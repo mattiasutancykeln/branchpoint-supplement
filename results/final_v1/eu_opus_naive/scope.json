@@ -1,0 +1,309 @@
+{
+  "condition": "eu_opus_naive",
+  "dataset": "eu",
+  "judge_model": "gpt-5.6-sol",
+  "input_digests": {
+    "seed000": "c0481317eb5d2162f97f039a1091114dbd4ee0581baa0152f35c5c52be5675e3",
+    "seed001": "51a96ca4c8be9a4c4bfaf561e95434c890b181cc400e77c3b2d577259bb535df",
+    "seed002": "be313a4f694ec6500d77d97494cb8d596bf45b08d30597b5b25e68d4b1e20c5d",
+    "seed003": "911b6487def551a191480d25f51f01ab27f58d18123fc05f0833bde30ea1816b",
+    "seed004": "ac7066a8b663db4259ee34854614e2a5ecf456fb8681a742eafe8f77f3b1558c",
+    "seed005": "f8a6d6c7d4bbd3b398b13b3b4027a0eb1fec02132d3ceeb09e4b724b3fb8859c",
+    "seed006": "cf50a91eee52a770ed2c72b840a9c80ca00484787cecdb7da6516985f6e43e9e",
+    "seed007": "0db08ffa101bf28b4477bdcf968e78e6ece92ec23cbbcb9f8b8c669a108509ad",
+    "seed008": "c7df9f40a804a07f72ed8a075944a8a2b02e97859214d5b2074019c524fb4c55",
+    "seed009": "9c127ba191be02598d60baa6b8bb4267ab00e56e635cb1be04660702fe1223cb",
+    "seed010": "5198688359c137bd6bae839acf915c9ce6042ccfd8c8c7833ba2d19c2895b995",
+    "seed011": "be6697b1c4456b16b31d0cf0249f4243dec33b5863f6e06b1ec32aabe69cf7bb",
+    "seed012": "2e61155939b15a56b7c6056f4249ea713cb466951e71241e13c48049d98779b0",
+    "seed013": "4e6ce74a46f95b54fdce4dc2900d2e4d8a48607c4ff600f5c8aea827d5ea466d",
+    "seed014": "7706de49cd8bdf077c46fc54b362ef14fd5b68556cdf3b96003d9db1fbbd2dc2",
+    "seed015": "4485d197811e5ae98521a6ea27cec8bcb1a0b08098f6b26257f0924a5b3bed03",
+    "seed016": "d0f33fd2b2b639dfbf6e90724cf7604212e551132366ce52e3da5925fd075395",
+    "seed017": "def5c9474531a8f31e4e448d0f90b09ef7df07a2111b8ead1762b9e72f63f8a7",
+    "seed018": "74782a69ea400fb74325021922758040a98ad6a95a5b08ac1bb81c8370841396",
+    "seed019": "70d6da76c5ca2c018de0963a5262f61cdf35efba2b98ad58802173b12b2d4e8a",
+    "seed020": "e6362797a8a6a84f2754e8c981823c6e6e528faa7d02912bf4685f6ac12e4594",
+    "seed021": "3bb3cd5daff3c32e8953bc8da74e190769296d3f56a6b0a7b6a2f1b753a3ea82",
+    "seed022": "061edbdc1667d198ecbd044102b0f74dd006393847f333c744a385b7211cc295",
+    "seed023": "e5ad6aaf46c40c79e4d55743e92e864e27010ce1c83594c5830dd1c9c4d2c7e6",
+    "seed024": "c22de9f1b7bb72d999dd06d230b478f605749158c4f6c4b9579ac8faa7539938",
+    "seed025": "95f14b8f938e4de14d58f5d358c1314def591e219071456d07eea50102e074c3",
+    "seed026": "8f563bc61bb8cd519f6b04954638dbc61303cffeb84fa7a52df026f283953211",
+    "seed027": "1d3fdd45621f70fd71f633e08f22fbca0f0a1b25ed08987cebed14772e5a7243",
+    "seed028": "8d82c9ef1385546e580c72de6c45863ab0f470a5dad4b484399fe7dd332371ab",
+    "seed029": "67391214defaedb42878fc14901d226a7dd8a1426bf349c84582027647eba71d",
+    "seed030": "4a4c423ad85f9cdd734faa6ba3b4e4b58239221543d3e2769e8c2c6c1f980624",
+    "seed031": "67f0fe56f333a399f3f114690566bd000929b511bfac8e76e43b81753a2d0e97",
+    "seed032": "d761c46fb8f0f999223e211b3b1bd8b260746d7510a634817eff1b7c5cb8069c",
+    "seed033": "bcc6262ce806bc919dfb154400776d58c540157b34ed6c935e44f1ca2c743417",
+    "seed034": "531d73d464656a680f49c014fcd7aff8fdd1b9a21c2bc9dc54a702ef1e8f2127",
+    "seed035": "d7ec2a3e593366851ebb131e0736db8aca9fcfb8f3537a578cbef8428ce70716",
+    "seed036": "a5ad28e73ea9fb34816c7e0aed164a75cbdc05fabfc4135cae3b767cc863b7d2",
+    "seed037": "ea720e2e1c5cf07d6d7fb3c5c8fb77ba305c3880b67f0ac2c09465b3e756c26b",
+    "seed038": "01519918339aae23276843e32eb194d26ef074e3911cf1096e05706a7687930b",
+    "seed039": "59af2175b4f218e0729abeaaaf1ba228de19d4092ac2967e13752d8584641a91",
+    "seed040": "d6100538e9de9da4fdd03f1b009d8668f3e4eb7eed818b9a43ad2acdd02c9afd",
+    "seed041": "8a60f75f5ccdab5eb8ee708accb9fec9d80b8ad77c5754cabf04e35d015c89b8",
+    "seed042": "e229c119aecdcdb225b0dfd0eb740bb96658db48b49e6fd1cb8815d2bb949510",
+    "seed043": "d1ad8828637ce4d44959f06fa84df1b830e45492d7da5318c0c29daf0e97ea3f",
+    "seed044": "c01dcb36ad82b0a9bfcf5c5220df55e2f720798eba34816628db6c4b98429b76",
+    "seed045": "6737d3da43eda62e569a83f396bd62efa6916bee1dce0ac5f9808346b507586f",
+    "seed046": "b0ea08ad623401873f1b477e57227339f36e5c8e2676de596e48a6bba488fe03",
+    "seed047": "f35edbde07fabb8905b590e09887a2e3dcf7c3ec20e78db1b10c31fcf09e2dbd",
+    "seed048": "101b35a91a031159244ccfb3a2239dfe8d9d5b46bccfc3754d38870c0f02522a",
+    "seed049": "d6bb42dd9d5bd505c8ea9b07eda1d40d8f4d22be4d79ea74fcfbdc9a029002d5"
+  },
+  "scopes": {
+    "seed000": {
+      "scope": "E",
+      "unit_estimated": "-0.004934 change in log expected total Eucalyptus seedling count per 1-percentage-point increase in total grass cover (cluster-robust SE 0.010116; z=-0.488; p=0.63). Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; orientation: as_declared.",
+      "why": "This answers the declared estimand within the stated dataset frame: more total grass cover versus Eucalyptus seedling recruitment. Model: negative-binomial GLM with log link and alpha=8.35, estimated from a Poisson Pearson-residual auxiliary regression. Outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m, verified equal to euc_sdlgs_all. Adjustments were Euc_canopy_cover, distance to nearest eucalypt canopy (m), and season fixed effects with Autumn 2007 as reference. Complete-case n=348 quadrat-visits; 3 observations were excluded for missing covariates. Cluster-robust standard errors used Property (18 clusters). The native model scale is the log expected seedling count."
+    },
+    "seed001": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover, constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; orientation: as_declared.",
+      "why": "The fitted focal estimate is beta_grass = -0.00612 on the negative-binomial GLM log-count scale, with cluster-robust SE = 0.00993 (z = -0.616, p = 0.54; approximate 95% CI: [-0.0256, 0.0133]). This answers the declared estimand within the dataset frame because the predictor is the declared total grass percent cover, the outcome is total Eucalyptus seedling recruitment, and larger predictor values mean more grass cover. Auditable specification: negative-binomial GLM with log link and alpha fixed at 1; outcome euc_sdlgs_all per quadrat-visit; covariates total grass cover, Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season as a factor with Autumn 2007 as reference; Property-clustered robust SEs (18 clusters). Complete cases only: n=348 quadrat-visits, df_resid=342; repeated cross-sectional quadrats nested within properties."
+    },
+    "seed002": {
+      "scope": "E",
+      "unit_estimated": "Log count ratio in expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover, conditional on Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season",
+      "why": "The fitted negative-binomial GLM uses the declared grass-cover construction and the represented Eucalyptus seedling outcome within the stated frame. The focal native-scale coefficient is -0.00491 (cluster-robust SE 0.01013; 18 Property clusters; n=348), with larger predictor values representing more grass cover (as_declared)."
+    },
+    "seed003": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected Eucalyptus seedling count per quadrat-visit per 1 percentage-point increase in total grass cover; coefficient = -0.00641 (cluster-robust SE 0.00832).",
+      "why": "The fitted negative binomial GLM directly uses the declared predictor\u2014total grass cover constructed as exotic annual + exotic perennial + native perennial grass cover\u2014and the declared recruitment outcome, total seedlings across the three height classes, within the represented Eucalyptus population. Adjustment variables, model family, and quadrat-visit analysis unit are analytical choices rather than scope changes. Larger predictor values mean more grass cover, so the orientation is as_declared. Complete cases were used (n=348), with SEs clustered by Property (18 clusters)."
+    },
+    "seed004": {
+      "scope": "E",
+      "unit_estimated": "One quadrat in one survey round (quadrat-visit); expected Eucalyptus seedling count, with inference clustered by Property.",
+      "why": "The model directly relates the declared total grass-cover percentage (exotic annual + exotic perennial + native perennial grass) to the represented Eucalyptus seedling-recruitment outcome. Its focal coefficient is the adjusted log expected-count change per 1 percentage-point increase in grass cover, oriented as declared; the covariate adjustment, negative-binomial specification, and clustering are analytical choices rather than scope changes."
+    },
+    "seed005": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in grass cover: coefficient = -0.00355, cluster-robust SE = 0.01043 (z = -0.340, p = 0.734).",
+      "why": "This answers the declared within-frame estimand: the predictor is grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values meaning more grass cover (orientation: as_declared), and the outcome is total Eucalyptus seedlings across the three height classes. The fitted model was a negative-binomial GLM with log link and alpha = 8.36, adjusted for Euc_canopy_cover, log1p(distance to eucalypt canopy), and Season (reference: Autumn 2007), using Property-cluster-robust standard errors. Complete cases were 348 of 351 quadrat-visits; graminoid cover was excluded."
+    },
+    "seed006": {
+      "scope": "E",
+      "unit_estimated": "Adjusted change in log expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover, where total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover.",
+      "why": "This is within the declared frame: the predictor is total grass cover with higher values meaning more grass (as_declared), and the outcome is the represented Eucalyptus seedling-recruitment count. The negative-binomial log-link model, covariate adjustment, quadrat-visit analysis level, and property-clustered uncertainty are analytical choices rather than scope changes."
+    },
+    "seed007": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in total grass cover.",
+      "why": "Answers the declared estimand within the dataset frame. Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percentage points); orientation: as_declared. Outcome: euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Negative-binomial GLM with log link and alpha=1, adjusted for Euc_canopy_cover, distance to nearest eucalypt canopy, and Season (Autumn 2007 reference), using Property-cluster-robust SEs (18 clusters). Complete-case n=348 quadrat-visits; 3 rows excluded for missingness. Reported robust inference: z=-0.616, p=0.538 (residual df 342; cluster-inference df 17)."
+    },
+    "seed008": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log count ratio in total Eucalyptus seedling count per 1-percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover, for a quadrat in a survey round.",
+      "why": "The predictor is the declared total grass-cover quantity with as-declared orientation, and the outcome is total Eucalyptus seedlings, within the stated population and dataset frame. The negative-binomial model, canopy and distance adjustments, property-clustered uncertainty, and quadrat-visit analysis unit are analytical choices rather than scope changes."
+    },
+    "seed009": {
+      "scope": "E",
+      "unit_estimated": "Log expected-count ratio for total eucalypt seedlings in one quadrat-survey round per 1-percentage-point increase in total grass cover.",
+      "why": "This answers the declared estimand within the dataset frame: the predictor was ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (larger means more grass; orientation as_declared), and the outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The fitted model was a negative-binomial GLM with log link and alpha=9.22 estimated by NB MLE, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), with Property-cluster-robust SEs (18 clusters). It used 348 quadrat-visits after excluding 3 with missing cover or distance. Inference was robust z=-0.771, p=0.44 (cluster df noted as 17). The supplied summary does not state the coefficient or SE numerically, so they cannot be recovered from z and p alone without data/model output."
+    },
+    "seed010": {
+      "scope": "E",
+      "unit_estimated": "Adjusted change in log expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover.",
+      "why": "The fitted NB GLM directly uses the declared in-frame exposure\u2014ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, oriented as_declared\u2014and the declared recruitment outcome\u2014euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. It adjusts for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), uses alpha=8.90, and cluster-robust uncertainty by Property (18 clusters), on 348 complete quadrat-visits after excluding 3 with missing covariates. Thus it answers the declared estimand within the dataset frame on the model\u2019s native log-mean scale."
+    },
+    "seed011": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected-count ratio for total Eucalyptus seedling count per 1 percentage-point increase in total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), at fixed canopy cover, distance to Eucalyptus canopy, and season.",
+      "why": "The fitted model targets the declared grass-cover exposure and Eucalyptus seedling-recruitment outcome within the dataset\u2019s population and frame. Summing seedling height-class counts, covariate adjustment, negative-binomial modeling, and property-clustered inference are analytical choices rather than scope changes."
+    },
+    "seed012": {
+      "scope": "E",
+      "unit_estimated": "Negative-binomial log-mean count coefficient per 1 percentage-point increase in total grass cover: -0.00612 (cluster-robust SE 0.00993; z=-0.616; approximate 95% CI [-0.02558, 0.01334]). Observation unit: one quadrat in one survey round.",
+      "why": "This answers the declared estimand within the stated frame: the predictor was grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, so larger values mean more total grass cover (orientation: as_declared); graminoids were excluded. The outcome was euc_sdlgs_all, the total count of eucalypt seedlings across three height classes. The fitted model was a negative-binomial GLM with log link and fixed alpha=1, adjusted for Euc_canopy_cover, distance to nearest eucalypt canopy in metres, and Season (3 rounds), with Property-cluster-robust standard errors (18 clusters). The analysis included 348 quadrat-visits and excluded 3 observations with missing model variables; df_resid=342. The estimate is reported on the native log-count scale."
+    },
+    "seed013": {
+      "scope": "E",
+      "unit_estimated": "Conditional difference in log expected total Eucalyptus seedling count per 1-percentage-point increase in total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), for one quadrat in one survey round; orientation is as_declared.",
+      "why": "This directly targets the framed Eucalyptus population, grass-cover exposure, and recruitment outcome. The fitted model was a negative-binomial GLM with log link and alpha=5.9; outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m; covariates were Euc_canopy_cover and Distance_to_Eucalypt_canopy(m); complete-case n=348, with 3 observations excluded for missing covariates; uncertainty used Property-cluster-robust SEs across 18 clusters. The focal Wald statistic was z=-0.769 (p=0.442). The supplied fit description does not state the coefficient or its SE, so their exact numeric values cannot be recovered from z and p alone."
+    },
+    "seed014": {
+      "scope": "E",
+      "unit_estimated": "Coefficient for total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), per +1 percentage point: -0.006412 log expected seedlings (cluster-robust SE 0.008325; z=-0.770; p=0.441).",
+      "why": "This directly estimates the declared effect of total grass cover on total Eucalyptus seedling recruitment within the dataset frame and is oriented as_declared. Model: negative binomial GLM with log link and alpha=9.22, outcome euc_sdlgs_all, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), with Property-cluster-robust SEs (18 clusters). Complete cases for all model and clustering variables were used: 348 of 351 quadrat-visits; model residual df=344."
+    },
+    "seed015": {
+      "scope": "E",
+      "unit_estimated": "One quadrat sampled in one survey round (quadrat-visit); fitted effect is the log expected total-eucalypt-seedling count ratio per 1-percentage-point increase in total grass cover.",
+      "why": "This answers the declared estimand within frame: the outcome is total Eucalyptus seedlings (the three seedling-size counts summed), and the predictor is ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, so larger values represent more grass cover (orientation: as_declared). The negative-binomial log-link model adjusts for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), uses 348 complete-cover quadrat-visits, and computes Property-cluster-robust uncertainty across 18 clusters. The model family, covariate adjustment, clustering, and quadrat-visit analysis unit are analytical choices rather than scope changes. Reported native-scale test: cluster-robust z = -0.771, p = 0.441; alpha = 9.22 and GLM residual df = 344."
+    },
+    "seed016": {
+      "scope": "E",
+      "unit_estimated": "Conditional log expected total Eucalyptus seedling-count change per 1 percentage-point increase in total grass cover at a quadrat-visit: coefficient = -0.00355, cluster-robust SE \u2248 0.00967, 95% CI \u2248 [-0.0225, 0.0154], z = -0.367, p = 0.714.",
+      "why": "This answers the declared estimand within the dataset frame. Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (%), with larger values representing more grass (orientation: as_declared). Outcome: euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m per 15\u00d715 m quadrat-visit. Model: negative-binomial GLM with log link and alpha=1, adjusted for Euc_canopy_cover, distance to eucalypt canopy (m), annual_precipitation, and Season (Autumn 2007 reference); Property-cluster-robust uncertainty (18 clusters). Complete-case/listwise deletion retained 346 of 351 observations; df_resid=339. The model scale and covariate adjustment are analytical choices, not scope changes."
+    },
+    "seed017": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log-rate change in total Eucalyptus seedling count per quadrat-visit per 1 percentage-point increase in total grass cover; estimate = -0.006412, cluster-robust SE = 0.008314 (Property clusters; inferential df = 17; z = -0.771, p = 0.44).",
+      "why": "This directly targets the declared within-frame relationship between grass cover and Eucalyptus seedling recruitment. Predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, in percentage points; orientation = as_declared. Model: negative binomial GLM with log link and alpha = 9.22 estimated by NB MLE, outcome euc_sdlgs_all, adjusted for Euc_canopy_cover (%) and Distance_to_Eucalypt_canopy(m), with Property-cluster-robust SEs across 18 clusters. Complete-case analysis used 348 of 351 quadrat-visits; excluded 3 rows with missing model variables."
+    },
+    "seed018": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected count ratio for total Eucalyptus seedlings per quadrat-visit, per 1 percentage-point increase in total grass cover.",
+      "why": "This directly targets the declared within-frame relationship: total grass cover was constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values representing more grass cover (as_declared), and recruitment was represented by euc_sdlgs_all. The fitted negative-binomial log-link coefficient is on the requested native log-count-ratio scale; adjustment variables, complete-case exclusion, and Property-clustered uncertainty are analytical choices rather than scope changes."
+    },
+    "seed019": {
+      "scope": "E",
+      "unit_estimated": "Adjusted negative-binomial log-mean count coefficient for total grass cover per 1 percentage-point increase: -0.00641 (property-cluster-robust SE 0.00831; 95% CI -0.0227 to 0.00989; z=-0.771, p=0.44). The modeled outcome is total Eucalyptus seedlings per quadrat-visit.",
+      "why": "This answers the declared estimand within the dataset frame: predictor = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, so larger values mean more grass (orientation: as_declared); outcome = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The fitted model was a negative-binomial GLM with log link and alpha=8.90, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), with SEs clustered by Property (18 clusters). It used 348 complete quadrat-visits and excluded 3 observations missing required cover or distance variables; graminoids were excluded from grass cover."
+    },
+    "seed020": {
+      "scope": "E",
+      "unit_estimated": "Adjusted NB2 log-count coefficient for a +1 percentage-point increase in total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; orientation: as_declared): -0.00641, cluster-robust SE 0.00832 (z=-0.770, p=0.44; 95% CI approximately [-0.0227, 0.00990]).",
+      "why": "This directly addresses the declared within-dataset estimand: Eucalyptus seedling recruitment as a function of total grass percent cover. The model was NB2 MLE with log link for precomputed euc_sdlgs_all, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), with Property-clustered robust SEs (18 clusters). It used 348 quadrat-visits after excluding 3 rows with missing covariates; residual df=344 and estimated dispersion alpha=9.22. The estimate is reported on the model's native log-count scale."
+    },
+    "seed021": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected eucalypt-seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover.",
+      "why": "The analysis targets the declared in-frame exposure and outcome: predictor = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values meaning more grass (as_declared), and outcome = euc_sdlgs_all. It uses a negative-binomial GLM with log link, adjusts for Euc_canopy_cover and distance to nearest eucalypt canopy, and uses Property-cluster-robust uncertainty over 348 complete quadrat-visits. Thus the focal coefficient is on the native log-count scale and answers the declared estimand within the represented dataset frame."
+    },
+    "seed022": {
+      "scope": "E",
+      "unit_estimated": "Conditional change in log expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover; predictor = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, orientation = as_declared. The supplied summary gives z = -0.488 and p = 0.63, but does not provide the native-scale coefficient or cluster-robust SE separately, so those cannot be numerically recovered from the summary alone.",
+      "why": "This answers the declared estimand within frame: the outcome is total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m), and the focal exposure is total grass cover. The fitted model was a negative-binomial GLM with log link and alpha = 8.35 estimated by Poisson-residual auxiliary regression, adjusted for Euc_canopy_cover, distance to nearest eucalypt canopy, and Season fixed effects, with Property-cluster-robust uncertainty across 18 properties. It used 348 complete quadrat-visits from 351, excluding 3 with missing cover or distance; residual df = 342."
+    },
+    "seed023": {
+      "scope": "E",
+      "unit_estimated": "-0.00641 on the log expected seedling-count scale per 1-percentage-point increase in total grass cover (cluster-robust SE \u2248 0.00831; 95% Wald CI \u2248 [-0.02270, 0.00988]; z = -0.771, p = 0.441).",
+      "why": "Answers the declared within-frame estimand. Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, in percentage points; larger values mean more grass, so orientation is as_declared. Outcome: euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Fitted negative-binomial GLM with log link and alpha = 8.90, adjusted for Euc_canopy_cover and distance to nearest eucalypt canopy, with Property-cluster-robust SEs (18 clusters). Complete-case analysis used 348 quadrat-visits, excluding 3 with missing cover; residual df = 344, with z-based inference. One observational unit was one quadrat in one survey round."
+    },
+    "seed024": {
+      "scope": "E",
+      "unit_estimated": "15\u00d715 m quadrat-visit seedling count; effect per 1 percentage-point increase in constructed grass cover",
+      "why": "The fitted NB GLM directly targets the within-frame association of grass cover\u2014constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, oriented as_declared\u2014with Eucalyptus recruitment measured by euc_sdlgs_all. It uses a log link with alpha=1 fixed, adjusts for Euc_canopy_cover, distance to eucalypt canopy, and Season fixed effects, excludes 3 incomplete records (n=348), and uses Property-cluster-robust uncertainty across 18 clusters. The focal coefficient is on the log-count scale per 1 percentage point of grass cover; reported z=-0.616 and p=0.54 (df_resid=342)."
+    },
+    "seed025": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit for a 1-percentage-point increase in total grass cover",
+      "why": "This directly targets the declared in-frame effect: total grass cover was constructed as ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (larger values mean more grass cover; orientation as_declared), and total seedling recruitment as euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The fitted model was a negative-binomial GLM with log link and MLE-estimated alpha=9.67, no covariates, and Property-clustered robust uncertainty (18 clusters), using 350 quadrat-visits after excluding one row with missing cover. The reported native-scale inference is z=-1.242 and p=0.214 (residual df 348); the coefficient and its SE or confidence interval were not supplied, so their numeric values cannot be recovered from z and p alone."
+    },
+    "seed026": {
+      "scope": "E",
+      "unit_estimated": "Quatrat-visit (one quadrat in one survey round), modeled as the expected total Eucalyptus seedling count",
+      "why": "The analysis directly addresses the declared estimand within the stated frame: its outcome is total Eucalyptus seedling recruitment (euc_sdlgs_all), and its focal predictor is total grass cover constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, oriented as_declared. The negative-binomial log-link coefficient is therefore the conditional log count-ratio per 1-percentage-point increase in total grass cover; covariate adjustment, clustering by Property, and the quadrat-visit analysis unit are analytical choices rather than scope changes."
+    },
+    "seed027": {
+      "scope": "E",
+      "unit_estimated": "Quadrat-visit; focal estimate = -0.004934 log expected seedlings per 1 percentage-point increase in total grass cover, cluster-robust SE = 0.010116 (z = -0.488, p = 0.63; approximate 95% CI: -0.02476 to 0.01489).",
+      "why": "This directly addresses the declared estimand within the dataset frame: Eucalyptus seedling recruitment as a function of grass cover. Predictor: Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; orientation = as_declared. The fitted model was a negative-binomial GLM with log link and alpha = 8.35, estimated from a Poisson-residual auxiliary regression. The outcome was euc_sdlgs_all, the total seedlings across all three height classes. Covariates were Euc_canopy_cover, distance to nearest eucalypt canopy in metres, and Season, with Autumn 2007 as reference. Property-cluster-robust standard errors used 18 clusters. Complete-case analysis included 348 quadrat-visits and excluded 3 observations missing cover or distance; residual df = 342. The design was a repeated cross-sectional survey with quadrats nested in properties."
+    },
+    "seed028": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per 1-percentage-point increase in total grass cover, conditional on Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season.",
+      "why": "The fitted negative-binomial GLM directly targets the declared within-frame relationship: total grass cover constructed as exotic annual plus exotic perennial plus native perennial grass cover, and recruitment measured as the summed Eucalyptus seedling size-class counts. The predictor is oriented as declared; covariate adjustment, clustering by Property, repeated-cross-section observation unit, and model choice are analytical choices rather than scope changes."
+    },
+    "seed029": {
+      "scope": "E",
+      "unit_estimated": "Log expected Eucalyptus seedling count per quadrat within survey round, per 1 percentage-point increase in total grass cover.",
+      "why": "The analysis matches the declared population, exposure, and recruitment outcome within the dataset frame. Predictor: Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger values mean more grass cover (orientation: as_declared). A negative-binomial GLM with log link and alpha=8.90 modeled euc_sdlgs_all, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), with Property-cluster-robust SEs (18 clusters). Graminoids were excluded as non-grasses; 3 rows missing predictors were excluded, leaving n=348 quadrat-visits. The focal native-scale estimate is -0.006412 log count per percentage point (SE 0.008316; z=-0.771; p=0.441; df_resid=344)."
+    },
+    "seed030": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected Eucalyptus seedling count per quadrat visit for a 1-percentage-point increase in constructed total grass cover: -0.00641 (cluster-robust SE 0.00831; 95% CI -0.02270 to 0.00988; z=-0.771, p=0.44).",
+      "why": "This answers the declared estimand within the dataset frame: the predictor was exactly ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values representing more grass cover (orientation: as_declared), and the outcome euc_sdlgs_all was the sum of the three Eucalyptus seedling height classes. The fitted model was an NB2 negative-binomial GLM with log link and alpha=9.22, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Graminoids were excluded from grass cover. Complete-case analysis included 348 quadrat-visits, dropping 3 with missing cover or distance; uncertainty used Property-cluster-robust SEs across 18 properties. Residual df was 344. The estimate is reported on the model\u2019s native log-count scale."
+    },
+    "seed031": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit, per 1-percentage-point increase in summed grass cover",
+      "why": "The fitted model directly targets the declared in-frame relationship: total Eucalyptus seedling recruitment is modeled against summed exotic annual, exotic perennial, and native perennial grass cover. The log-link negative-binomial coefficient is therefore a log rate ratio per percentage point of grass cover; covariate adjustment, clustering by Property, and the quadrat-visit analysis unit are analytical choices rather than scope changes."
+    },
+    "seed032": {
+      "scope": "E",
+      "unit_estimated": "Adjusted negative-binomial log-count coefficient per 1 percentage-point increase in total grass cover: -0.004937; Property-cluster-robust SE \u2248 0.01012 (z = -0.488, p = 0.63; approximate 95% CI: -0.0248 to 0.0149). Observation unit: quadrat-visit.",
+      "why": "This estimates the declared within-frame relationship between grass cover and Eucalyptus seedling recruitment. Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, in percent of quadrat; orientation: as_declared. Outcome: euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Model: negative-binomial GLM with log link and alpha=8.28 estimated by moment iteration, adjusted for Euc_canopy_cover, distance to nearest eucalypt canopy in meters, and Season; Property-cluster-robust uncertainty across 18 clusters. Complete predictor cases only: 348 quadrat-visits, with 342 residual degrees of freedom. The coefficient is reported on its native log expected-count scale."
+    },
+    "seed033": {
+      "scope": "E",
+      "unit_estimated": "One quadrat-visit (348 complete-case observations, clustered by 18 properties).",
+      "why": "The fitted negative-binomial GLM addresses the declared within-frame estimand: total Eucalyptus seedling recruitment is modeled against summed percent grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), oriented as_declared, with adjustment for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). The focal native scale is the log rate ratio per 1 percentage-point increase in summed grass cover; cluster-robust inference gives z = -0.642 and p = 0.52. Graminoids were excluded, and 348 of 351 complete cases were analyzed. The model and covariate choices are analytical choices rather than a scope change."
+    },
+    "seed034": {
+      "scope": "E",
+      "unit_estimated": "One quadrat in one survey round; conditional log expected Eucalyptus seedling-count ratio per 1 percentage-point increase in total grass cover.",
+      "why": "This answers the declared estimand within frame: the predictor was grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (larger values mean more grass cover; as_declared), and the outcome was euc_sdlgs_all, the sum of three Eucalyptus seedling height classes. The fitted model was a negative-binomial GLM with log link and alpha=8.90, adjusted for Euc_canopy_cover and distance to eucalypt canopy, using Property-cluster-robust SEs (18 clusters). Complete-case n=348 quadrat-visits, with 3 excluded for missing cover/distance. The focal coefficient is on the native log-count-ratio scale per 1 percentage point of grass cover; reported z=-0.771 and p=0.441 (z test; residual df 344). The coefficient and SE/CI themselves were not supplied, so their numerical values cannot be recovered from z and p alone."
+    },
+    "seed035": {
+      "scope": "E",
+      "unit_estimated": "One quadrat in one survey round (quadrat-visit); effect per +1 percentage point of summed grass cover.",
+      "why": "This analysis addresses the declared within-frame estimand using total Eucalyptus seedlings as the recruitment outcome and grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, oriented as_declared. A negative-binomial GLM with log link and alpha=6.0 was fit to 348 complete quadrat-visits, adjusting for Euc_canopy_cover, distance to eucalypt canopy, and Season (reference Autumn 2007), with Property-cluster-robust uncertainty across 18 properties. The focal estimate is -0.00504 on the log-rate scale per +1 percentage point of grass cover (robust SE approximately 0.01008; z=-0.500; p=0.617; approximate 95% z CI: -0.0248 to 0.0147). Three incomplete observations were excluded."
+    },
+    "seed036": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit per 1 percentage-point increase in total grass cover; coefficient = -0.00641 (cluster-robust SE 0.00832).",
+      "why": "The predictor exactly implements declared total grass cover and is oriented as declared; the outcome is total Eucalyptus seedling recruitment represented by the three recorded seedling size-class counts. The negative-binomial log-link model, covariate adjustment, and Property-clustered uncertainty are analytical choices within the declared frame. Complete-case analysis used 348 quadrat-visits, excluding 3 with missing cover or covariates."
+    },
+    "seed037": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in total grass cover; coefficient = -0.00454, cluster-robust SE = 0.00998 (95% CI: -0.02410 to 0.01502; z = -0.455, p = 0.65).",
+      "why": "Predictor: ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, in percentage points. Orientation: as_declared, because larger values indicate more grass cover. This directly addresses grass cover and Eucalyptus seedling recruitment within the stated dataset frame. Model: negative-binomial GLM with log link and alpha fixed at 1; outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m; adjusted for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season fixed effects; SEs clustered by Property (18 clusters). Complete-case n = 348 quadrat-visits, with 3 observations excluded for missingness; residual df = 342."
+    },
+    "seed038": {
+      "scope": "E",
+      "unit_estimated": "Log count ratio in total Eucalyptus seedling count per 1-percentage-point increase in total grass cover at a quadrat-visit",
+      "why": "This directly targets the declared within-frame effect: total grass cover was constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values meaning more grass cover (as_declared), and recruitment was the sum of the three Eucalyptus seedling-count variables. The negative-binomial log-link GLM adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy, dropped rows missing model variables (348/351 retained), and used Property-cluster-robust uncertainty across 18 properties. The supplied fit reports z = -0.770 and p = 0.44; however, the coefficient and cluster-robust SE themselves are not included in the supplied information, so their native-scale numerical values cannot be recovered exactly from z and p alone."
+    },
+    "seed039": {
+      "scope": "E",
+      "unit_estimated": "quadrat-visit",
+      "why": "The fitted NB2 GLM directly targets the declared in-frame relationship: total Eucalyptus seedling count per quadrat-visit versus grass cover constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, where larger values mean more grass cover (as_declared). Its focal coefficient is the adjusted log count ratio per 1 percentage-point increase in that summed cover, with property-cluster-robust uncertainty. The canopy, distance, and season adjustments, NB2 specification, repeated cross-sectional unit, and exclusion of three rows with missing cover are analytical choices rather than scope changes. Reported uncertainty was z = -0.488 and p = 0.63 over n = 348; the supplied description does not state the coefficient or robust SE numerically."
+    },
+    "seed040": {
+      "scope": "E",
+      "unit_estimated": "quadrat-visit",
+      "why": "The fitted negative-binomial GLM targets Eucalyptus seedling recruitment as a function of the declared total grass-cover exposure within the dataset frame. Its focal coefficient is the conditional log count ratio in expected total Eucalyptus seedlings per quadrat-visit for a 1-percentage-point increase in total grass cover, adjusted for canopy cover, canopy distance, and precipitation; clustering by Property changes uncertainty estimation, not the estimand. The predictor orientation is as_declared."
+    },
+    "seed041": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected total Eucalyptus seedling count per quadrat-visit per 1 percentage-point increase in total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover); orientation: as_declared.",
+      "why": "This analysis answers the declared estimand within the dataset frame: the predictor is total grass percent cover, the outcome is total Eucalyptus seedlings across the three height classes, and the observations are represented quadrat-visits. The negative-binomial log-link model, adjustment covariates, complete-case exclusion, and Property-clustered uncertainty are analytical choices rather than scope changes."
+    },
+    "seed042": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in total grass cover; coefficient = -0.00491, cluster-robust SE \u2248 0.0101 (95% CI \u2248 -0.0248 to 0.0149).",
+      "why": "This answers the declared estimand within the dataset frame: the predictor was constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, so larger values mean more grass cover (orientation: as_declared), and the outcome was euc_sdlgs_all, total eucalypt seedlings. The fitted model was NB2 MLE with estimated alpha=9.12, adjusted for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season fixed effects, using Property-cluster-robust uncertainty (18 clusters). Complete cases on all model variables were used: 348 quadrat-visits, with 342 residual degrees of freedom. The focal estimate is on the model\u2019s native log-count scale (z=-0.485, p=0.63)."
+    },
+    "seed043": {
+      "scope": "E",
+      "unit_estimated": "One quadrat in one survey round; focal estimate = -0.00664 log expected-count units per 1 percentage-point increase in total grass cover (cluster-robust SE 0.00869; z = -0.764; p = 0.445).",
+      "why": "This answers the declared estimand within the dataset frame: the predictor was Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, with larger values meaning more grass (orientation: as_declared), and the outcome was total Eucalyptus seedling count = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. A negative-binomial GLM with log link and alpha=1 adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), using Property-cluster-robust SEs (18 clusters). Complete-case analysis used 348 of 351 quadrat-visits, excluding 3 with missing model variables. Wald z inference was used (residual df 344)."
+    },
+    "seed044": {
+      "scope": "E",
+      "unit_estimated": "Log expected total-eucalypt-seedling count ratio per 1 percentage-point increase in total grass cover for a quadrat-visit, conditional on Euc_canopy_cover and distance to nearest eucalypt canopy.",
+      "why": "The fitted negative-binomial GLM directly targets the declared grass-cover/recruitment relationship within the dataset frame. The predictor is total grass cover constructed as ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (graminoids excluded), with larger values meaning more grass cover (as_declared). The outcome is the sum of euc_sdlgs0_50cm, euc_sdlgs50cm_2m, and euc_sdlgs>2m. It uses 348 complete quadrat-visits, adjusts for Euc_canopy_cover and distance to nearest eucalypt canopy, and uses Property-cluster-robust uncertainty across 18 properties. Model-family, adjustment, and aggregation choices do not change scope."
+    },
+    "seed045": {
+      "scope": "E",
+      "unit_estimated": "Conditional log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in total grass cover, where total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover.",
+      "why": "This directly addresses the declared effect of grass cover on Eucalyptus seedling recruitment within the dataset frame. The fitted model is a negative-binomial GLM with log link for the sum of seedlings in the 0\u201350 cm, 50 cm\u20132 m, and >2 m classes, adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m), using 348 complete quadrat-visits after excluding 3 with missingness and Property-cluster-robust uncertainty across 18 clusters. The predictor is oriented as_declared. The focal coefficient is negative on the native log-count scale, with z = -0.771 and p = 0.44; the supplied summary does not provide the coefficient or cluster-robust SE needed to state its numeric estimate and confidence interval."
+    },
+    "seed046": {
+      "scope": "E",
+      "unit_estimated": "quadrat-visit; log expected seedling-count ratio per 1 percentage-point increase in constructed total grass cover",
+      "why": "This directly targets the declared within-frame effect: predictor = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, with larger values meaning more grass cover (as_declared), and outcome = euc_sdlgs_all. The fitted model was a negative-binomial GLM with log link and alpha=1, adjusted for Euc_canopy_cover and distance to nearest eucalypt canopy, using complete cases (n=348; 3 excluded for missingness) and Property-cluster-robust SEs across 18 clusters. The supplied summary reports z=-0.764 and p=0.445 (residual df=344), but does not provide the coefficient or SE/CI, so the native-scale numerical estimate and uncertainty cannot be recovered exactly from the declaration alone."
+    },
+    "seed047": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log expected seedling-count change per quadrat-visit for a 1-percentage-point increase in total grass cover; coefficient = -0.00491 (cluster-robust SE 0.01013).",
+      "why": "This directly addresses the declared within-frame estimand using total grass cover constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (larger values mean more grass; as_declared) and total Eucalyptus seedlings constructed by summing the three seedling-size counts. The fitted negative-binomial log-link GLM adjusted for Euc_canopy_cover, distance to nearest eucalypt canopy, and Season, used 348 complete quadrat-visits, and clustered uncertainty by Property (18 clusters). Native graminoids were excluded. The focal native-scale estimate was -0.00491 per percentage point (SE 0.01013, z=-0.485, p=0.63)."
+    },
+    "seed048": {
+      "scope": "E",
+      "unit_estimated": "Quadrat sampled in one survey round (quadrat-visit; n=346).",
+      "why": "The analysis directly targets the declared within-frame relationship: total grass cover (%) was constructed as ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, with larger values meaning more grass cover (as_declared), and total Eucalyptus seedlings was constructed by summing the three seedling-size variables. It used a negative-binomial GLM with log link and adjusted for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and annual_precipitation; 5 incomplete records were excluded and SEs were clustered by Property (18 clusters). The native-scale coefficient is the log expected-count change per 1 percentage-point increase in total grass cover. The supplied results give z = -0.614 and p = 0.539, but do not state the coefficient or robust SE/CI, which cannot be uniquely recovered from those statistics alone."
+    },
+    "seed049": {
+      "scope": "E",
+      "unit_estimated": "Log expected total Eucalyptus seedling count per quadrat-visit per 1-percentage-point increase in total grass cover",
+      "why": "The analysis directly uses the declared exposure\u2014ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover\u2014and the declared recruitment outcome, total eucalypt seedlings across the three height classes, within the dataset frame. The negative-binomial model, covariate adjustment, quadrat-visit aggregation, and property-clustered uncertainty are analytical choices rather than scope changes; larger predictor values represent more grass cover, so the orientation is as declared."
+    }
+  }
+}

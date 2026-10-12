@@ -1,0 +1,77 @@
+[grid]
+datasets = ["bt", "eu", "marp"]
+models = ["sol", "opus", "glm"]
+arms = ["naive", "continuation"]
+n = 25
+seed = 7
+effort = "low"
+judge_model = "gpt-5.6-sol"
+concurrency = 3
+workers = 6
+guard = 500.0
+output_root = "results/final_v1"
+logs = "results/logs"
+
+[layer2]
+ledger = "results/grid2/costs.jsonl"
+
+[models."claude-sonnet-5"]
+short = "sonnet"
+rates = [2.0, 10.0, 0.20, 2.50]
+[models."claude-opus-5"]
+short = "opus"
+rates = [5.0, 25.0, 0.50, 6.25]
+[models."gpt-5.6-sol"]
+short = "sol"
+rates = [4.0, 20.0, 0.40, 4.0]
+[models."gpt-5.6-luna"]
+short = "luna"
+rates = [0.20, 1.20, 0.02, 0.20]
+[models."openrouter/z-ai/glm-5.3"]
+short = "glm"
+rates = [1.40, 4.40, 0.26, 1.40]
+providers = ["friendli"]
+continuation_provider = "friendli"
+
+[datasets.bt]
+# df scale the human comparator itself used: crowd median adjusted_df/n = 0.126 (90/96 cluster-scale)
+df_policy = "cluster"
+data = "research/scratch/manyecoevo/extracted/blue_tit_data.csv"
+question = "experiments/questions/QUESTION_bt.md"
+crowd = "blue tit"
+
+[datasets.eu]
+# df scale the human comparator itself used: crowd median adjusted_df/n = 0.936 (40/55 row-scale)
+df_policy = "row"
+data = "research/scratch/manyecoevo/extracted/euc_data.csv"
+question = "experiments/questions/QUESTION_eu.md"
+crowd = "eucalyptus"
+
+[datasets.marp]
+data = "research/scratch/marp/MARP_data.csv"
+question = "experiments/questions/QUESTION_marp.md"
+crowd = "marp"
+
+# LAYER 2 JUDGE PROMPTS ONLY. These run after Layer-1 reports are banked and
+# must never be appended to the dataset analyst's prompt.
+[prompts]
+extract = '''Below is one analysis: the numbers its scripts PRINTED, and the terminal note it wrote about its accepted result. Read off the statistics for that FOCAL accepted fit. Printed output may contain rejected candidate fits, diagnostics, or sensitivity analyses; use the terminal note to identify the accepted fit and never substitute a statistic from another fit. Report only what is actually there; never infer, compute, or fill a field you cannot read.
+
+n_obs is how many observations the reported model was fit over. unit is what one observation is. Put the accepted focal statistic in exactly one field: a finite Student t in t_stat or an asymptotic normal Wald z in z_stat; the other must be null. Never relabel one as the other. df_resid is the accepted model's residual/error df. df_reference is a different finite reference df used only for inference, such as clusters minus one. Never put df_reference, a Pearson chi-square/residual-df ratio, or another fit's df in df_resid. direct_effect is a standardized effect reported outright, if any. found is false when the output does not contain these statistics.
+
+# What its scripts printed
+{printed}
+
+# Its note
+{note}'''
+
+scope = '''# The declared estimand and frame
+{frame}
+
+# One analysis
+Declared focal predictor: {predictor}
+Declared orientation: {orientation}
+Methods note: {note}
+Fit over {n_obs} observations; one observation is {unit}.
+
+Return E when it answers the declared estimand within frame, N when it estimates a different target or scale, and U when the declaration cannot settle it. A different covariate set, model family, or estimator is analytical choice—not a scope change, and neither is the aggregation level or unit of analysis: individuals, clusters and group means are all reasonable ways for an analyst to answer one question, and the human panels this is measured against contain all three.'''

@@ -1,0 +1,446 @@
+{
+  "protocol_version": 6,
+  "dataset": "eu",
+  "model": "claude-opus-5",
+  "mode": "naive",
+  "allocation": "uniform",
+  "seed": 7,
+  "judge_model": "gpt-5.6-sol",
+  "effort": "low",
+  "workers": 6,
+  "provider_route": [],
+  "branching_method": "not_applicable",
+  "agent_interface": "native",
+  "extensions": [
+    {
+      "from": 0,
+      "to": 50,
+      "wall_clock_s": 383.0
+    }
+  ],
+  "wall_clock_s": 383.0,
+  "n_requested": 50,
+  "n_reported": 50,
+  "rows": [
+    {
+      "seed": 0,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 estimated from Poisson Pearson-residual aux regression) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m; verified equal to euc_sdlgs_all) on total grass cover, adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and season fixed effects (ref Autumn 2007). Complete cases n=348 quadrat-visits (3 dropped for missing covariates); unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in 18 properties; SEs cluster-robust by Property (18 clusters). Focal: grass coef = -0.004934, SE 0.010116, z = -0.488, p = 0.63, Wald z with cluster-robust cov (df ~ 17 clusters); native scale = change in log expected seedling count per 1 percentage point grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 1,
+      "estimate": -0.00612,
+      "se": 0.00993,
+      "note": "Negative binomial GLM (log link, alpha=1 fixed), outcome euc_sdlgs_all (total eucalypt seedling count, all height classes) per quadrat-visit. Predictors: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), Season factor (ref Autumn 2007). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits; df_resid=342. Focal: beta_grass = -0.00612 (log count per 1% grass cover), SE 0.00993, z = -0.616, p=0.54. Design: repeated cross-sectional quadrats nested in properties.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 2,
+      "estimate": -0.00491,
+      "se": 0.010125,
+      "note": "Negative binomial GLM (log link, alpha=9.12 estimated by NB MLE on same spec) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season dummies. Cluster-robust SEs by Property (18 clusters). Listwise deletion of rows missing any model variable: n=348 of 351 quadrat-visits. Focal coefficient = log count ratio per 1 percentage point grass cover: -0.00491, SE 0.01013, z = -0.485, p=0.63; residual df=342 (robust inference uses 18 clusters). Unit = one quadrat visit; design = repeated cross-sectional quadrats nested in properties across 3 survey rounds.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 3,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 from Poisson-residual moment estimate) of euc_sdlgs_all (sum of all three height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Rows with missing values in these variables dropped: n=348 quadrat-visits (observation unit = quadrat in one survey round). Focal coefficient per 1 percentage point grass cover: -0.00641, SE 0.00832, z=-0.771, p=0.44; z-test (large-sample, 18 clusters). Design: repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 4,
+      "estimate": -0.00491,
+      "se": 0.010125,
+      "note": "Negative-binomial GLM (log link, alpha=9.12 profiled by ML) of euc_sdlgs_all (total seedlings, all height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover, distance to eucalypt canopy (m), and Season factor (ref Autumn 2007). Cluster-robust SE by Property (18 clusters). Complete cases n=348 quadrat-visits (3 dropped for missing cover/distance). Native scale: log count per 1 percentage point grass cover. z = -0.485, p=0.63; residual df=342, robust inference df\u224817 clusters. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (% of quadrat): exotic annual + exotic perennial + native perennial grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 5,
+      "estimate": -0.003548,
+      "se": 0.01043,
+      "note": "Negative binomial GLM (log link, alpha=8.36 estimated via Poisson-residual auxiliary regression) on data.csv. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (counts, quadrat-visit level). Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoid excluded). Covariates: Euc_canopy_cover, log1p(distance to eucalypt canopy), Season factor (ref Autumn 2007). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 of 351. Native scale: log count per 1 percentage point grass cover = -0.00355, SE 0.01043, z = -0.340, p=0.734; df_resid=342. Design: repeated cross-sectional quadrat survey, unit = quadrat-visit.",
+      "predictor": "grass = sum of ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover); larger = more grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 6,
+      "estimate": -0.00454,
+      "se": 0.00998,
+      "note": "Negative binomial GLM (log link, alpha=1) of total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover), adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season (3 rounds; Autumn 2007 reference). Cluster-robust (Property, 18 clusters) SEs. Complete cases: n=348 quadrat-visits (3 dropped for missing). Native scale: log-count per percentage point of grass cover; z=-0.455, p=0.65, residual df=342. Observation unit: quadrat-visit; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; higher = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 7,
+      "estimate": -0.0061214,
+      "se": 0.0099303,
+      "note": "Negative binomial GLM (log link, alpha=1) of total eucalypt seedlings (sum of euc_sdlgs0_50cm, euc_sdlgs50cm_2m, euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season (3 rounds; Autumn 2007 reference). Cluster-robust (Property, 18 clusters) SEs. Observation unit = quadrat-visit; n=348 (3 rows dropped for missing values); repeated-cross-section survey. Native scale: log-count per 1 percentage point grass cover. z = -0.616, p = 0.538; residual df = 342, robust inference df = 17 clusters.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 8,
+      "estimate": -0.005399,
+      "se": 0.008408,
+      "note": "Negative binomial GLM (log link, alpha=8.17 from Poisson-residual auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters); 3 rows dropped for missingness. n=348 quadrat-visits (unit = one quadrat in one survey round); repeated cross-sectional survey clustered in properties. Native scale: log count ratio per 1 percentage point grass cover. z = -0.642, p = 0.521; inference via robust z (large-sample), residual df = 344.",
+      "predictor": "Sum of exotic annual + exotic perennial + native perennial grass percent cover (0-100+ scale)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 9,
+      "estimate": -0.006412,
+      "se": 0.008314,
+      "note": "Negative-binomial GLM (log link, alpha=9.22 estimated by NB MLE) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover percent (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 dropped for missing cover/distance). Native scale: log count-ratio per 1 percentage point grass cover. z = -0.771, p=0.44; inferential df: robust z (cluster df 17). Observation unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered within properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 10,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "NB GLM (log link, alpha=8.90 from Poisson-residual aux regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters); complete cases n=348 quadrat-visits (3 dropped for missing covariates). z = -0.771, p=0.441, df residual 344. Unit: one quadrat in one survey round; cross-sectional repeated-visit survey with fresh quadrats.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass); larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 11,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 from Poisson-residual aux regression) of total eucalypt seedling count (sum of 0-50cm, 50cm-2m, >2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded), adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season dummies (ref Autumn 2007). Cluster-robust SE by Property (18 clusters). Complete cases n=348 quadrat-visits (3 dropped for missing cover/covariates). Native scale: log count ratio per 1 percentage point grass cover. z = -0.488, p = 0.626; Wald z inference (cluster df ~17). Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 12,
+      "estimate": -0.00612,
+      "se": 0.00993,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs_all (total eucalypt seedlings, all three height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded), adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season (3 rounds). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 dropped for missing values); observation unit = quadrat in one survey round; design = repeated cross-sectional survey clustered in properties. Focal coefficient: log count change per 1 percentage point grass cover = -0.00612, SE 0.00993, z = -0.616, df_resid = 342.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 13,
+      "estimate": -0.00642,
+      "se": 0.008344,
+      "note": "Negative binomial GLM (log link, alpha=5.9 chosen by profile likelihood) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (% = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases: n=348 quadrat-visits (3 dropped for missing covariates). Native scale: log rate ratio per 1 percentage point grass cover. z = -0.769, p = 0.442; Wald z inference (cluster-robust, 18 clusters; df\u224817 if t-approx). Unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover, percent (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 14,
+      "estimate": -0.006412,
+      "se": 0.008325,
+      "note": "Negative binomial GLM (log link, MLE, alpha=9.22) of euc_sdlgs_all (total eucalypt seedlings, all height classes) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Rows with missing values in these variables dropped: n=348 of 351 quadrat-visits (observation unit = one quadrat in one survey round; repeated cross-sectional survey). Native effect -0.006412 log-count per +1% grass cover, SE 0.008325, z = -0.770, p=0.441; inference via robust z (asymptotic, no finite df; model df residual 344).",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 15,
+      "estimate": -0.006412,
+      "se": 0.008314,
+      "note": "Negative binomial GLM (log link, alpha=9.22 estimated by NB MLE) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on grass cover, adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent, graminoids excluded). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 dropped for missing cover), unit = quadrat sampled in one round; repeated-cross-section survey. Native scale: log count ratio per 1 percentage point grass cover. Test: cluster-robust z = -0.771, p=0.441; GLM df_resid = 344.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass), continuous, per 1 percentage point",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 16,
+      "estimate": -0.0035475,
+      "se": 0.0096693,
+      "note": "Negative binomial GLM (log link, alpha=1) on total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) per quadrat-visit. Focal predictor: total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent). Covariates: Euc_canopy_cover, distance to eucalypt canopy (m), annual_precipitation, Season (3 rounds; Autumn 2007 reference). Cluster-robust SEs by Property (18 clusters). Listwise deletion of missing -> n=346 of 351. Native scale: log count-rate change per 1 percentage point grass cover = -0.00355; z = -0.367, p = 0.714; df_resid = 339. Observation unit: one 15x15 m quadrat sampled in one round; design: repeated cross-sectional survey nested in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 17,
+      "estimate": -0.006412,
+      "se": 0.008314,
+      "note": "Negative binomial GLM (log link, alpha=9.22 estimated by NB MLE) of euc_sdlgs_all (total eucalypt seedlings all height classes, count per quadrat-visit) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover (%) and Distance_to_Eucalypt_canopy(m). Cluster-robust (Property) SEs, 18 clusters, inferential df=17 (statsmodels reports z). Complete cases: n=348 of 351 rows. Observation unit = quadrat-visit; design = repeated cross-sectional survey with fresh quadrats in 3 rounds nested in 18 properties. Focal effect: -0.006412 log-rate per 1 percentage point grass cover, robust SE 0.008314, z = -0.771, p = 0.44. Other coefficients: canopy -0.0047 (0.012); distance -0.0285 (0.013).",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 18,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 from Poisson-residual auxiliary regression), outcome euc_sdlgs_all (total seedlings, all size classes) per quadrat-visit; predictors: total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, % cover), Euc_canopy_cover, distance to nearest eucalypt canopy (m), Season fixed effects. Cluster-robust SEs by Property (18 clusters). Complete cases n=348 (3 dropped for missing cover/covariates). Native scale: log count ratio per 1 percentage point grass cover. z=-0.488, p=0.63, residual df=342. Observation unit: quadrat-visit; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover % = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 19,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 estimated from Poisson-residual aux regression) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust (Property, 18 clusters) SEs. Complete cases: n=348 quadrat-visits (3 dropped for missing cover/distance). Focal coef -0.00641 per 1 percentage point grass cover on log-count scale; z=-0.771, p=0.44, df_resid=344. Observation unit: quadrat-visit; design: repeated cross-sectional survey, quadrats nested in properties across 3 rounds.",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover); larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 20,
+      "estimate": -0.006412,
+      "se": 0.008325,
+      "note": "NB2 (log-link) MLE of euc_sdlgs_all (sum of three height classes; precomputed column) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), controlling for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 rows dropped for missing covariates); observation unit = quadrat sampled in one round; design = repeated cross-sectional survey clustered in 18 properties. Focal coef (log count per +1% grass cover) = -0.00641, SE 0.00832, z = -0.770, p=0.44; large-sample z inference (residual df 344). Dispersion alpha=9.22.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 21,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 from Poisson-based aux OLS moment estimator), outcome euc_sdlgs_all (total eucalypt seedlings, count per quadrat-visit); predictors: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), Euc_canopy_cover (%), distance to nearest eucalypt canopy (m). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 rows dropped for missing values); observation unit = quadrat sampled in one round; design = repeated cross-sectional survey clustered in properties. Native perennial graminoid excluded from grass. Focal effect: z = -0.771, p = 0.44; large-sample z inference (residual df 344). Log count change per 1 percentage point more grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 22,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 estimated by Poisson-residual auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season fixed effects. Cluster-robust (Property, 18 clusters) SEs. Complete cases: n=348 quadrat-visits of 351 (3 dropped for missing cover/distance). Native scale: log count per 1 percentage point grass cover. z = -0.488, p = 0.63; residual df = 342. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 23,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative-binomial GLM (log link, alpha=8.90 estimated from Poisson-residual auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover), adjusting for Euc_canopy_cover and distance to nearest eucalypt canopy (m). Cluster-robust SEs by Property (18 clusters). Complete cases: n=348 quadrat-visits (3 dropped for missing cover). Focal coef = -0.00641 per 1 percentage point grass cover, z = -0.771, p = 0.441; df: 344 residual (z-test used). Unit = one quadrat in one survey round; design = repeated cross-sectional quadrats nested in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 24,
+      "estimate": -0.006121,
+      "se": 0.00993,
+      "note": "NB GLM (log link, alpha=1 fixed), outcome euc_sdlgs_all (total seedlings all size classes, count per 15x15m quadrat-visit); predictors: grass (percent cover, sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass), Euc_canopy_cover, distance to eucalypt canopy (m), Season fixed effects. Cluster-robust SE by Property (18 clusters). Complete cases n=348 of 351. Native scale: log-count per 1 percentage point grass cover. z = -0.616, p=0.54, df_resid=342. Design: repeated cross-sectional quadrats nested in properties.",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 25,
+      "estimate": -0.010350401985293434,
+      "se": 0.008331717233924412,
+      "note": "Negative binomial GLM (log link, alpha=9.67 estimated by NB MLE), outcome = total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m; predictor = total grass cover (% ) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass. Cluster-robust SEs by Property (18 clusters). 1 row dropped for missing cover; n=350 quadrat-visits. Native scale: log count per 1 percentage point grass cover. z = -1.242, p = 0.214; residual df = 348. Design: repeated cross-sectional quadrats nested in properties; observation unit = quadrat-visit. No other covariates.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 26,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative-binomial GLM (log link, alpha=8.35 estimated from Poisson-residual auxiliary regression), outcome euc_sdlgs_all (total eucalypt seedlings per quadrat, all height classes). Focal predictor: total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent). Covariates: Euc_canopy_cover, distance to nearest eucalypt canopy (m), Season factor (ref Autumn 2007). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits; observation unit = quadrat in a survey round; design = repeated cross-sectional survey clustered in properties. Native scale: log count-ratio per 1 percentage point grass cover. z = -0.488, p = 0.626; residual df = 342, inference df from 18 clusters.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 27,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 estimated from Poisson-residual aux regression) of euc_sdlgs_all (total seedlings, all 3 height classes) on grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover, adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season (3 rounds; Autumn 2007 reference). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits (3 dropped for missing cover/distance). Focal coef = -0.004934 (log count per 1 percentage point grass cover), SE 0.010116, z = -0.488, p=0.63, df_resid=342. Unit = quadrat-visit; design = repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 28,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 estimated via Poisson-residual auxiliary regression), outcome = total eucalypt seedlings (sum of euc_sdlgs0_50cm, euc_sdlgs50cm_2m, euc_sdlgs>2m). Focal predictor = total grass cover (% ) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), Season factor. Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits (observation unit = one quadrat in one survey round); repeated cross-section design. Native scale = log expected count per 1% grass cover; z = -0.488, p=0.63; inference via cluster-robust z (18 clusters), GLM residual df=342.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 29,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 estimated from Poisson-residual auxiliary regression) of euc_sdlgs_all (total eucalypt seedlings, all three height classes) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded as non-grasses), adjusted for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust (Property, 18 clusters) SEs. n=348 quadrat-visits (3 rows dropped for missing predictors); observation unit = quadrat within survey round; design = repeated cross-sectional survey, quadrats nested in properties. Native scale: log count per 1 percentage point grass cover. Focal: coef=-0.006412, SE=0.008316, z=-0.771, p=0.441, df_resid=344.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 30,
+      "estimate": -0.006412,
+      "se": 0.008314,
+      "note": "Negative binomial GLM (log link, alpha=9.22 from NB2 MLE) of euc_sdlgs_all (sum of three height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (graminoids excluded), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Complete cases n=348 quadrat-visits (3 dropped for missing cover/distance); cluster-robust SEs by Property (18 clusters). Focal coef on log-count scale per 1 percentage point grass cover: -0.00641, SE 0.00831, z=-0.771, p=0.44, df_resid=344. Observation unit: quadrat visit; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 31,
+      "estimate": -0.0064,
+      "se": 0.0083,
+      "note": "Negative binomial GLM (log link, alpha=9.22 estimated by NB2 MLE), outcome = total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m). Predictor: total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover (graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 dropped for missing cover/covariates), df_resid=344; z = -0.771, p=0.44. Design: repeated cross-sectional quadrats nested in properties; unit = quadrat-visit. Native scale: log rate ratio per 1 percentage point grass cover.",
+      "predictor": "Summed percent grass cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 32,
+      "estimate": -0.004937,
+      "se": 0.010115,
+      "note": "Negative binomial GLM (log link, alpha=8.28 estimated by moment iteration) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season. Cluster-robust SEs by Property (18 clusters). Rows with missing predictors dropped: n=348 quadrat-visits, df_resid=342. Focal coef = -0.004937 (log count per 1% grass cover), z = -0.488, p = 0.63. Observation unit: quadrat-visit; design: repeated cross-sectional survey nested in properties.",
+      "predictor": "Total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent of quadrat)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 33,
+      "estimate": -0.005399,
+      "se": 0.008408,
+      "note": "Negative binomial GLM (log link, alpha=8.17 estimated by Poisson moment method) of total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (graminoids excluded), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters); complete cases n=348 of 351. Native scale: log rate ratio per 1 percentage point grass cover. z = -0.642, p=0.52; large-sample z inference (df=inf; residual df=344). Observation unit: one quadrat-visit; design: repeated cross-sectional survey, quadrats nested in properties across 3 rounds.",
+      "predictor": "Summed percent grass cover (exotic annual + exotic perennial + native perennial grass), larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 34,
+      "estimate": -0.0064,
+      "se": 0.008,
+      "note": "Negative binomial GLM (log link, alpha=8.90 from Poisson-residual aux regression) of euc_sdlgs_all (sum of three height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, adjusting for Euc_canopy_cover and distance to eucalypt canopy (m). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits (3 dropped for missing cover/distance). Native scale: log count ratio per 1 percentage point grass cover. z = -0.771, p = 0.441; inferential df: z-test (residual df 344). Unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (% ) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 35,
+      "estimate": -0.005039,
+      "se": 0.010079,
+      "note": "Negative binomial GLM (log link, alpha=6.0 chosen by profile likelihood over 0.1-6 grid, boundary), outcome = total eucalypt seedlings across all three height classes (= euc_sdlgs_all, verified). Predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover). Covariates: Euc_canopy_cover, distance to eucalypt canopy (m), Season factor (ref Autumn 2007). Complete cases n=348 quadrat-visits (3 dropped), 18 properties; cluster-robust SEs by Property. Focal coef per +1% grass cover: -0.00504 (log rate), z=-0.500, p=0.617, robust df ~ 17 clusters. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Summed grass percent cover (exotic annual + exotic perennial + native perennial grass), per 1 percentage point",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 36,
+      "estimate": -0.006412,
+      "se": 0.008325,
+      "note": "Negative binomial GLM (log link, MLE, alpha=9.22 estimated) of total eucalypt seedling count (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases: n=348 quadrat-visits (3 dropped for missing cover/covariates). Focal coef = -0.00641, SE = 0.00832, z = -0.770, p = 0.44; df_resid = 344. Unit = one quadrat sampled in one round; design = repeated cross-sectional quadrats nested in properties across 3 seasons.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; log-scale coefficient per 1 percentage point",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 37,
+      "estimate": -0.00454,
+      "se": 0.009979,
+      "note": "Negative binomial GLM (log link, alpha fixed at 1) on total eucalypt seedling count (sum of euc_sdlgs0_50cm, euc_sdlgs50cm_2m, euc_sdlgs>2m) ~ grass + Euc_canopy_cover + Distance_to_Eucalypt_canopy(m) + Season fixed effects; grass = sum of ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent). Cluster-robust SEs by Property (18 clusters). n=348 quadrat-visits (3 dropped for missingness), unit = quadrat-visit, design = repeated cross-sectional survey clustered in properties. Focal coef = -0.00454, SE=0.00998, z=-0.455, p=0.65, residual df=342.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 38,
+      "estimate": -0.00642,
+      "se": 0.008343,
+      "note": "Negative binomial GLM (log link, alpha=6.0 chosen by grid-search profile likelihood; boundary of grid) of total eucalypt seedling count (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover (%) and Distance_to_Eucalypt_canopy(m). Cluster-robust (Property, 18 clusters) SEs. Rows with missing values in model variables dropped (n=348 quadrat-visits of 351). Native scale: log count ratio per 1 percentage point grass cover. z = -0.770, p = 0.44; df: residual 344, robust inference on 18 clusters. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 39,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "NB2 GLM (log link, alpha=8.35 from Poisson-based moment estimator), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m) per quadrat-visit; predictor grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent); adjusted for Euc_canopy_cover, distance to eucalypt canopy (m), and Season dummies. Cluster-robust SEs by Property (18 clusters). n=348 (3 rows dropped for missing cover). Native scale: log count ratio per 1 percentage point grass cover. z = -0.488, p=0.63; df residual 342 (robust inference uses z). Observation unit: quadrat-visit; design: repeated cross-sectional quadrats nested in properties.",
+      "predictor": "grass = sum of exotic annual + exotic perennial + native perennial grass percent cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 40,
+      "estimate": -0.006202,
+      "se": 0.008195,
+      "note": "Negative binomial GLM (log link, alpha=8.88 from Poisson aux regression), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m counts) per quadrat-visit; predictors: total grass cover % (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass), Euc_canopy_cover, distance to eucalypt canopy (m), annual precipitation. Cluster-robust SE by Property (18 clusters). n=346 quadrat-visits (5 dropped for missingness). Native scale: log count ratio per 1 percentage point grass cover. z=-0.757, p=0.449; df: 341 residual, robust inference on 18 clusters. Design: repeated cross-sectional survey, quadrat-visit observations clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 41,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 from Pearson moment estimator), y = total euc seedlings (0-50cm + 50cm-2m + >2m counts) ~ grass + Euc_canopy_cover + Distance_to_Eucalypt_canopy(m) + C(Season). grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent). Complete cases n=348 quadrat-visits (3 dropped for missing cover/covariates); unit = quadrat in one survey round; cluster-robust SEs by Property (18 clusters). Native scale: log count per 1 percentage point grass cover. z = -0.488, p=0.63, df_resid=342.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 42,
+      "estimate": -0.004911,
+      "se": 0.010125,
+      "note": "Negative binomial (NB2, MLE, alpha=9.12 estimated) regression of euc_sdlgs_all (total eucalypt seedlings, all height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (% cover), adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Season fixed effects. Cluster-robust (Property, 18 clusters) SEs. Rows with missing model variables dropped: n=348 quadrat-visits (observation unit = one quadrat in one survey round); df_resid=342. Focal coefficient on log-count scale: -0.00491 per 1% grass cover, z=-0.485, p=0.63.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 43,
+      "estimate": -0.0066,
+      "se": 0.0087,
+      "note": "Negative binomial GLM (log link, alpha=1) of total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SE by Property (18 clusters). Complete cases: n=348 quadrat-visits (351 minus 3 missing). Focal coef = -0.00664, SE=0.00869, z=-0.764, p=0.445, Wald z inference (df: residual 344; clusters 18). Unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 44,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 from Poisson-residual auxiliary regression) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (% = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; graminoids excluded), adjusted for Euc_canopy_cover and distance to nearest eucalypt canopy. Cluster-robust SEs by Property (18 clusters). Complete cases: n=348 quadrat-visits (3 dropped for missing cover/distance). Native scale: log count ratio per 1 percentage point grass cover. z = -0.771, p=0.44; residual df=344. Observation unit: quadrat sampled in one round; design: repeated cross-sectional survey clustered in 18 properties.",
+      "predictor": "Total grass cover (%), sum of exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 45,
+      "estimate": -0.006412,
+      "se": 0.008316,
+      "note": "Negative binomial GLM (log link, alpha=8.90 from Poisson-residual aux regression), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m). Predictor: total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover. Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Cluster-robust SE by Property (18 clusters). n=348 quadrat-visits (3 dropped for missingness), z=-0.771, p=0.44; inferential df: z-based (residual df 344). Unit = one quadrat in one survey round; repeated-cross-section survey clustered in properties. Native scale: log count per 1 percentage point grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 46,
+      "estimate": -0.0066,
+      "se": 0.009,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs_all (total seedlings all height classes) on grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (% cover), adjusting for Euc_canopy_cover and distance to nearest eucalypt canopy (m). Cluster-robust (Property, 18 clusters) SEs. Complete cases n=348 quadrat-visits (3 dropped for missingness). Native scale: log count ratio per 1 percentage point grass cover. z = -0.764, p = 0.445; residual df = 344; unit = quadrat-visit; design = repeated cross-sectional quadrats nested in properties across 3 survey rounds.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 47,
+      "estimate": -0.004911,
+      "se": 0.010125,
+      "note": "Negative-binomial GLM (log link, ML, alpha=9.12) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) per quadrat-visit on total grass cover (% ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass), adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy (m), and Season fixed effects. Cluster-robust (Property, 18 clusters) SEs. n=348 quadrat-visits (3 rows dropped for missing covariates); native graminoids excluded from grass. Focal coefficient: log-count change per 1 percentage point of grass cover = -0.00491, robust SE 0.01013, z = -0.485, p = 0.63; large-sample z inference (df residual 342). Unit = quadrat-visit; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 48,
+      "estimate": -0.005129,
+      "se": 0.008355,
+      "note": "Negative binomial GLM (log link, alpha fixed 1.0), outcome = total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m); focal predictor = total grass cover (% ) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), annual_precipitation. Cluster-robust (Property, 18 clusters) SEs. n=346 quadrat-visits (5 dropped for missing values); unit = quadrat sampled in one round; repeated-visit cross-sectional survey design. Native scale: log-count per 1 percentage-point grass cover. z = -0.614, p = 0.539; residual df = 341 (robust inference uses z).",
+      "predictor": "Total grass cover percent (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 49,
+      "estimate": -0.004934,
+      "se": 0.010116,
+      "note": "Negative binomial GLM (log link, alpha=8.35 estimated by Poisson-residual aux regression), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m counts) per quadrat-visit. Predictor: total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent). Covariates: Euc_canopy_cover, distance to eucalypt canopy (m), Season factor. Complete cases n=348 of 351; cluster-robust SEs by Property (18 clusters). Native scale: log count per 1% grass cover. z = -0.488, p=0.626, df_resid=342. Observation unit: quadrat-visit; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass percent cover (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    }
+  ],
+  "envelope": [
+    -0.010350401985293434,
+    -0.0035475
+  ],
+  "width": 0.006802901985293434,
+  "q05_q95": [
+    -0.0065190000000000005,
+    -0.00454
+  ],
+  "width_q05_q95": 0.0019790000000000007,
+  "iqr": [
+    -0.006412,
+    -0.004934
+  ],
+  "width_iqr": 0.0014780000000000001,
+  "median": -0.006120499999999999,
+  "unique_ends": 5,
+  "mean": -0.005742306039705869,
+  "usd": 11.736305,
+  "n_failed_reports": 0
+}

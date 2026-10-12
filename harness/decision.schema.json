@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "action": {"type": "string", "enum": ["code", "report"]},
+    "basis": {"type": "string"},
+    "code": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "filename": {"type": "string"},
+        "script": {"type": "string"}
+      },
+      "required": ["filename", "script"]
+    },
+    "report": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "estimate": {"type": ["number", "null"]},
+        "se": {"type": ["number", "null"]},
+        "note": {"type": ["string", "null"]},
+        "predictor": {"type": ["string", "null"]},
+        "orientation": {
+          "type": ["string", "null"],
+          "enum": ["as_declared", "reversed", "not_applicable", null]
+        }
+      },
+      "required": ["estimate", "se", "note", "predictor", "orientation"]
+    }
+  },
+  "required": ["action", "basis", "code", "report"]
+}

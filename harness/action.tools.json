@@ -1,0 +1,34 @@
+[
+  {
+    "name": "run_code",
+    "description": "Write and run one Python analysis step in the project.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "filename": {"type": "string", "description": "A relative scripts/*.py path."},
+        "script": {"type": "string", "description": "The complete Python script."}
+      },
+      "required": ["filename", "script"]
+    }
+  },
+  {
+    "name": "submit_report",
+    "description": "Finish the analysis with the focal estimate and standard error.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "estimate": {"type": "number"},
+        "se": {"type": "number"},
+        "note": {"type": ["string", "null"]},
+        "predictor": {"type": "string"},
+        "orientation": {
+          "type": "string",
+          "enum": ["as_declared", "reversed", "not_applicable"]
+        }
+      },
+      "required": ["estimate", "se", "note", "predictor", "orientation"]
+    }
+  }
+]

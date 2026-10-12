@@ -1,0 +1,309 @@
+{
+  "condition": "eu_sol_spread",
+  "dataset": "eu",
+  "judge_model": "gpt-5.6-sol",
+  "input_digests": {
+    "root": "bff58c7d558266e049322fb764cdcfd4ab383a2b29e641340b62b5e857a562c7",
+    "3a1a0834-0": "e63ce6a96994226fb59b5fefaecaeb71b9bb8ddf7ed467445523b6cb10bd08ed",
+    "0029760f-1": "63183b1a71f67565d052f2abc99d9c76101204224b9d96dc37302be85acbcdc6",
+    "4a1d91e0-2": "962fc2aacc258286f7efc53038ee7cbb229e1f5c3726b77156a1c43ae5f3196e",
+    "bcc5b7ee-3": "230c172f25701e708e7f24c967bb12b54ecccda747a8da6c3b1a3be9a1fc6103",
+    "b13c1f68-4": "8fcb4aafa0cedcfd5e2515309e2b3a4757c2ef3eb03c5cf734194b16dc2c2bd7",
+    "6fe63c69-5": "112df084ef6a74095a83cee06b18e4d24da92f32f6e02b6cc09baef141ca3ee8",
+    "6ce41855-6": "2e5d1ebaf28afc4f3bc9a1f947e3ea758f383162faff6929417f46a1ca7cb9c2",
+    "7e51f81e-7": "55503409eda8b61d74452f3cd78aaf33f6899033555bedc64b788d97ff576506",
+    "07c4773a-8": "fc14e7c451f262e2754fd74ce46ab2fdee79748a0172593eefc12e0108f4cf9e",
+    "fecfd687-9": "1f5ee9ef91a5d56350d18130a40721a6c931ca0182cc6d3e2a6dc4d600c372e9",
+    "854e8177-10": "27b74c2ad8cd89b5252c0dfdf636c98f360e2e054002dee5d02c23989a5f60f9",
+    "56347321-11": "ab7c0f8dfe5972042d4082112e32da93f5515a0edee3acc1df646d48c70e9f93",
+    "a467acca-12": "d2cff883667d45d456b70107d470bf9e646730f33d67a2e6862894c1d12a3823",
+    "99d4a110-13": "53a6297514f9ca110e2b01de89c3139e5b8ac84d522a4dd712c5cc70703f87d0",
+    "505b8797-14": "5c9857d78047b4423aab298a7e95a8d065ed97e7851fa333e3af538190ca7588",
+    "b23d547c-15": "bff354fa3503b6a1b22652db6a3b4c1c972582aeaa3eefa6a8d1a7851334eb0a",
+    "7d40c5a3-16": "4389b07c4c09aebbf9d8e23ff6ee7b3ed88d15b7a56c823010ce549f137ef442",
+    "15a278a7-17": "caabc69538f7fdae73a19aa03b01e5b17a69cd6e6a088eb0b21e6605262dca75",
+    "791784d4-18": "f06170029eef44ae639621d0ed0f90294b413efdc01509008d87b9cd915b19ca",
+    "2e6c9c5a-19": "cd279cf461138a33afa9e00125df472fb787ee6d9c639d2d165abddbcc1d5da9",
+    "3aeac3a5-20": "0fb58a07ade4bdc968395c266ae6f2a4bbf50a293ce9b013af69713b5d526bbc",
+    "97a2e50e-21": "8e2c04b2ee4117d888b2101ea7d39582210e6e4ef278bd8c0df7247f9a6e0708",
+    "b76c56a9-22": "3d19a8f516e8110e61a5497edb35dc99a2ce5b6a2565e6a65afd5acf37bbc001",
+    "b20e28ed-23": "3d693fee43c39f59cc2ea09e033f05e32dfc171599be48f3e7c24a14e5898621",
+    "6d5a8308-24": "20b78e8b311c61d62d49a8b536f563320b7d25cd9c97bd9f28d12b1de19782aa",
+    "349c35ea-25": "31c5c1890eb1d6a84a5c99c15c6e7489b3038888b16a05ba9deeba96e9d71ee8",
+    "d1adbf08-26": "438c23b9dcf5324fafd77f0db81dc6c584175436110759f247589176c425c8c0",
+    "72843bf9-27": "605856bd4b7ce4d424be6182847aadac9b82a156e85b6e636a935aae8a469c2d",
+    "2197daac-28": "1a433b03b92b1f00678b2dcedda21a46b74617d08c862795f9df453fe3137b5f",
+    "083939bb-29": "bde5138db535b174e2a9e85d1a020b539afd3c1932f00bf3cfa6c0e4e97f62e2",
+    "be9b4e02-30": "5f245043d8361069a9e6c8890d78edfe4389f353094617a8f9001806b1dc2a32",
+    "b1d5f52e-31": "e6656431f71849ac5808fbc0449c4508a7052d5295931677a32479053855749f",
+    "416e476a-32": "3378fc5fcd85ff4fd06528db2212c2769ee2f147b8eadcdf4ddd06b24b3b047d",
+    "f3ef046e-33": "ac4c2eaa182ade41786e33b5ca61ae88ed375e023901891d04ffefdd47845751",
+    "c1332d91-35": "0f9339045419673de990767ea5d5750dd39cd447dd257cfc3c38d228245e6089",
+    "199e6328-36": "5dd9373ecd838e732a5073f62754a15ed54fcfcbb541b366560645936e9a3b6a",
+    "bf0dfd02-37": "554c9a5f85ab40c56846435969ee77f5a6be8cff6e9649e151b38556f0f94e3b",
+    "df12f64a-38": "edafa8749a5ff65edf6593a364f43474067cb78216ad30a14fa6e409eb8b8205",
+    "34c66fc9-39": "1debdab511ef70aee9c7b85bbbc590be155d57458838d5c9ed180956610c72b8",
+    "d1557df9-40": "fd3b9d6bc61cf85b4c884eddacb95a424ed1e1a2248b9b8748788968ecb4e6fd",
+    "b1d5f52e-41": "6f56f5eeca80b1b330680d3a828e6924d3698c72f9decb54d4c53a176a55bcc9",
+    "45a2f94a-42": "99dfb6df5444af433423cc06680678be7bdbd07aee92c1fc1dfbbd1f9aadf8a2",
+    "0912ff0d-43": "842e2136d2a941958eabdefc073e36367d12bf9d655036303ca717e03c13e90a",
+    "850c6667-44": "535be9adbf1b592db5c478ece9ba0160860927e03e16d1f8a8b7d3c84ea3e250",
+    "c985e754-45": "7b40c4e318c577073ba3aabdc7300b5647b5dc5c19149bd812510d1769a386ed",
+    "20138569-46": "53c2e9ffade8d608b6821b4e2405a0d450e8cd6ee25aa33cbc4dd23445a7db5a",
+    "dc088bfd-47": "6880a95ef5b3ea831fd7c23834d71566e443bd52f3cfa8f1e7e52e3a3556a88c",
+    "4c8dadc9-48": "d8f1e09eb04be055732b5f6aca777dd0f4f7ea0329a46dc8d90459e8f612476b",
+    "448fe99e-49": "1cbe6d40a52d688db267db570f1caf7d270f4b6268d4208e91fc57e0044fdc65"
+  },
+  "scopes": {
+    "root": {
+      "scope": "E",
+      "unit_estimated": "Adjusted negative-binomial log-link coefficient for (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10: -0.0309778, sandwich cluster-robust SE=0.1334135 (t=-0.2321936, df=17, p=0.8191598). This is the change in log expected total Eucalyptus seedling count per 10-percentage-point increase in summed grass cover; orientation=as_declared.",
+      "why": "This directly estimates the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. Total recruitment was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m per equal-area 15\u00d715 m quadrat visit. The MLE negative-binomial model used a log link and estimated alpha=5.2348489, adjusting for categorical Season, linear canopy distance, linear overhead Eucalyptus canopy cover, and Property fixed effects. SEs were finite-sample-corrected sandwich estimates clustered by 18 properties. It fit 348 visits, excluding SurveyID 75 for missing grass/canopy cover and SurveyIDs 253 and 258 for missing canopy distance; no area offset was used."
+    },
+    "3a1a0834-0": {
+      "scope": "E",
+      "unit_estimated": "Distinct physical 15 \u00d7 15 m quadrat sampled in one survey round (n=350), with inference clustered by Property (18 clusters)",
+      "why": "Answers the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The predictor was exactly (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, so larger values mean more summed grass cover (orientation: as_declared). The focal negative-binomial log-link coefficient was -0.09114836894956665 per 10 percentage-point increase (SE 0.1166268828521157; t=-0.7815382416174484; df=17), retained on the log expected-count scale. Outcome was total Eucalyptus seedlings: euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The NB2 model adjusted for Season and Property fixed effects, estimated alpha=5.545330836855991, and used finite-sample-corrected Property-clustered covariance with t inference. Complete cases were required for the three outcome components, three grass components, Property, and Season; canopy variables were not required. SurveyID 75 was excluded for missing grass cover."
+    },
+    "0029760f-1": {
+      "scope": "E",
+      "unit_estimated": "Log expected-count change in total Eucalyptus seedling recruitment per 15 \u00d7 15 m quadrat-round for a one-unit increase in log2(1 + summed exotic annual, exotic perennial, and native perennial grass percentage cover), i.e. a doubling of 1 + summed grass cover.",
+      "why": "The fitted NB2 model directly relates the declared grass-cover exposure to the declared Eucalyptus seedling-recruitment outcome within the dataset frame. The predictor is oriented as declared, and adjustment choices, count-model scale, clustering, and quadrat-round analysis unit are analytical choices rather than scope changes."
+    },
+    "4a1d91e0-2": {
+      "scope": "E",
+      "unit_estimated": "Conditional change in log expected 0\u201350 cm Eucalyptus seedling count per 15 \u00d7 15 m quadrat for each 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "This directly targets the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The predictor is summed grass cover divided by 10 and is oriented as_declared; the outcome is recent-recruitment seedling count. The NB2 log-link model adjusts for survey round, property, distance to nearest eucalypt canopy, and overhead canopy cover, using 348 complete quadrat-survey observations and property-clustered covariance across 18 properties. The focal coefficient is on the native log-mean scale; its reported Wald statistic is t=-0.6483414639 with 17 df (two-sided p=0.5254255)."
+    },
+    "bcc5b7ee-3": {
+      "scope": "E",
+      "unit_estimated": "Adjusted population-averaged log mean-count coefficient for total Eucalyptus seedling recruitment per 15 \u00d7 15 m quadrat visit, per 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The fitted Poisson GEE directly targets the declared within-frame relationship between grass cover and Eucalyptus seedling recruitment. The predictor is constructed in the declared as-oriented direction, and the outcome is the total recruitment count from the three Eucalyptus seedling size classes. The log coefficient is the model\u2019s native scale; covariate adjustment, clustering, and robust covariance are analytical choices rather than scope changes."
+    },
+    "b13c1f68-4": {
+      "scope": "E",
+      "unit_estimated": "Expected total Eucalyptus seedling count per 15 \u00d7 15 m quadrat in one survey round, on the log scale; focal contrast is a 10 percentage-point increase in summed exotic and native perennial grass cover.",
+      "why": "The fitted coefficient (-0.2410232888, SE 0.2436262917) directly targets the declared grass-cover quantity and the dataset-represented Eucalyptus seedling-recruitment outcome within the stated frame. Property and Season adjustment, negative-binomial modeling, and property-clustered inference are analytical choices rather than scope changes."
+    },
+    "6fe63c69-5": {
+      "scope": "E",
+      "unit_estimated": "Log expected seedling-count coefficient per 10 percentage-point increase in summed grass cover: -0.1419423310 (bias-reduced robust SE 0.1258886698).",
+      "why": "This directly addresses the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The predictor was (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, oriented as_declared. The outcome was total Eucalyptus seedlings per 15 \u00d7 15 m quadrat, summed across the three size classes. A population-averaged Poisson GEE with log link adjusted for categorical Season, clustered by Property with exchangeable working correlation and bias-reduced robust covariance. Complete cases on all outcome components, grass components, Season, and Property were retained (n=350; SurveyID 75 excluded)."
+    },
+    "6ce41855-6": {
+      "scope": "E",
+      "unit_estimated": "Signed log-odds coefficient for Eucalyptus recruitment occurrence at the 15 \u00d7 15 m quadrat-survey level per 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover, conditional on Season and Property fixed effects; estimate = -0.025311010172149213, property-clustered finite-sample-corrected SE = 0.13170554649498653.",
+      "why": "This answers the declared estimand within the stated frame: the predictor is grass cover as declared and oriented as_declared, while the outcome is Eucalyptus seedling recruitment represented as occurrence from the three directly summed seedling-count components. The binomial logistic model used 350 complete observations, excluded SurveyID 75, included Season and Property fixed effects, and clustered uncertainty by 18 properties (t = -0.19217877185690654, df = 17)."
+    },
+    "7e51f81e-7": {
+      "scope": "E",
+      "unit_estimated": "One distinct 15 \u00d7 15 m quadrat sampled in one survey round; the coefficient is the change in log expected count of 0\u201350 cm Eucalyptus seedlings per 10 percentage-point increase in (ExoticPerennialGrass_cover + NativePerennialGrass_cover), constructed as (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10 and oriented as_declared.",
+      "why": "The fitted NB2 log-link model directly relates the declared grass-cover exposure to operationalized Eucalyptus seedling recruitment in the dataset\u2019s Eucalyptus population. Adjustment variables, property-clustered covariance, and the quadrat-level analysis are analytical choices rather than changes in scope."
+    },
+    "07c4773a-8": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat-survey for a +1 increase in log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), i.e. a doubling of 1 plus summed grass percentage cover.",
+      "why": "This directly addresses the declared grass-cover effect on Eucalyptus seedling recruitment within the dataset frame. The predictor is oriented as_declared: larger values mean more grass cover. The fitted analysis was a log-link Poisson regression on 348 complete cases, adjusted for categorical survey round, linear distance to Eucalypt canopy, and linear Euc canopy cover, with no area offset and property-clustered sandwich uncertainty across 18 properties (17 inferential df). The reported focal test was t = -0.8439324022967674; different modeling and adjustment choices do not change scope."
+    },
+    "fecfd687-9": {
+      "scope": "E",
+      "unit_estimated": "Property-conditioned change in log odds that a distinct 15 \u00d7 15 m quadrat contains at least one 0\u201350 cm Eucalyptus seedling, per 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "This directly answers the declared within-frame effect of grass cover on Eucalyptus seedling recruitment occurrence. The predictor is (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, oriented as_declared. The converged property-stratified conditional logistic model adjusted for survey season, distance to nearest Eucalyptus canopy, and overhead Eucalyptus canopy cover; property intercepts were conditioned out. It used 286 complete-case observations from 14 informative properties (41 events and 245 non-events), excluding noninformative all-zero properties Hawkey, Olive, Rokahr, and Taylor. The focal estimate is on the native log-odds scale with inverse-Hessian Wald uncertainty and asymptotic standard-normal inference (signed z = 0.5321875632650956)."
+    },
+    "854e8177-10": {
+      "scope": "E",
+      "unit_estimated": "Log expected count of 0\u201350 cm Eucalyptus seedlings in one 15 \u00d7 15 m quadrat-survey observation per 10 percentage-point increase in summed exotic plus native perennial grass cover, adjusted for survey-round fixed effects.",
+      "why": "This directly addresses the declared grass-cover\u2013seedling-recruitment estimand within the dataset frame. The predictor was constructed as (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10 and is oriented as_declared; the outcome is the in-frame Eucalyptus seedling count. The Poisson log-link coefficient is therefore on the native log-mean-count scale. The stated exclusions, 350 observations, survey-round adjustment, and property-clustered finite-sample sandwich inference are analytical choices rather than scope changes."
+    },
+    "56347321-11": {
+      "scope": "E",
+      "unit_estimated": "One distinct physical 15 \u00d7 15 m quadrat sampled in one survey round.",
+      "why": "The fitted NB2 log-link count regression answers the declared within-frame question: total Eucalyptus seedling recruitment per quadrat is modeled against a one-unit increase in (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, i.e. exactly 10 percentage points more summed perennial grass cover (orientation: as_declared). Survey round, distance to Eucalyptus canopy, and Eucalyptus canopy cover were adjusted for; SurveyID 75, 253, and 258 were excluded as incomplete cases (n=348), with property-clustered inference across 18 properties. The focal coefficient and uncertainty are on the native log expected-count scale."
+    },
+    "a467acca-12": {
+      "scope": "E",
+      "unit_estimated": "Poisson log expected total Eucalyptus recruitment count per 15 \u00d7 15 m quadrat per 10 percentage-point increase in summed grass cover; estimate = -0.09756372285743975, cluster-robust SE = 0.1588888524808766 (t = -0.6140375572866714, df = 17, two-sided p = 0.547320510590108).",
+      "why": "This answers the declared estimand within the dataset frame. The predictor was constructed exactly as (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, so larger values represent more grass cover (orientation: as_declared). The outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. A Poisson log-link GLM adjusted for Season, linear Distance_to_Eucalypt_canopy(m), linear Euc_canopy_cover, and Property fixed effects, with finite-sample-corrected sandwich covariance clustered by Property. Complete cases comprised 348 distinct quadrat-round observations from 18 properties; SurveyIDs 75, 253, and 258 were excluded."
+    },
+    "99d4a110-13": {
+      "scope": "E",
+      "unit_estimated": "Change in log population-average expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat for a 10 percentage-point increase in summed exotic and native perennial grass cover.",
+      "why": "The fitted Poisson GEE directly relates the declared grass-cover quantity, (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, to an observed Eucalyptus seedling-recruitment outcome within the represented population and frame. Its as-declared orientation and native log-mean scale match the stated target; adjustment variables, clustering, and robust uncertainty are analytical choices rather than scope changes."
+    },
+    "505b8797-14": {
+      "scope": "E",
+      "unit_estimated": "-0.039393981364805535 log-odds per 10 percentage-point increase in summed grass cover (robust SE 0.09081283321428242; Wald z=-0.43379311018577404; asymptotic 95% CI approximately [-0.21738, 0.13860]). Predictor: (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10. Orientation: as_declared.",
+      "why": "This directly addresses the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The fitted model was a population-averaged binomial logistic GEE for occurrence of any Eucalyptus seedling, defined as 1 when the directly summed counts euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m exceeded 0, adjusted for Season fixed effects, grouped by Property with exchangeable working correlation (alpha=0.19594466506093514) and robust covariance. Complete cases on the three outcome components, three grass-cover components, Property, and Season were retained: n=350 across 18 properties (90 events, 260 nonevents), excluding SurveyID 75. Each observation was a distinct 15 x 15 m physical quadrat sampled in one survey round; the design was repeated cross-sectional over three rounds. The model converged without warnings."
+    },
+    "b23d547c-15": {
+      "scope": "E",
+      "unit_estimated": "One distinct 15 \u00d7 15 m physical quadrat sampled in one survey round (351 quadrat-round observations, clustered within 18 properties).",
+      "why": "The fitted NB2 log-link coefficient directly targets Eucalyptus seedling recruitment as a function of the declared summed grass-cover exposure, scaled per 10 percentage-point increase and oriented as declared, within the represented properties, seasons, and quadrats. Property and Season adjustment, imputation, clustering, and the count-model scale are analytical choices rather than scope changes."
+    },
+    "7d40c5a3-16": {
+      "scope": "E",
+      "unit_estimated": "-0.0499873754371515 log expected Eucalyptus recruitment count per 10 percentage-point increase in summed grass cover (SE 0.1135199952642084; t(17)=-0.4403398301841893; two-sided p=0.6652387103589308). Predictor: (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10. Orientation: as_declared.",
+      "why": "This directly estimates the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The fitted outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The model was an NB2 GEE with log link, exchangeable Property-level clustering, and bias-reduced robust sandwich covariance; alpha=9.118451809252402. It adjusted for categorical Season, linear Distance_to_Eucalypt_canopy(m), and linear Euc_canopy_cover. Complete-case n=348 across 18 properties; SurveyIDs 75, 253, and 258 were excluded. Each observation was a distinct equal-area 15 x 15 m quadrat in one survey round, so no area offset was used."
+    },
+    "15a278a7-17": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log expected 0\u201350 cm Eucalyptus seedling count per 15 \u00d7 15 m quadrat-survey observation for a 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The fitted Poisson GEE directly targets the declared within-frame relationship between grass cover and Eucalyptus seedling recruitment. The predictor was constructed as (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, so larger values mean more grass cover (orientation: as_declared), and the signed coefficient is on the native log-expected-count scale. The specified complete-case analysis used n=348, adjusted for survey season, canopy distance, and overhead canopy cover, clustered observations by property with exchangeable correlation, and excluded SurveyIDs 75, 253, and 258 for the stated missing values. These modeling and adjustment choices do not change the estimand\u2019s scope."
+    },
+    "791784d4-18": {
+      "scope": "E",
+      "unit_estimated": "Coefficient on log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), with covers in percentage points, for log expected total Eucalyptus seedling recruitment count per 15 \u00d7 15 m quadrat per survey round. A one-unit increase doubles 1 + summed grass cover; orientation is as_declared.",
+      "why": "This directly targets grass cover and Eucalyptus seedling recruitment within the dataset frame. The outcome was euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m in a log-link NB2 model, adjusted for survey round (Autumn 2007 reference), distance to nearest Eucalypt canopy, and overhead Eucalypt canopy cover. The fit used 348 complete cases with 3 exclusions. Uncertainty was a 500-replicate property-cluster bootstrap with NB2 alpha fixed at 9.1172303933; the native-scale percentile 95% interval was [-0.4846968715, 0.2705021137], and the coefficient/bootstrap-SE ratio was -0.3669029793."
+    },
+    "2e6c9c5a-19": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log expected total Eucalyptus seedling count per distinct 15 \u00d7 15 m quadrat-round for a 10-percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The fitted Poisson log-link GEE directly targets recruitment in the dataset\u2019s Eucalyptus population using the declared predictor, (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, with as-declared orientation. It used 348 complete observations clustered by 18 properties, adjusted for categorical Season, linear Distance_to_Eucalypt_canopy(m), and linear Euc_canopy_cover, with exchangeable working correlation and bias-reduced robust sandwich uncertainty; SurveyIDs 75, 253, and 258 were excluded. The focal inference remained on the native log expected-count scale (z = -0.7393825640171768). Thus it answers the declared estimand within the stated frame."
+    },
+    "3aeac3a5-20": {
+      "scope": "E",
+      "unit_estimated": "Conditional log-odds effect on recruitment occurrence per 10 percentage-point increase in summed grass cover: -0.0484011277 (model-based Laplace SE 0.0694090137; Wald z=-0.697332020).",
+      "why": "This addresses the declared estimand within the dataset frame. The predictor was exactly (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, oriented as_declared. Recruitment occurrence equaled 1 when euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m was greater than zero. A binomial logistic mixed-effects model adjusted for categorical Season and included a Gaussian Property random intercept (SD 0.9459447007). Complete cases on the three outcome components, three grass components, Property, and Season were retained: n=350 distinct 15 x 15 m quadrat-survey observations across 18 properties, with SurveyID 75 excluded; 90 occurrences and 260 non-occurrences. The estimate is reported without conversion on its native conditional log-odds scale."
+    },
+    "97a2e50e-21": {
+      "scope": "E",
+      "unit_estimated": "Adjusted change in log expected total Eucalyptus seedling count per 15 \u00d7 15 m quadrat for a one-unit increase in log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), i.e. a doubling of 1 plus summed grass percentage cover.",
+      "why": "This directly targets grass-cover exposure and total Eucalyptus seedling recruitment in the dataset\u2019s Eucalyptus population. The NB2 log-link coefficient is on the requested native log expected-count scale, with survey round, property, distance to Eucalyptus canopy, and Eucalyptus canopy cover adjustment; clustered sandwich uncertainty and complete-case exclusions do not change scope. Larger predictor values mean more grass cover, so orientation is as declared."
+    },
+    "b76c56a9-22": {
+      "scope": "E",
+      "unit_estimated": "The Poisson-GLM coefficient on log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover): the adjusted change in log expected Eucalyptus seedling count per 15\u00d715 m quadrat for a one-unit increase, equivalent to doubling 1 + summed grass percentage cover.",
+      "why": "This directly addresses the declared estimand within the dataset frame: the focal exposure is total grass cover as declared, and recruitment is represented by the count of Eucalyptus seedlings 0\u20132 m tall. The quadrat-round analysis level, Poisson log scale, covariate adjustment, and property-clustered covariance are analytical choices rather than scope changes."
+    },
+    "b20e28ed-23": {
+      "scope": "E",
+      "unit_estimated": "One physical 15 \u00d7 15 m quadrat sampled in one survey round; the focal parameter is the jackknife bias-corrected change in log expected Eucalyptus seedling count for a one-unit increase in log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), i.e. a doubling of 1 + summed grass percentage cover.",
+      "why": "This directly estimates the declared grass-cover effect on Eucalyptus seedling recruitment within the represented population, exposures, and outcomes. The predictor is oriented as_declared: larger values mean more grass cover. The adjusted Poisson model, quadrat-round analysis unit, and property-cluster jackknife are analytical choices rather than scope changes; uncertainty is on the native log expected-count scale (t = -0.85931735232968, df = 17)."
+    },
+    "6d5a8308-24": {
+      "scope": "E",
+      "unit_estimated": "Adjusted population-averaged log mean total Eucalyptus seedling-count contrast per 15 \u00d7 15 m quadrat at 47.85% versus 10.3% total grass cover (higher minus lower).",
+      "why": "This directly addresses the declared within-frame effect: total grass cover was constructed as ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, and recruitment as euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. The stated fit was a Poisson log-link GEE with x=total grass cover/10 and x-squared, Property clusters, exchangeable working correlation, and bias-reduced robust covariance, adjusted for Season, Distance_to_Eucalypt_canopy(m), and Euc_canopy_cover. The focal native-model-scale contrast was 3.755*beta_x + 21.835325*beta_x_squared, oriented as_declared. It used 348 complete cases and excluded SurveyIDs 75, 253, and 258. The supplied declaration gives t=-0.736230311324991 on 17 df and p=0.4716284137947273 but does not provide the fitted contrast or its standard error/confidence interval, so those numeric quantities cannot be recovered from the declaration alone."
+    },
+    "349c35ea-25": {
+      "scope": "E",
+      "unit_estimated": "Log-odds coefficient for occurrence of any Eucalyptus seedling per 10-percentage-point increase in summed exotic and native perennial grass cover: 0.0124968 (cluster-robust SE 0.137506).",
+      "why": "This directly estimates the association of the declared grass-cover quantity with Eucalyptus seedling recruitment, operationalized as presence of any seedling in a sampled quadrat, within the dataset\u2019s framed population, exposures, and outcomes. The binary-outcome model and covariate adjustment are analytical choices rather than scope changes."
+    },
+    "d1adbf08-26": {
+      "scope": "E",
+      "unit_estimated": "One distinct 15 \u00d7 15 m physical quadrat sampled in one survey round; the focal effect is the absolute change in Eucalyptus recruitment-occurrence probability per 10-percentage-point increase in summed grass cover.",
+      "why": "This directly addresses the declared estimand within the dataset frame. The predictor is (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, oriented as_declared, with SurveyID 75 imputed using the Property \u00d7 Season median of 19.45%. The outcome is an indicator that the sum of the three Eucalyptus seedling-count variables exceeds zero. The fitted linear probability model uses Season and Property fixed effects and Property-clustered finite-sample-corrected sandwich uncertainty over 351 observations and 18 properties. The reported test statistic is t = -0.25495618742918486 with 17 inferential degrees of freedom and two-sided p = 0.8018157106081325. The coefficient and standard error themselves are not recoverable from the supplied t statistic alone."
+    },
+    "72843bf9-27": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged log expected-count coefficient for a +1 increase in log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), i.e. a doubling of 1 plus summed grass percentage cover, for total Eucalyptus seedling recruitment per quadrat-round.",
+      "why": "The fitted GEE directly targets the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. Its predictor has the declared as-declared orientation, its outcome is the summed Eucalyptus seedling recruitment count, and the native model scale is the Poisson log-mean scale. Adjustment choices, clustering, and quadrat-round aggregation do not change estimand scope."
+    },
+    "2197daac-28": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat for a 20 percentage-point increase in combined exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The predictor is exactly the declared combined-grass-cover quantity, oriented as_declared, and the Poisson log-mean coefficient targets Eucalyptus seedling recruitment within the stated dataset frame. Adjustment choices, complete-case exclusions, and property-level jackknife uncertainty are analytical choices rather than scope changes."
+    },
+    "083939bb-29": {
+      "scope": "E",
+      "unit_estimated": "Conditional change in log odds of any-size Eucalyptus recruitment occurrence in a 15 \u00d7 15 m quadrat per 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover, comparing quadrats within the same property and adjusting for survey season, distance to nearest Eucalyptus canopy, and overhead Eucalyptus canopy cover.",
+      "why": "This directly targets the declared grass-cover effect on Eucalyptus seedling recruitment within the dataset frame. The predictor is constructed exactly as declared and oriented as_declared; conditioning on property and the covariate adjustments are analytical choices rather than scope changes."
+    },
+    "be9b4e02-30": {
+      "scope": "E",
+      "unit_estimated": "Expected count of 0\u201350 cm Eucalyptus seedlings in a 15 \u00d7 15 m quadrat during one survey round, per one-unit increase in sqrt(total grass percentage cover).",
+      "why": "The focal predictor is the declared grass-cover quantity with the declared orientation, and the outcome is recent Eucalyptus seedling recruitment in the dataset frame. Adjustment, Poisson modeling, clustering by property, and use of quadrat-round observations are analytical choices rather than scope changes."
+    },
+    "b1d5f52e-31": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat for a 10-percentage-point increase in summed perennial grass cover, constructed as (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10.",
+      "why": "The predictor exactly matches the declared grass-cover quantity and is oriented as_declared; the outcome is recent Eucalyptus seedling recruitment, and the observations are within the represented Eucalyptus population and exposure/outcome frame. The fitted analysis used an NB2 log-link model on 348 complete-case, survey-round-specific physical quadrats, with property-clustered finite-sample-corrected sandwich uncertainty and adjustment for Season, distance to Eucalypt canopy, and Eucalypt canopy cover. Excluding SurveyIDs 75, 253, and 258 and choosing this model and adjustment set are analytical choices, not scope changes."
+    },
+    "416e476a-32": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log odds of any Eucalyptus seedling recruitment in a 15 \u00d7 15 m quadrat per +1 increase in log2(1 + summed grass percentage cover), equivalent to doubling 1 + summed grass cover.",
+      "why": "The fitted GEE directly targets the declared grass-cover effect and seedling-recruitment occurrence within the dataset\u2019s Eucalyptus population and exposure/outcome frame. The predictor is oriented as declared; covariate adjustment, spline specification, clustering by property, and the quadrat-survey observation unit are analytical choices rather than scope changes."
+    },
+    "f3ef046e-33": {
+      "scope": "E",
+      "unit_estimated": "The adjusted log expected total Eucalyptus seedling count for a 15 \u00d7 15 m quadrat in one survey round, per 10-percentage-point increase in summed exotic plus native perennial-grass cover.",
+      "why": "This directly addresses the declared within-dataset estimand: perennial grass cover is the focal exposure, summed Eucalyptus seedling count is the recruitment outcome, and the reported coefficient is signed as declared. Property and survey-round adjustment and the negative-binomial model are analytical choices, not scope changes. The estimate is the fitted focal coefficient on the native log expected-count scale, with model-based SE; the supplied Wald statistic is z = -1.831779980803408 (coefficient/SE). The prompt does not supply the coefficient or SE separately, so their numerical values cannot be recovered from the Wald ratio alone."
+    },
+    "c1332d91-35": {
+      "scope": "E",
+      "unit_estimated": "Change in the Poisson log expected count of Eucalyptus seedlings below 2 m per 15 \u00d7 15 m quadrat-round for a one-unit increase in log2(1 + ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), i.e. doubling 1 + summed grass percentage cover.",
+      "why": "This answers the declared estimand within the dataset frame: the focal predictor is the declared grass-cover quantity with as-declared orientation, and the outcome is Eucalyptus recruitment represented by the summed counts of seedlings 0\u201350 cm and 50 cm\u20132 m. Excluding seedlings above 2 m and adjusting for survey round, canopy distance, and canopy cover are analytical choices rather than scope changes. The fitted model is a complete-case Poisson log-mean regression on 348 quadrat-round observations, with delete-one-property jackknife inference across 18 properties."
+    },
+    "199e6328-36": {
+      "scope": "E",
+      "unit_estimated": "One distinct 15 \u00d7 15 m physical quadrat sampled in one survey round (351 quadrat-round observations).",
+      "why": "The fitted coefficient targets the declared within-frame effect: the absolute change in observed 0\u201350 cm Eucalyptus seedling count per quadrat for a 10-percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover, with SurveyID 75 imputed as specified. Property and Season adjustment, OLS, and Property-clustered inference are analytical choices rather than scope changes."
+    },
+    "bf0dfd02-37": {
+      "scope": "E",
+      "unit_estimated": "15 \u00d7 15 m physical quadrat in one survey round; focal estimate is the Poisson log-mean coefficient per 10-percentage-point increase in combined exotic plus native perennial grass cover",
+      "why": "The fitted analysis directly targets Eucalyptus seedling recruitment using euc_sdlgs0_50cm and the declared grass-cover exposure, (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, with orientation as_declared. It uses 348 complete-case quadrat-round observations from the represented Eucalyptus population and reports the delete-one-property jackknife bias-corrected coefficient and jackknife SE on the native log-mean scale. Adjustment choices and exclusion of annual grass are analytical choices rather than scope changes."
+    },
+    "df12f64a-38": {
+      "scope": "E",
+      "unit_estimated": "Change in log odds of any Eucalyptus seedling recruitment in a 15 \u00d7 15 m quadrat-round per 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover",
+      "why": "The fitted GEE directly targets the declared within-frame relationship: the predictor is exactly (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10 using percent cover, oriented as_declared, and the outcome is Eucalyptus recruitment occurrence. Season adjustment, property clustering, robust covariance, and the stated SurveyID 75 imputation are analytical choices rather than scope changes."
+    },
+    "34c66fc9-39": {
+      "scope": "E",
+      "unit_estimated": "Adjusted log-odds difference in any Eucalyptus seedling recruitment per one-unit increase in sqrt(ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover), measured in square-root percentage-cover units.",
+      "why": "The fitted binomial logistic model directly addresses the declared within-frame effect of grass cover on Eucalyptus seedling recruitment occurrence. The predictor is the declared square-root-transformed total grass cover with as-declared orientation, and the outcome is presence versus absence of directly summed Eucalyptus seedling counts. Adjustment choices, clustering by property, and modeling recruitment as occurrence rather than count are analytical choices rather than scope changes."
+    },
+    "d1557df9-40": {
+      "scope": "E",
+      "unit_estimated": "Distinct 15 \u00d7 15 m quadrat-by-survey-round observations within the 14 outcome-informative properties represented in the dataset",
+      "why": "The fitted coefficient targets the association of a 10-percentage-point increase in native perennial grass cover with recent Eucalyptus seedling recruitment occurrence, within the represented Eucalyptus population, exposure, and outcome frame. Property-stratified conditional logistic regression, covariate adjustment, and the quadrat-round analysis unit are analytical choices and do not change the declared scope."
+    },
+    "b1d5f52e-41": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat for a 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The constructed predictor exactly matches the declared grass-cover exposure and is oriented as_declared. The 0\u201350 cm seedling count is the dataset\u2019s represented measure of recent Eucalyptus recruitment, and the GEE targets that outcome within the represented properties and survey rounds. Season adjustment, Poisson-log specification, quadrat-level analysis, and property clustering are analytical choices rather than scope changes."
+    },
+    "45a2f94a-42": {
+      "scope": "E",
+      "unit_estimated": "Log-odds change in occurrence of any-size Eucalyptus seedling recruitment in a 15 \u00d7 15 m quadrat-round per 10 percentage-point increase in combined exotic and native perennial grass cover.",
+      "why": "The fitted property-stratified conditional logistic regression directly relates the declared grass-cover exposure, constructed as (ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10 and oriented as_declared, to a binary Eucalyptus recruitment outcome defined by any seedling-size-class count being positive. It uses the dataset-represented population and conditions/adjusts as documented; exclusions for missingness and noninformative property strata do not change the estimand's scope."
+    },
+    "0912ff0d-43": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log expected 0\u201350 cm Eucalyptus seedling count per 15 \u00d7 15 m quadrat for a one-unit increase in (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10, i.e. a 10 percentage-point increase in summed grass cover (orientation: as_declared).",
+      "why": "This directly addresses the declared within-frame effect of grass cover on recent Eucalyptus seedling recruitment. The fitted model was a Poisson GEE with log link, categorical Season adjustment, Property as 18 exchangeable-correlation clusters, and robust sandwich covariance; it used 350 distinct quadrat-round observations and excluded SurveyID 75 because the focal grass-cover components were missing. No property fixed effects were included. The native effect scale is the log expected seedling-count change per 10 percentage-point increase in summed grass cover. Reported Wald inference was z=-1.767448637451226 with asymptotic two-sided p=0.07715312362168991; the coefficient and standard error themselves were not supplied, so their numeric values cannot be recovered uniquely from z alone."
+    },
+    "850c6667-44": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected 0\u201350 cm Eucalyptus seedling count per 15 \u00d7 15 m quadrat-round for a 10 percentage-point increase in directly measured NativePerennialGrass_cover, conditional on property and adjusted for survey season, distance to nearest Eucalyptus canopy, and overhead Eucalyptus canopy cover.",
+      "why": "This answers the declared within-frame effect of grass cover on Eucalyptus seedling recruitment. The predictor was NativePerennialGrass_cover / 10 and is oriented as_declared; the outcome was the observed seedling count. A property-stratified conditional Poisson model used 286 complete, informative quadrat-round observations from 14 properties; four properties with zero total outcomes were excluded because they provided no conditional-likelihood information. The reported native-scale coefficient/whole-property-bootstrap-SE statistic was -1.4313963222848896, with a standard-normal reference and no inferential df."
+    },
+    "c985e754-45": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected total Eucalyptus seedling count per 15 \u00d7 15 m quadrat for a 10-percentage-point increase in summed grass cover, where the predictor is (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10 and larger values mean more grass cover (as_declared).",
+      "why": "This directly addresses the declared effect of grass cover on Eucalyptus seedling recruitment within the dataset frame. The outcome sums the three Eucalyptus seedling size-class counts; the negative-binomial type 2 log-link model adjusts for Season and Property fixed effects and uses Property-clustered sandwich uncertainty. The single missing summed exposure was hot-decked from the nearest observed quadrat in the same Property \u00d7 Season stratum. Fitted n=351. The reported focal coefficient is on the native log-mean scale; its cluster-robust test was t=-0.7815397091175357 with 17 df and two-sided p=0.44523394527126187."
+    },
+    "20138569-46": {
+      "scope": "E",
+      "unit_estimated": "Change in log expected total Eucalyptus seedling recruitment count per 15 \u00d7 15 m quadrat-round for a 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "The fitted Poisson coefficient targets the declared grass-cover quantity with as-declared orientation and uses total Eucalyptus seedling recruitment in the dataset\u2019s quadrat-round observations. Adjustment choices, count-model scale, and property-cluster jackknife uncertainty are analytical choices rather than scope changes. Reported uncertainty was delete-one-property jackknife based (t = -0.5484397439583656, df = 17, two-sided p = 0.590520417983235); the coefficient and standard error themselves were not stated in the supplied analysis description."
+    },
+    "dc088bfd-47": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged change in log expected count of 0\u201350 cm Eucalyptus seedlings per 15 \u00d7 15 m quadrat for a 10 percentage-point increase in summed exotic annual, exotic perennial, and native perennial grass cover.",
+      "why": "This directly targets the declared effect of grass cover on Eucalyptus seedling recruitment within the represented dataset. The fitted model used Poisson GEE with log link, categorical Season adjustment, Property as 18 exchangeable clusters, and robust covariance; SurveyID 75\u2019s missing grass components were handled with 50 within-Property-and-Season joint hot-deck imputations, pooled by Rubin\u2019s rules, with no exclusions (n=351). The predictor orientation is as declared. The reported native-scale effect has pooled Wald t=-1.7626909275191087 and df=1076050833.4704301."
+    },
+    "4c8dadc9-48": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged fitted log-odds contrast for any Eucalyptus seedling recruitment in a distinct 15 \u00d7 15 m quadrat visit, comparing summed grass cover of 47.85% with 10.3%.",
+      "why": "This directly addresses the declared within-frame effect of grass cover on Eucalyptus recruitment. The predictor is the higher-minus-lower contrast in summed ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover under the stated quadratic GEE, so its orientation is as_declared. Dichotomizing recruitment as any versus none and using a population-averaged logistic model are analytical choices, not a change in scope."
+    },
+    "448fe99e-49": {
+      "scope": "E",
+      "unit_estimated": "Population-averaged log expected-count coefficient for total Eucalyptus seedling recruitment per 15 \u00d7 15 m quadrat, per 10 percentage-point increase in summed grass cover, where predictor = (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover) / 10. Estimate = -0.11421341227786098; bias-reduced robust SE = 0.10129371379081993; z = -1.1275468931242991.",
+      "why": "This directly addresses the declared effect of grass cover on Eucalyptus seedling recruitment within the dataset frame, with as-declared orientation. The fitted model was a population-averaged NB2 GEE with log link, categorical Season adjustment, Property as 18 clusters, independence working correlation, fixed alpha = 9.578386308660715 from a preliminary negative-binomial regression, and bias-reduced robust covariance. The outcome summed euc_sdlgs0_50cm, euc_sdlgs50cm_2m, and euc_sdlgs>2m. Complete cases for all outcome components, grass components, Season, and Property were retained (n=350); SurveyID 75 was excluded."
+    }
+  }
+}

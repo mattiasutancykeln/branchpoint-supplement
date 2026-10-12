@@ -1,0 +1,39 @@
+
+--- launch 2026-08-30 10:02:06 ---
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/path/to/branchpoint/experiments/run_condition.py", line 348, in <module>
+    main()
+    ~~~~^^
+  File "/path/to/branchpoint/experiments/run_condition.py", line 322, in main
+    run_branchpoint(
+    ~~~~~~~~~~~~~~~^
+        out,
+        ^^^^
+    ...<8 lines>...
+        branching_method=a.branching_method,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/path/to/branchpoint/experiments/run_condition.py", line 146, in run_branchpoint
+    raise RuntimeError(f"{len(summary['errors'])} probe(s) failed; inspect bp_state.json")
+RuntimeError: 6 probe(s) failed; inspect bp_state.json
+
+--- launch 2026-08-30 10:12:36 ---
+{
+  "mode": "branchpoint",
+  "dataset": "eu",
+  "model": "openrouter/z-ai/glm-5.3",
+  "n_reported": 50,
+  "envelope": [
+    -1.2444,
+    0.071
+  ],
+  "width": 1.3154,
+  "width_q05_q95": 0.42441242668437673,
+  "width_iqr": 0.09021025,
+  "median": -0.030752913570438738,
+  "unique_ends": 37,
+  "usd": 2.86075476
+}

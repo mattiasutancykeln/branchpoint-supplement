@@ -1,0 +1,446 @@
+{
+  "protocol_version": 6,
+  "dataset": "bt",
+  "model": "gpt-5.6-sol",
+  "mode": "naive",
+  "allocation": "uniform",
+  "seed": 7,
+  "judge_model": "gpt-5.6-sol",
+  "effort": "low",
+  "workers": 6,
+  "provider_route": [],
+  "branching_method": "not_applicable",
+  "agent_interface": "native",
+  "extensions": [
+    {
+      "from": 0,
+      "to": 50,
+      "wall_clock_s": 1400.6
+    }
+  ],
+  "wall_clock_s": 1400.6,
+  "n_requested": 50,
+  "n_reported": 50,
+  "rows": [
+    {
+      "seed": 0,
+      "estimate": -1.01613976061,
+      "se": 0.0895085713491,
+      "note": "Primary experimental analysis of day-14 weight in native mass units. Included chicks alive and measured at day 14 from experimentally enlarged (rear_nest_trt=5; n=1742 chicks) and reduced (rear_nest_trt=6; n=1059 chicks) rearing broods; excluded unmanipulated broods because they were not systematically matched to manipulated broods. Fitted chick-level OLS: day_14_weight ~ competition_contrast + C(hatch_year), with cluster-robust sandwich SEs by hatch-year \u00d7 rearing-nest. Fitted n=2801 chicks in 333 rearing-nest clusters. Test: t=-11.3524296645 with cluster-based inferential df=332 (two-sided p=1.85422789837e-25). Observation unit: chick alive and measured at day 14. Design: brood-size manipulation/cross-fostering experiment, analyzed as an enlarged-versus-reduced contrast with year fixed effects. No adjustment for post-treatment brood sizes or survival quantities and no effect-size conversion. The estimate is the year-adjusted enlarged-minus-reduced mean day-14 weight contrast.",
+      "predictor": "competition_contrast, constructed as +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); its coefficient is exactly enlarged minus reduced adjusted mean day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 1,
+      "estimate": -1.0161397606101648,
+      "se": 0.08950857134909256,
+      "note": "Native effect: -1.0161397606101648 g; SE 0.08950857134909256 g. Test: t = -11.352429664496778 with 332 inferential df (cluster-robust finite-sample reference), p = 7.213005833107831e-30. Fitted n = 2,801 chicks; observation unit = chick; 333 year-specific rearing-nest clusters (167 enlarged, 166 reduced). Design/model: brood-size manipulation analysis using chick-level OLS, day_14_weight ~ competition_contrast + categorical hatch_year, with finite-sample-corrected heteroskedasticity-robust covariance clustered by hatch_year \u00d7 rear_nest_breed_ID. Included experimentally enlarged (rear_nest_trt=5) and reduced (rear_nest_trt=6) broods; excluded unmanipulated broods because they were not systematically matched to manipulated broods. Outcomes and model variables were complete in this fitted sample. The estimate is the breeding-year-adjusted enlarged-minus-reduced difference in day-14 weight; no post-treatment brood-size variable was adjusted for.",
+      "predictor": "+0.5 for a chick reared in an experimentally enlarged brood (rear_nest_trt=5) and -0.5 for a chick reared in an experimentally reduced brood (rear_nest_trt=6); the coefficient is exactly the adjusted enlarged-minus-reduced day-14 weight difference, so increasing the predictor by 1 represents moving from reduced to enlarged sibling competition.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 2,
+      "estimate": -0.17035446230366444,
+      "se": 0.01402049233679838,
+      "note": "Native outcome scale: recorded units of day_14_weight per net chick added. Test: t = -12.150390885814312, inferential df = 318. Fitted n = 2,716 chicks; observation unit = chick. Design: chick-level OLS restricted to experimentally enlarged and reduced rearing broods, adjusted for pre-manipulation brood size constructed as rear_Cs_at_start_of_rearing - net_rearing_manipulation and categorical hatch_year, with two-way cluster-robust covariance by rearing nest and hatch nest. The sample included 319 rearing-nest clusters and 363 hatch-nest clusters; df was conservatively set to min(cluster counts)-1. Complete cases were used: 919 chicks in unmanipulated broods were excluded because those broods were not systematically matched to manipulated broods, and 85 manipulated-brood chicks missing required model fields were excluded. The focal coefficient assumes a linear effect per chick over observed net manipulations from -4 to +4.",
+      "predictor": "net_rearing_manipulation: net number of chicks added to the rearing brood (positive = chicks added/more sibling competition; negative = chicks removed/less sibling competition); coefficient is per one-chick increase",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 3,
+      "estimate": -1.0840068284204056,
+      "se": 0.09371160104810769,
+      "note": "Native outcome scale: grams of day-14 mass. Fitted brood-level OLS after aggregating chick mass to an equally weighted mean for each compound rearing brood identified by (hatch_year, rear_nest_breed_ID). Model: mean day-14 mass ~ signed experimental-treatment contrast + categorical hatch year; HC2 heteroskedasticity-robust covariance with residual-df t reference. Focal test: t = -11.567477412576924, inferential df = 329. Fitted n = 333 rearing broods (167 enlarged, 166 reduced), representing 2,801 measured chicks. Observation unit: rearing brood. Design: randomized brood-size manipulation comparison, adjusted for breeding season. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. No adjustment was made for achieved brood size or other potentially post-treatment variables. The estimate is the year-adjusted enlarged-minus-reduced difference in rearing-brood mean day-14 mass; no effect-size conversion was applied.",
+      "predictor": "Signed experimental sibling-competition contrast coded +0.5 for an experimentally enlarged rearing brood (rear_nest_trt=5) and -0.5 for an experimentally reduced rearing brood (rear_nest_trt=6); its coefficient is exactly the adjusted enlarged-minus-reduced difference.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 4,
+      "estimate": -1.0161397606101648,
+      "se": 0.08566504764594587,
+      "note": "Outcome: day-14 weight (grams). Model: chick-level OLS linear mean model with fixed effects for breeding year and a signed assigned-treatment contrast, using a finite-sample-corrected two-way cluster-robust covariance by rearing nest and natal nest. Focal native-scale effect = enlarged-minus-reduced adjusted mean mass difference. Test statistic: t = -11.861777802422711; inferential df = 331, conservatively defined as min(332 rearing-nest clusters, 377 natal-nest clusters) - 1. Fitted n = 2,801 chicks; observation unit = individual chick alive and measured at day 14. Design: brood-size manipulation/cross-fostering experiment; analysis includes assigned enlarged and reduced rearing broods and excludes unmanipulated broods because those were not systematically matched to manipulated broods. Rows missing outcome, treatment, year, or nest IDs would be excluded; all retained observations had the required fields.",
+      "predictor": "+0.5 for assigned enlarged rearing brood (rear_nest_trt=5) and -0.5 for assigned reduced rearing brood (rear_nest_trt=6); the one-unit contrast and coefficient are enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 5,
+      "estimate": -1.014089855707468,
+      "se": 0.08925215707385598,
+      "note": "Native effect: -1.01409 g; cluster-robust SE: 0.08925 g. Signed t = -11.3621 with 332 inferential df; fitted n = 2,801 chicks in 333 year-by-rearing-nest breeding events (332 numeric rearing-nest IDs, with one ID appearing in two years). Observation unit: individual chick measured alive at day 14, equally weighted. Design/model: experimental enlarged-versus-reduced brood comparison; chick-level OLS of day_14_weight (grams) on enlarged_vs_reduced, categorical hatch_year, and rear_nest_OH centered within year. Heteroskedasticity-robust inference was clustered by the hatch_year \u00d7 rear_nest_breed_ID breeding event with finite-cluster correction. Included rear_nest_trt codes 5 and 6; excluded unmanipulated code 7. No observations were lost for modeled variables. Realized day-14 brood size was not adjusted for because it is post-treatment. The estimate is the adjusted enlarged-minus-reduced difference in day-14 mass.",
+      "predictor": "enlarged_vs_reduced indicator: 1 when rear_nest_trt = 5 (experimentally enlarged rearing brood), 0 when rear_nest_trt = 6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 6,
+      "estimate": -1.01613976061,
+      "se": 0.085665047646,
+      "note": "Native effect: -1.01614 g; SE 0.0856650 g. Test: t = -11.8618 with inferential df = 331, defined conservatively as min(332 rearing-nest clusters, 377 natal-nest clusters) - 1; two-sided p = 2.76e-27; 95% CI [-1.18466, -0.84762] g. Fitted n = 2,801 chicks; observation unit = chick. Design: chick-level OLS of day_14_weight (grams) on enlarged_vs_reduced plus breeding-year fixed effects, with two-way cluster-robust covariance by rear_nest_breed_ID and hatch_nest_breed_ID. Included experimentally enlarged and reduced broods only; excluded unmanipulated broods because they were not systematically matched. No adjustment for post-treatment brood size or mortality. The negative estimate means experimentally enlarged broods had day-14 mass about 1.02 g lower than reduced broods.",
+      "predictor": "enlarged_vs_reduced indicator: 1 when rear_nest_trt = 5 (experimentally enlarged rearing brood), 0 when rear_nest_trt = 6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced mean day-14 weight conditional on breeding year",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 7,
+      "estimate": -1.0161397606101648,
+      "se": 0.0856650476459459,
+      "note": "Native effect: -1.01614 g; SE: 0.0856650 g. Test statistic: two-way cluster-robust t = -11.8618, with inferential df = 331 (conservative min[number of rearing-nest clusters 332, hatch-nest clusters 377] - 1). Fitted n = 2,801 chicks. Observation unit: one chick alive and measured at day 14. Design/model: chick-level OLS for day_14_weight, restricted to experimentally enlarged and reduced rearing broods (167 enlarged and 165 reduced nests); unmanipulated broods excluded because they were not systematically matched to manipulated broods. Included breeding-year fixed effects (2001 reference; indicators for 2002 and 2003). Uncertainty used finite-sample-corrected two-way cluster-robust covariance by rear_nest_breed_ID and hatch_nest_breed_ID. Complete cases were required for outcome, treatment, year, and both cluster IDs. No adjustment for molecular sex because of extensive missingness, and no adjustment for day-14 brood size because it is post-treatment. The estimate is the intention-to-treat enlarged-minus-reduced difference in mean day-14 mass, in grams.",
+      "predictor": "Assigned rearing-brood competition contrast: +0.5 for enlarged treatment (rear_nest_trt = 5) and -0.5 for reduced treatment (rear_nest_trt = 6); its coefficient is exactly the adjusted enlarged-minus-reduced mean day-14 weight contrast.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 8,
+      "estimate": -1.0161397606101648,
+      "se": 0.0856650476459459,
+      "note": "Outcome: day_14_weight (grams). Fitted sample: 2,801 chicks assigned to experimentally enlarged or reduced rearing broods, from 332 rearing nests and 377 natal nests; unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Model: chick-level OLS, day_14_weight ~ competition_contrast + categorical hatch_year. Covariance was two-way cluster-robust by rearing nest and natal nest with finite-sample correction. Wald t = -11.8617778024; inferential df = 331, defined conservatively as min(332 rearing-nest clusters, 377 natal-nest clusters) - 1. Observation unit: chick measured at day 14. Design: experimental enlarged-versus-reduced rearing-brood assignment with hatch-year fixed effects. Native effect and SE are in grams. The failed crossed-random-intercept attempt produced no estimate and is not the fitted analysis reported here.",
+      "predictor": "competition_contrast coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt = 5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt = 6); its one-unit coefficient is exactly adjusted mean day-14 mass in enlarged broods minus adjusted mean day-14 mass in reduced broods",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 9,
+      "estimate": -1.0543604168393879,
+      "se": 0.08414604392065878,
+      "note": "Native effect: -1.0543604168393879 g; SE: 0.08414604392065878 g. Signed t = -12.530124622775412 with inferential df = 330 (two-sided p = 9.940012662051575e-30). Fitted n = 2,792 chicks, the observation unit; each measured day-14 survivor received equal weight. Design: brood-size manipulation with cross-fostering; analysis compared experimentally enlarged versus reduced rearing broods and excluded unmanipulated broods because they were not systematically matched. OLS outcome was day_14_weight (grams), adjusted for categorical hatch_year, rear_nest_OH, and pre-manipulation rear_d0_rear_nest_brood_size. Complete-case exclusion removed 9 chicks in 2 rearing broods because initial brood size was missing. Nest identities were season-specific (hatch_year plus nest ID). The covariance was two-way cluster-robust by 331 rearing-brood clusters and 377 natal-brood clusters, with small-sample corrections; df was the smaller included cluster count minus one. The estimate is the adjusted enlarged-minus-reduced difference among chicks alive and measured at day 14; it is not converted to another effect-size scale.",
+      "predictor": "Assigned sibling-competition contrast constructed from rear_nest_trt: +0.5 for experimentally enlarged rearing broods (code 5) and -0.5 for experimentally reduced rearing broods (code 6); thus a one-unit contrast is enlarged minus reduced.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 10,
+      "estimate": -1.0162266194221232,
+      "se": 0.0856717496692986,
+      "note": "Native outcome: day_14_weight in grams. Fitted chick-level OLS: day_14_weight ~ enlarged_vs_reduced + categorical hatch_year, restricted to experimentally manipulated rearing broods (rear_nest_trt 5 or 6); unmanipulated broods were excluded because they were not systematically matched. No post-treatment brood-size or sex adjustment. Two-way finite-sample-corrected cluster-robust covariance by year-specific rearing nest (332 clusters) and year-specific natal nest (377 clusters). Focal t = -11.861863722228835 with conservative inferential df = min(332,377)-1 = 331; fitted n = 2,801 chicks (observation unit: chick; 1,742 enlarged and 1,059 reduced). Design: brood-size manipulation/cross-fostering experiment. Chick P809444's inconsistent hatch_year was corrected from 2002 to 2003 because its natal/rearing nest IDs, box, manipulation, brood measures, and chick-ring sequence matched that nest's 2003 records. The coefficient is the breeding-year-adjusted enlarged-minus-reduced mean difference in day-14 mass.",
+      "predictor": "enlarged_vs_reduced indicator: 1 = rear_nest_trt 5, experimentally enlarged rearing brood (positive net rearing manipulation); 0 = rear_nest_trt 6, experimentally reduced rearing brood (negative net rearing manipulation)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 11,
+      "estimate": -1.01613976061,
+      "se": 0.089508571349,
+      "note": "Native outcome: day_14_weight. Chick-level OLS fitted to 2,801 chicks alive and measured at day 14 from 333 year-specific rearing broods, with categorical hatch_year fixed effects. Focal design contrast compares experimentally enlarged versus reduced rearing broods; unmatched unmanipulated broods (rear_nest_trt=7) were excluded, and there were no complete-case exclusions among eligible manipulated chicks. CR1 cluster-robust SE clustered by hatch_year::rear_nest_breed_ID; t=-11.352429664497 with inferential df=332 (clusters minus 1), two-sided p=1.85422789837e-25. Observation unit: chick. Design: brood-size manipulation with treatment assigned at rearing-brood level. Estimate is enlarged minus reduced in the native day-14-weight scale; no effect-size conversion and no adjustment for post-treatment brood size.",
+      "predictor": "competition_contrast = +0.5 for rear_nest_trt=5 (experimentally enlarged rearing brood) and -0.5 for rear_nest_trt=6 (experimentally reduced rearing brood); its coefficient is exactly the year-adjusted enlarged-minus-reduced difference in day_14_weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 12,
+      "estimate": -1.037503439110675,
+      "se": 0.08847177864403373,
+      "note": "Day-14 weight (grams) was modeled by chick-level OLS among experimentally enlarged and reduced broods only; unmanipulated broods were excluded because they were not systematically matched to manipulated broods. The model was day_14_weight ~ enlarged-vs-reduced indicator + categorical hatch_year + rear_nest_OH + rear_nest_CS. Covariance was cluster-robust by year-qualified rearing brood with finite-sample correction and t-based inference. Complete cases were used, excluding 7 otherwise eligible chicks due to missing rearing-nest clutch size. Native effect = -1.037503 g, cluster-robust SE = 0.088472 g; t = -11.726942, inferential df = 331; fitted n = 2,794 chicks in 332 rearing-brood clusters (166 reduced and 166 enlarged). Observation unit: chick. Design: brood-size manipulation analyzed as an enlarged-versus-reduced experimental contrast, with treatment assigned and uncertainty clustered at the rearing-brood level.",
+      "predictor": "Indicator coded 1 for rear_nest_trt = 5 (experimentally enlarged rearing brood) and 0 for rear_nest_trt = 6 (experimentally reduced rearing brood); coefficient is the adjusted enlarged-minus-reduced difference in day-14 weight (grams).",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 13,
+      "estimate": -1.0161397606101648,
+      "se": 0.0856650476459459,
+      "note": "Native-scale effect in grams from OLS of day_14_weight on the signed enlarged-versus-reduced contrast plus categorical hatch-year fixed effects. Sample excluded unmanipulated broods and included 2,801 measured chicks in 332 rearing nests (167 enlarged, 165 reduced) and 377 natal nests. Uncertainty used Cameron-Gelbach-Miller two-way cluster-robust covariance by rearing nest and natal nest with small-sample corrections. Test: t = -11.861777802422708 with conservative inferential df = min(332, 377) - 1 = 331. Observation unit: chick. Experimental design: cross-fostered brood-size manipulation; comparison of assigned enlarged versus reduced rearing broods. No post-treatment covariates were included. The attempted crossed-random-intercept model timed out without producing an estimate, so the fitted reported analysis uses two-way cluster-robust inference.",
+      "predictor": "Signed assigned-treatment contrast: +0.5 for experimentally enlarged rearing broods (rear_nest_trt = 5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt = 6); its coefficient is exactly the hatch-year-adjusted mean day-14 weight contrast enlarged minus reduced.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 14,
+      "estimate": -1.0840068284204056,
+      "se": 0.09388597681558376,
+      "note": "Native outcome: day_14_weight. Analysis used 2,801 chick rows from experimentally enlarged or reduced broods, aggregated to one equally weighted mean day-14 mass per year-specific rearing brood, identified by (hatch_year, rear_nest_breed_ID). Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Fitted OLS: brood mean day-14 weight ~ competition contrast + categorical hatch year, with conventional model-based standard errors. The contrast was +0.5 for enlarged (rear_nest_trt=5) and -0.5 for reduced (rear_nest_trt=6), so the coefficient is enlarged minus reduced. Native effect = -1.0840068284 mass units; SE = 0.0938859768; t = -11.5459929713; inferential residual df = 329; fitted n = 333 rearing broods (167 enlarged, 166 reduced). Observation unit: year-specific rearing brood; design: brood-size manipulation experiment, analyzed as an enlarged-versus-reduced intention-to-treat contrast with breeding-year fixed effects. Outcomes are conditioned on chicks being alive and measured at day 14; measured chicks per fitted brood ranged from 1 to 17.",
+      "predictor": "Experimental sibling-competition contrast coded +0.5 for an enlarged rearing brood (rear_nest_trt=5) and -0.5 for a reduced rearing brood (rear_nest_trt=6); coefficient equals enlarged minus reduced in brood-average day-14 weight.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 15,
+      "estimate": -1.054360416839,
+      "se": 0.087508081261,
+      "note": "Native outcome scale: grams of day-14 weight. Focal test: cluster-robust t = -12.04872055 with inferential df = 330 (331 year-specific rearing-nest treatment clusters minus 1). Fitted n = 2,792 chicks; observation unit = chick alive and measured at day 14. Design/model: randomized enlarged-versus-reduced brood-size manipulation; chick-level OLS ANCOVA of day_14_weight on the focal indicator, categorical hatch_year, pre-manipulation rear_d0_rear_nest_brood_size, and rear_nest_OH; CR1 standard error clustered by year-specific rear_nest_breed_ID. Excluded 919 chicks from unmanipulated broods because those broods were not systematically matched to manipulated broods, and 9 chicks from manipulated broods due to model-variable missingness. No post-treatment brood-size or survival variables were adjusted for.",
+      "predictor": "Indicator equal to 1 for rear_nest_trt = 5 (experimentally enlarged rearing brood; more assigned sibling competition) and 0 for rear_nest_trt = 6 (experimentally reduced rearing brood); coefficient is the adjusted enlarged-minus-reduced difference in mean day-14 weight.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 16,
+      "estimate": -1.0820804961856025,
+      "se": 0.09383252748589996,
+      "note": "Native effect: -1.0820804961856025 g (HC2 robust SE 0.09383252748589996 g) on rearing-brood mean day-14 weight. Test: HC2 robust z = -11.532040382778828; inferential df not applicable for the normal-reference z test (underlying OLS residual df = 328). Fitted n = 332 rearing broods (167 enlarged, 165 reduced), comprising 2,801 measured chicks. Observation/analysis and treatment-assignment unit: rearing brood. Design: brood-size manipulation experiment; OLS of brood-mean day-14 weight on the signed enlarged-versus-reduced contrast plus categorical breeding-year fixed effects, with HC2 heteroskedasticity-robust covariance. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. All assigned enlarged/reduced broods were retained, including 13 lacking numerical net-manipulation values, because assigned treatment was observed. Chick-level hatch year was replaced by the within-rearing-brood modal year for aggregation, correcting one discordant record. No outcome values were missing. The estimate is the adjusted enlarged-minus-reduced difference in grams and was not converted to another effect-size scale.",
+      "predictor": "competition_contrast = +0.5 for rear_nest_trt 5 (experimentally enlarged rearing brood) and -0.5 for rear_nest_trt 6 (experimentally reduced rearing brood); coefficient is adjusted mean day-14 weight in enlarged broods minus that in reduced broods",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 17,
+      "estimate": -1.0162266194221232,
+      "se": 0.08950176470889343,
+      "note": "Native outcome scale: grams of day-14 body mass (`day_14_weight`). Chick-level OLS fitted to 2,801 measured chicks in the randomized manipulated-brood comparison only; unmanipulated broods (`rear_nest_trt=7`) were excluded because they were not selected through the matched manipulation procedure. Model: day_14_weight ~ enlarged_vs_reduced + categorical hatch_year. The focal coefficient compares experimentally enlarged with experimentally reduced rearing broods. Finite-sample-corrected cluster-robust inference was clustered by rearing brood: 332 clusters (167 enlarged, 165 reduced). Test: t = -11.354263491087845, inferential df = 331 (clusters minus one); model residual df = 2797. Observation unit: chick; assignment/clustering unit: rearing brood; design: brood-size manipulation by cross-fostering, analyzed as the enlarged-versus-reduced experimental contrast with breeding-year fixed effects. `.` was treated as missing; outcome and treatment were complete in this fitted comparison. The isolated `hatch_year` value for chick P809444 was corrected from 2002 to 2003 before fitting because its seven brood-mates and all identical brood-level identifiers, parents, location, dates, manipulation values, and brood sizes identify it as part of the same 2003 brood. No adjustment was made for post-manipulation brood size, mortality, chick morphology, movement status, or incompletely recorded starting-brood variables. Effect and SE are reported without conversion to another effect-size scale.",
+      "predictor": "Binary enlarged-versus-reduced experimental contrast constructed as 1 = rearing brood experimentally enlarged (`rear_nest_trt` = 5), 0 = rearing brood experimentally reduced (`rear_nest_trt` = 6); coefficient is adjusted mean day-14 mass for enlarged minus reduced broods.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 18,
+      "estimate": -1.01613976061,
+      "se": 0.0895085713491,
+      "note": "Native outcome scale: day_14_weight. OLS fitted to 2,801 chicks alive and measured at day 14 in experimentally enlarged or reduced rearing broods, with categorical hatch-year fixed effects and CR1 cluster-robust covariance by hatch_year \u00d7 rear_nest_breed_ID (333 clusters). Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Focal coefficient: enlarged-minus-reduced adjusted mean day-14 weight difference. Test: cluster-robust t = -11.3524296645, inferential df = 332. Observation unit: chick; treatment assignment and clustering unit: rearing brood. No adjustment was made for post-treatment day-14 brood size.",
+      "predictor": "competition_contrast coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); its coefficient is exactly enlarged minus reduced adjusted mean day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 19,
+      "estimate": -1.0375034391,
+      "se": 0.0884587336,
+      "note": "Primary adjusted chick-level OLS: day_14_weight ~ competition_contrast + C(hatch_year) + rear_nest_OH + rear_nest_CS. Complete cases among experimentally enlarged/reduced broods only; unmanipulated broods excluded because they were not systematically matched to manipulated broods. Fitted n=2,794 chicks in 331 rearing nests (observation unit: chick; experimental assignment/design unit: rearing nest). Rearing-nest-clustered sandwich SE with finite-sample correction; t=-11.7286716276 with inferential df=330. Native outcome scale is the recorded day-14 mass scale. Sensitivity model without covariates used 2,801 chicks in all 332 manipulated nests and gave estimate=-1.0140839711, SE=0.0894656108.",
+      "predictor": "competition_contrast: +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); the coefficient is exactly adjusted mean day-14 mass in enlarged broods minus adjusted mean day-14 mass in reduced broods",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 20,
+      "estimate": -1.0161397606101599,
+      "se": 0.0894968933135662,
+      "note": "Native outcome: day_14_weight in the dataset's recorded weight units (not transformed). Model: chick-level OLS, day_14_weight ~ enlarged_vs_reduced + categorical hatch_year, with finite-sample-corrected cluster-robust covariance by rear_nest_breed_ID. Focal test: t = -11.3539109905 with inferential df = 331 (332 rearing-brood clusters minus 1); two-sided t-reference p = 1.87748e-25. Fitted n = 2,801 chicks alive and measured at day 14, from 332 experimentally manipulated rearing broods (167 enlarged, 165 reduced). Observation unit: chick. Design: brood-size manipulation analyzed as an enlarged-versus-reduced intent-to-treat contrast; rear_nest_trt 7 unmanipulated broods were excluded because they were not matched comparably. Treatment codes recovered manipulated broods even where net_rearing_manipulation was missing. Recorded hatch-year values were retained unchanged. Estimate is the adjusted enlarged-minus-reduced difference in day-14 weight.",
+      "predictor": "enlarged_vs_reduced: 1 if rear_nest_trt == 5 (experimentally enlarged rearing brood), 0 if rear_nest_trt == 6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 21,
+      "estimate": -1.0161397606101648,
+      "se": 0.08950857134909256,
+      "note": "Native outcome scale: grams of day-14 mass. OLS model: day_14_weight ~ competition_contrast + categorical hatch_year fixed effects. The focal competition_contrast was +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6), so its coefficient is the full year-adjusted enlarged-minus-reduced mean contrast. Unmanipulated broods (rear_nest_trt=7) were excluded because they were not systematically matched to manipulated broods. No post-treatment brood-size variables were adjusted for. Standard error is a finite-sample-corrected sandwich SE clustered by year::rear_nest_breed_ID, the treatment-assignment unit. Test statistic: t=-11.352429664496778; inferential df=332 (333 rearing-brood clusters). Fitted n=2801 chicks (1742 enlarged, 1059 reduced), from 333 rearing broods (167 enlarged, 166 reduced). Observation unit: chick alive and measured at day 14. Design: experimental brood-size manipulation, analyzed at chick level with breeding-year fixed effects and rearing-brood-clustered robust inference. The estimand is conditional on being alive and measured at day 14.",
+      "predictor": "Assigned sibling-competition contrast: +0.5 for experimentally enlarged rearing brood (rear_nest_trt=5) and -0.5 for experimentally reduced rearing brood (rear_nest_trt=6); a one-unit increase is the enlarged-minus-reduced contrast.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 22,
+      "estimate": -1.0923855095775223,
+      "se": 0.09181141932359696,
+      "note": "Converged REML linear mixed model of day_14_weight (native mass units) among experimentally manipulated broods only: rear_nest_trt 5 (enlarged) and 6 (reduced); unmanipulated broods excluded because they were not systematically matched. Complete cases were used for outcome, treatment, hatch_year, rear_nest_OH, rear_nest_CS, and both nest IDs. Fixed effects were the focal competition contrast, categorical hatch_year, linear rear_nest_OH, and linear rear_nest_CS. Crossed random intercepts were fitted for year-specific rearing-nest and hatch/natal-nest IDs. Fitted n=2,794 chicks; observation unit=chick measured alive at day 14; 332 rearing-nest-year units and 376 hatch-nest-year units. Design=brood-size manipulation with cross-fostering. Focal Wald z=-11.898144235493398; inferential df=not applicable because statsmodels MixedLM uses asymptotic normal Wald inference. The coefficient is the adjusted enlarged-minus-reduced difference in day-14 weight.",
+      "predictor": "Signed experimental sibling-competition contrast: +0.5 for chicks reared in enlarged broods (rear_nest_trt=5) and -0.5 for chicks reared in reduced broods (rear_nest_trt=6); its one-unit coefficient equals enlarged minus reduced.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 23,
+      "estimate": -1.0495803994660275,
+      "se": 0.08832082800104464,
+      "note": "Native outcome scale: recorded day-14 mass. Chick-level OLS: day_14_weight ~ signed enlarged-versus-reduced contrast + pre-manipulation rearing-nest brood size (rear_d0_rear_nest_brood_size) + categorical hatch year. The focal contrast was +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6), so the coefficient is enlarged minus reduced. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods; complete cases were used, excluding 9 otherwise eligible chicks. CR1 standard errors were clustered by year-specific rearing nest. Test: t=-11.883724634619744 with inferential df=330 (331 clusters minus 1). Fitted n=2792 individual chicks in 331 rearing-nest clusters. Observation unit: chick. Design: experimental brood-size manipulation, enlarged versus reduced broods, adjusted for year and pre-manipulation brood size.",
+      "predictor": "Signed experimental sibling-competition contrast: +0.5 if rear_nest_trt=5 (enlarged brood), -0.5 if rear_nest_trt=6 (reduced brood); coefficient equals adjusted enlarged-minus-reduced day-14 mass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 24,
+      "estimate": -1.0161397606101648,
+      "se": 0.0856650476459459,
+      "note": "Native outcome scale: day_14_weight (mass units as recorded). Fitted OLS at the chick level: day_14_weight ~ competition_contrast + categorical hatch_year, with finite-sample-corrected two-way cluster-robust covariance by rearing nest and hatch (natal) nest, V_rearing + V_hatch - V_intersection. The focal contrast was coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced broods (rear_nest_trt=6), so its coefficient is enlarged minus reduced. Unmanipulated broods (rear_nest_trt=7) were excluded because they were not systematically matched to manipulated broods. No post-treatment brood-size variables were adjusted for. Fitted n=2,801 chicks; 332 rearing nests (167 enlarged, 165 reduced); 377 hatch nests. Observation unit: chick. Design: experimental brood-size manipulation/cross-fostering, intention-to-treat enlarged-versus-reduced comparison among chicks alive and measured at day 14. Test statistic: t=-11.8617778024; inferential df=331, conservatively defined as min(332 rearing-nest clusters, 377 hatch-nest clusters)-1. Two-sided p=2.7601e-27.",
+      "predictor": "+0.5 if assigned to an experimentally enlarged rearing brood (rear_nest_trt=5), and -0.5 if assigned to an experimentally reduced rearing brood (rear_nest_trt=6); coefficient equals the adjusted mean day-14 weight contrast enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 25,
+      "estimate": -1.0161397606101599,
+      "se": 0.08566926300866161,
+      "note": "Outcome: day_14_weight (grams), analyzed as a day-14 endpoint because no earlier individual mass was supplied. Fitted n=2,801 chicks alive and measured at day 14: 1,742 from enlarged and 1,059 from reduced broods. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Model: OLS day_14_weight ~ enlarged_vs_reduced + categorical hatch_year. Covariance: finite-sample-corrected two-way cluster-robust sandwich by year-qualified rearing nest (333 clusters) and year-qualified hatch/natal nest (378 clusters). Observation unit: chick. Experimental design: brood-size manipulation with cross-fostering; focal comparison is assignment to enlarged versus reduced rearing broods. Native effect = -1.0161397606 g, SE = 0.0856692630 g; Wald z = -11.8611941427; inferential df = infinity (asymptotic normal reference). No post-treatment brood-size or survival variables were adjusted for.",
+      "predictor": "enlarged_vs_reduced indicator: 1 if rear_nest_trt == 5 (experimentally enlarged rearing brood), 0 if rear_nest_trt == 6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 26,
+      "estimate": -1.0161397606101599,
+      "se": 0.08566504764594543,
+      "note": "Native outcome scale: grams of day-14 body mass. Fitted chick-level OLS among experimentally manipulated broods only, with competition_enlarged and categorical hatch-year fixed effects; uncertainty used a two-way cluster-robust covariance by rearing nest and hatch/natal nest with finite-cluster covariance corrections. Unmanipulated rear_nest_trt=7 broods were excluded because they were not systematically matched to manipulated broods. Complete cases were required for mass, year, rearing-nest ID, and natal-nest ID; all eligible treatment-group chicks were complete. Fitted n=2,801 chicks (observation unit: chick measured at day 14), from 332 rearing nests and 377 natal nests. Design: brood-size manipulation/cross-fostering experiment analyzed as enlarged-versus-reduced assignment. Wald z=-11.861777802422717; inferential df: asymptotic normal (infinite). The estimate is the year-adjusted enlarged-minus-reduced mean difference; no adjustment was made for post-treatment realized brood size.",
+      "predictor": "competition_enlarged: 1 = rear_nest_trt 5 (experimentally enlarged rearing brood), 0 = rear_nest_trt 6 (experimentally reduced rearing brood); exact signed contrast is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 27,
+      "estimate": -1.11799289111931,
+      "se": 0.09016654944417035,
+      "note": "Native effect: -1.11799 g (HC2 SE 0.09017 g); robust t = -12.3992 with 325 residual/inferential df (two-sided t-reference p = 3.58e-29). Fitted n = 331 rearing broods (166 enlarged, 165 reduced), comprising brood mean day-14 weights from 2,792 measured chicks; observation unit = rearing brood. Design = brood-size manipulation experiment, analyzed as brood-level OLS among experimentally manipulated broods only. Outcome was mean day_14_weight (grams) per hatch_year \u00d7 rear_nest_breed_ID. The focal predictor was an indicator for assigned rearing treatment (1 = rear_nest_trt 5, experimentally enlarged; 0 = rear_nest_trt 6, experimentally reduced), giving the adjusted enlarged-minus-reduced contrast. Covariates were categorical hatch_year, rear_d0_rear_nest_brood_size (pre-manipulation brood size), and rear_nest_OH (rearing-nest hatch date). HC2 heteroskedasticity-robust covariance with finite-sample t inference was used. Unmanipulated broods (rear_nest_trt 7) were excluded because they were not systematically matched; 2 of 333 manipulated broods were excluded for missing adjustment data. The fitted endpoint measures mass among chicks alive and measured at day 14, so it does not incorporate pre-day-14 mortality into the growth outcome.",
+      "predictor": "Indicator contrast: experimentally enlarged rearing brood (rear_nest_trt = 5, coded 1) minus experimentally reduced rearing brood (rear_nest_trt = 6, coded 0)",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 28,
+      "estimate": -0.169882188391986,
+      "se": 0.014126918003691235,
+      "note": "Primary model: OLS for day_14_weight in its recorded native units among 2,709 day-14 chicks from experimentally enlarged or reduced broods with observed net manipulation and complete model variables. Model: day_14_weight ~ net_rearing_manipulation + rear_nest_CS + rear_nest_OH + categorical rearing year. Year was assigned as the modal hatch_year within rearing nest, correcting one inconsistent chick record. Seven otherwise eligible chicks from one rearing nest were excluded because rear_nest_CS was missing; unmanipulated broods and 85 chicks in 13 manipulated nests lacking net manipulation were excluded. Covariance was two-way cluster-robust by rearing nest and natal nest. Native effect = -0.1698822 weight units per net chick added; SE = 0.0141269; t = -12.0254; inferential df = 317, defined conservatively as min(318 rearing clusters, 361 natal clusters)-1. Fitted n = 2,709 chicks; observation unit = chick; experimental unit/exposure cluster = rearing nest; design = enlarged/reduced brood-size manipulation with crossed fostering. A categorical-dose diagnostic showed irregular departures from linearity, with only one rearing nest at each of doses -1 and +1; the prespecified signed linear dose coefficient was retained.",
+      "predictor": "net_rearing_manipulation = rear_Cs_in minus rear_Cs_out (equivalently, net chicks added to the rearing brood); coefficient is per +1 chick, with positive values denoting more assigned siblings",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 29,
+      "estimate": -1.0784179574436568,
+      "se": 0.09393589264157096,
+      "note": "Linear mixed-effects model (REML) of day-14 weight in grams among 2,801 measured chicks assigned to experimentally enlarged or reduced rearing broods. Fixed effects were the signed competition contrast and categorical hatch year (2001 reference; indicators for 2002 and 2003). Crossed random intercepts were fitted for rearing nest and hatch (natal) nest. The analysis included 332 rearing nests and 377 hatch nests. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. No adjustment was made for post-treatment brood size, mortality, or other post-treatment variables. The focal estimate is enlarged minus reduced on the native gram scale. Asymptotic normal test: z = -11.480360990005723, inferential df = infinity. Observation unit: chick; treatment assignment unit: rearing brood. Design: randomized brood-size manipulation with cross-fostering. Model converged.",
+      "predictor": "Signed experimental sibling-competition contrast: +0.5 for chicks reared in enlarged broods (rear_nest_trt = 5) and -0.5 for chicks reared in reduced broods (rear_nest_trt = 6); its coefficient is exactly the adjusted day-14 mass contrast enlarged minus reduced.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 30,
+      "estimate": -1.049580399466029,
+      "se": 0.08831446298248706,
+      "note": "Native-scale effect in grams from chick-level OLS: day_14_weight ~ enlarged_vs_reduced + rear_d0_rear_nest_brood_size + categorical hatch_year. Analysis used complete cases among experimentally manipulated broods only, excluding unmanipulated broods because they were not systematically matched. Fitted n=2,792 chicks (observation unit: chick) in 330 rearing-nest treatment clusters: 1,735 chicks/166 nests enlarged and 1,057 chicks/164 nests reduced. Standard error is cluster-robust by rearing nest with finite-sample correction. Test statistic: t=-11.884581; inferential df=329 (clusters minus 1); two-sided p=2.4146e-27. Design: brood-size manipulation by cross-fostering; adjusted enlarged-versus-reduced contrast controlling pre-manipulation rearing-nest brood size and breeding-year fixed effects.",
+      "predictor": "enlarged_vs_reduced indicator: 1 for rear_nest_trt=5, verified to have positive net_rearing_manipulation (experimentally enlarged rearing brood); 0 for rear_nest_trt=6, verified to have negative net_rearing_manipulation (experimentally reduced rearing brood). Coefficient is adjusted enlarged minus reduced day-14 mass.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 31,
+      "estimate": -1.0820804962,
+      "se": 0.0938325275,
+      "note": "Outcome: day_14_weight in grams. Analysis excluded unmanipulated broods (rear_nest_trt=7) and compared experimentally enlarged (5) with experimentally reduced (6) broods. Chick masses were averaged within rear_nest_breed_ID so each rearing brood was one observation. OLS modeled brood mean day-14 mass as enlarged indicator plus categorical breeding-year fixed effects, with HC2 heteroskedasticity-robust covariance and finite-sample t inference. One rearing brood ID (203455) appeared on one chick labeled 2002 and seven labeled 2003 despite identical nest, parent, treatment, date, and brood fields; these records were consolidated as one brood and assigned modal year 2003. Native effect = -1.0820804962 g, HC2 SE = 0.0938325275 g; t = -11.5320403828, inferential residual df = 328; fitted n = 332 rearing-brood means (167 enlarged, 165 reduced), summarizing 2,801 chicks alive and measured at day 14. Observation unit: rearing brood. Design: brood-size manipulation experiment analyzed by year-adjusted brood-level OLS. The estimate pertains to day-14 survivors and does not adjust for realized day-14 brood size, a post-treatment variable.",
+      "predictor": "Indicator contrast: 1 for experimentally enlarged rearing brood (rear_nest_trt=5) minus 0 for experimentally reduced rearing brood (rear_nest_trt=6); coefficient is the enlarged-minus-reduced difference in brood mean day-14 mass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 32,
+      "estimate": -1.0497644984,
+      "se": 0.088323052,
+      "note": "Native outcome: recorded day_14_weight units. Corrected primary model: chick-level OLS among experimentally enlarged (rear_nest_trt=5) and reduced (rear_nest_trt=6) broods, with categorical hatch_year and pre-treatment rear_d0_rear_nest_brood_size covariates; unmanipulated broods and rows missing model variables excluded. Small-sample-corrected SE clustered by raw rear_nest_breed_ID. Signed t=-11.8855098 with inferential df=329 (330 rearing-brood clusters minus 1); fitted n=2,792 chicks, the observation unit. Design: randomized enlarged-versus-reduced rearing-brood comparison. One demonstrable year miscoding was corrected: all eight chicks in rear_nest_breed_ID 203455 were assigned hatch_year=2003 because seven were already coded 2003 and all shared identical brood metadata. The year-only sensitivity model was similar (estimate -1.0161398, SE 0.0895086).",
+      "predictor": "Indicator equal to 1 for rear_nest_trt=5 (experimentally enlarged rearing brood; more sibling competition) and 0 for rear_nest_trt=6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced day-14 weight.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 33,
+      "estimate": -1.0840068284204083,
+      "se": 0.0937116010481077,
+      "note": "Outcome: mean day-14 mass (g) within each year \u00d7 rearing-nest brood. Model: OLS on 333 experimental rearing broods (2,801 chicks), with categorical hatch-year fixed effects, HC2 heteroskedasticity-robust covariance, and residual-df t inference. Focal test: robust t = -11.56747741257695, df = 329. Observation unit: year \u00d7 rearing-nest brood. Design: randomized brood-size manipulation contrast, weighting each brood equally. Included rear_nest_trt 5 and 6; excluded unmanipulated rear_nest_trt 7 because those broods were not comparably matched. Day-14 mass was complete among included chicks. No adjustment for post-treatment brood size or survival. Native effect is grams and was not converted to another effect-size scale.",
+      "predictor": "enlarged_vs_reduced indicator: 1 = experimentally enlarged rearing brood (rear_nest_trt 5), 0 = experimentally reduced rearing brood (rear_nest_trt 6); coefficient is adjusted enlarged minus reduced difference in brood-mean day-14 mass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 34,
+      "estimate": -1.0161397606101648,
+      "se": 0.08566926300866208,
+      "note": "Native outcome scale: grams of day-14 weight. Signed Wald t = -11.8611941427; inferential df = 332, conservatively defined as the smaller of the two cluster counts minus one. Fitted n = 2,801 chicks alive and measured at day 14 (observation unit: chick), from 333 year-qualified rearing-nest clusters and 378 year-qualified hatch-nest clusters. Design: brood-size manipulation, restricted to experimentally enlarged (rear_nest_trt=5; 1,742 chicks) and reduced (rear_nest_trt=6; 1,059 chicks) rearing broods; unmanipulated broods excluded because they were not systematically matched. Model: chick-level OLS of day_14_weight on the focal contrast and categorical hatch_year fixed effects, with finite-sample-corrected two-way cluster-robust covariance by year-qualified rearing nest and hatch nest. No post-treatment brood-size, survival, sex, or other chick covariates were included. The estimate pertains to chicks alive and measured at day 14 and does not incorporate mortality before measurement.",
+      "predictor": "competition_contrast constructed as +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); its coefficient is exactly the adjusted mean day-14-weight contrast enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 35,
+      "estimate": -1.08203344755,
+      "se": 0.0892467707867,
+      "note": "Native-scale linear mixed model of day_14_weight (grams), fitted by REML to 2,801 chicks alive and measured at day 14 in experimentally enlarged or reduced rearing broods (1,742 enlarged; 1,059 reduced). Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Fixed effects were the signed enlarged-versus-reduced competition contrast and categorical hatch year; crossed random intercepts were included for rearing nest (333 nests) and hatch/natal nest (378 nests). No adjustment was made for realized brood size or other post-treatment variables. Focal estimate = enlarged minus reduced mean day-14 mass, conditional on the model: -1.08203344755 g, SE 0.0892467707867 g. Test: asymptotic Wald z = -12.124062731; inferential df = infinity. Observation unit: chick. Design: randomized brood-size manipulation with cross-fostering; chick-level mixed model. The model converged.",
+      "predictor": "competition_contrast coded +0.5 for rear_nest_trt=5 (experimentally enlarged rearing brood) and -0.5 for rear_nest_trt=6 (experimentally reduced rearing brood); its one-unit coefficient is exactly enlarged minus reduced in day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 36,
+      "estimate": -1.0161397606101599,
+      "se": 0.08950857134909213,
+      "note": "Native outcome scale: grams of day-14 weight. Chick-level OLS model: day_14_weight ~ enlarged_vs_reduced + C(hatch_year). Analysis included 2,801 chicks alive and measured at day 14 in 333 experimentally enlarged or reduced rearing-brood clusters; unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Treatment was analyzed by assigned rear_nest_trt category, retaining manipulated broods with missing net_rearing_manipulation. Standard errors were finite-sample-corrected cluster-robust by hatch_year \u00d7 rear_nest_breed_ID, with cluster-df-corrected t inference: t = -11.3524296645, df = 332. Observation unit: chick. Design: experimental assigned rearing-brood enlarged-versus-reduced contrast. The negative estimate means chicks assigned to enlarged broods weighed 1.0161 g less at day 14 than chicks assigned to reduced broods, conditional on breeding-year fixed effects.",
+      "predictor": "enlarged_vs_reduced: 1 for assigned enlarged rearing brood (rear_nest_trt = 5), 0 for assigned reduced rearing brood (rear_nest_trt = 6); coefficient is the enlarged-minus-reduced contrast",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 37,
+      "estimate": -1.08157276188,
+      "se": 0.0893831340561,
+      "note": "Native outcome: recorded day_14_weight. REML linear mixed-effects model: day_14_weight ~ competition_contrast + categorical hatch_year, with crossed random intercepts for rear_nest_breed_ID and hatch_nest_breed_ID. Analysis included experimentally enlarged (rear_nest_trt=5) and reduced (rear_nest_trt=6) broods and excluded unmanipulated broods because they were not systematically matched to manipulated broods. Fitted n=2,801 chicks (observation unit: chick alive and measured at day 14), from 332 rearing nests and 377 natal nests. Design: brood-size manipulation experiment with cross-fostering. Effect=-1.08157276188 and SE=0.0893831340561 in the native day-14-weight scale; Wald z=-12.1004121561, inferential df=infinity (asymptotic Wald z). Model converged, optimizer code 0, no convergence messages, and fit was not singular. No conversion to another effect-size scale.",
+      "predictor": "competition_contrast coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); coefficient is exactly adjusted mean day-14 weight in enlarged broods minus adjusted mean day-14 weight in reduced broods",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 38,
+      "estimate": -1.0161397606101648,
+      "se": 0.08566504764594587,
+      "note": "Native outcome: day_14_weight (recorded mass units). Fitted chick-level OLS: day_14_weight ~ competition_contrast + categorical hatch_year, restricted to experimentally enlarged (rear_nest_trt=5) and reduced (rear_nest_trt=6) broods; unmanipulated broods excluded because they were not systematically matched. No adjustment for post-treatment brood sizes. Two-way finite-correction cluster-robust sandwich SE by rearing nest and hatch (natal) nest. Test: t=-11.861777802422711, inferential df=min(332 rearing nests, 377 hatch nests)-1=331, p=2.7601094516029465e-27. Fitted n=2,801 day-14 chicks (observation unit: chick), in 332 manipulated rearing nests (167 enlarged, 165 reduced). Design: randomized enlarged-versus-reduced brood-size manipulation with cross-fostering; chick-weighted marginal contrast among measured day-14 survivors.",
+      "predictor": "Assigned sibling-competition contrast coded +0.5 for experimentally enlarged rearing broods and -0.5 for experimentally reduced rearing broods; coefficient is exactly mean day-14 weight in enlarged minus reduced assignment, adjusted for categorical hatch year.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 39,
+      "estimate": -1.0840068284204056,
+      "se": 0.09371160104810769,
+      "note": "Native effect: -1.0840068284204056 g; HC2 robust SE: 0.09371160104810769 g. Robust Wald z = -11.567477412576924; asymptotic inferential df not applicable (fitted OLS residual df = 329). Fitted n = 333 rearing-brood observations (167 enlarged, 166 reduced), comprising mean day-14 weights from 2,801 chicks. Observation unit: rearing-nest-by-year brood mean. Design/model: unweighted brood-level OLS of mean day-14 weight on the signed enlarged-versus-reduced contrast and categorical hatch-year fixed effects, with HC2 heteroskedasticity-robust covariance. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods; assigned enlarged/reduced broods were retained even if exact net manipulation was missing. Outcome was complete. The coefficient is the year-adjusted enlarged-minus-reduced difference in brood mean day-14 mass.",
+      "predictor": "Assigned rearing-brood competition contrast: +0.5 for experimentally enlarged broods (rear_nest_trt = 5) and -0.5 for experimentally reduced broods (rear_nest_trt = 6), so a one-unit contrast equals enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 40,
+      "estimate": -1.0161397606101648,
+      "se": 0.08566504764594587,
+      "note": "Native effect: -1.01614 g; SE 0.0856650 g. Wald z = -11.8618, inferential df = infinite (asymptotic normal). Fitted n = 2,801 chicks (observation unit: one day-14 chick), from 332 rearing nests and 377 natal hatch nests; 1,742 chicks were in enlarged and 1,059 in reduced broods. Design/model: randomized enlarged-versus-reduced brood-size manipulation analyzed by chick-level OLS of day_14_weight (grams) on the signed competition contrast and categorical hatch year, with finite-sample-corrected two-way cluster-robust covariance by rearing nest and natal hatch nest. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Required variables were day_14_weight, rear_nest_trt, hatch_year, rear_nest_breed_ID, and hatch_nest_breed_ID; no eligible enlarged/reduced chick was excluded for missingness. The focal coefficient is exactly enlarged minus reduced; no effect-size conversion was applied.",
+      "predictor": "Signed assigned brood-competition contrast: +0.5 for experimentally enlarged rearing brood (rear_nest_trt = 5) and -0.5 for experimentally reduced rearing brood (rear_nest_trt = 6); coefficient equals adjusted mean day-14 mass in enlarged broods minus that in reduced broods.",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 41,
+      "estimate": -1.0819115827165913,
+      "se": 0.08868589270377024,
+      "note": "Gaussian linear mixed model fitted by maximum likelihood to day_14_weight for all 2,801 chicks measured at day 14 in experimentally enlarged (rear_nest_trt=5) or reduced (rear_nest_trt=6) broods; unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Fixed effects were the signed assignment contrast and categorical hatch_year (2001 reference). Crossed random intercepts were included for 333 rearing-nest-year units and 378 hatch-nest-year units to represent shared rearing environment and natal origin under cross-fostering. No adjustment was made for achieved brood size because it is post-treatment. Native-scale effect = -1.0819116 day-14 weight units, SE = 0.0886859; asymptotic Wald z = -12.1993651; inferential df = not defined for the asymptotic Wald z. Observation unit: chick. Design: enlarged-versus-reduced brood-size manipulation with cross-fostering. The fit converged across four starting values; estimated variance components were 0.56914 for rearing-nest-year, 0.14288 for hatch-nest-year, and 0.51078 residual.",
+      "predictor": "competition_assignment coded +0.5 for experimentally enlarged rearing broods and -0.5 for experimentally reduced rearing broods; its coefficient is exactly the year-adjusted enlarged-minus-reduced contrast in mean day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 42,
+      "estimate": -1.0375034391106719,
+      "se": 0.08847177864403377,
+      "note": "Native-scale effect on day-14 weight in grams. Chick-level OLS among experimentally enlarged and reduced broods only; unmanipulated broods were excluded because they were not selected through the same matching procedure. Outcome: day_14_weight. Fixed effects: enlarged-versus-reduced assignment, categorical hatch_year, rear_nest_CS, and rear_nest_OH centered within hatch year. Cluster-robust covariance used 332 rearing brood-year units constructed as (hatch_year, rear_nest_breed_ID). Complete cases gave n=2,794 chicks (166 enlarged and 166 reduced fitted brood-year units); 7 otherwise eligible chick rows were excluded for missing covariates, removing one entire enlarged brood-year unit. Observation unit: chick; assignment/dependence unit: rearing brood-year. Focal large-sample cluster-robust z = -11.726942252230142 with infinite/normal-reference inferential df. The estimate is the adjusted enlarged-minus-reduced mean difference: -1.037503 g, SE 0.088472 g.",
+      "predictor": "enlarged_vs_reduced = 1 if assigned rearing-brood treatment was enlarged (rear_nest_trt = 5), and 0 if assigned treatment was reduced (rear_nest_trt = 6); coefficient is the enlarged-minus-reduced contrast in day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 43,
+      "estimate": -1.08157276196904,
+      "se": 0.0893831406953525,
+      "note": "Outcome: day_14_weight (grams). REML Gaussian linear mixed model among experimentally manipulated broods only, with fixed effects for the enlarged-vs-reduced indicator and categorical hatch_year, plus crossed random intercepts for rear_nest_breed_ID and hatch_nest_breed_ID. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods. Complete-case fitted n=2,801 chicks (1,742 enlarged, 1,059 reduced), from 332 rearing nests and 377 natal nests. Observation unit: chick; treatment/design unit: experimentally manipulated rearing brood in a cross-fostering design. Native effect = -1.08157276196904 g, SE = 0.0893831406953525 g; asymptotic Wald z = -12.100411258264; inferential df = asymptotic/not finite. Model converged with no optimizer messages and was nonsingular.",
+      "predictor": "enlarged_vs_reduced indicator: 1 if rear_nest_trt = 5 (experimentally enlarged rearing brood), 0 if rear_nest_trt = 6 (experimentally reduced rearing brood); coefficient is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 44,
+      "estimate": -1.08400682842,
+      "se": 0.0937116010481,
+      "note": "Native effect: -1.0840068 g; HC2 SE: 0.0937116 g. HC2-robust t = -11.5675 with 329 residual inferential df. Fitted n = 333 rearing nests (167 enlarged, 166 reduced), containing 2,801 chicks measured at day 14. Observation and treatment-assignment unit: rearing nest. Design: experimental brood-size manipulation, intention-to-treat enlarged-versus-reduced comparison. For each year-specific rearing nest, day_14_weight was averaged across measured chicks; OLS model was mean_day14_weight ~ enlarged + C(hatch_year), with HC2 heteroskedasticity-consistent SE. The focal predictor was coded 1 for assigned enlarged treatment (rear_nest_trt=5) and 0 for assigned reduced treatment (rear_nest_trt=6), so the coefficient is enlarged minus reduced. Unmanipulated nests (rear_nest_trt=7) were excluded because they were not systematically matched to manipulated nests. Treated nests were retained despite missing net_rearing_manipulation because assigned treatment defined the intention-to-treat exposure. No adjustment was made for post-treatment brood size or survival.",
+      "predictor": "Indicator for assigned rearing-brood treatment: 1 = experimentally enlarged (rear_nest_trt = 5), 0 = experimentally reduced (rear_nest_trt = 6); focal contrast is enlarged minus reduced in year-adjusted rearing-nest mean day-14 weight",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 45,
+      "estimate": -1.0161397606101599,
+      "se": 0.0894968933135662,
+      "note": "Outcome: day_14_weight (grams). Model: chick-level OLS, day_14_weight ~ enlarged_vs_reduced + categorical hatch_year, with finite-sample-corrected cluster-robust SEs by rear_nest_breed_ID. Focal test: t = -11.35391099051849 with 331 inferential df (332 rearing-nest clusters, using G-1). Fitted n = 2,801 individual chicks: 1,742 chicks in 167 enlarged nests and 1,059 chicks in 165 reduced nests. Observation unit: an individual chick alive and measured at day 14. Design: experimental enlarged-versus-reduced brood-size manipulation. Unmanipulated broods (rear_nest_trt=7) were excluded because they were not systematically matched to manipulated broods; fitted variables were otherwise required complete. The estimate is the hatch-year-adjusted enlarged-minus-reduced mean difference in day-14 mass, in the model's native gram scale.",
+      "predictor": "Indicator coded 1 for experimentally enlarged rearing brood (rear_nest_trt=5) and 0 for experimentally reduced rearing brood (rear_nest_trt=6); coefficient is the signed enlarged-minus-reduced contrast",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 46,
+      "estimate": -0.184704032475,
+      "se": 0.0145701524738,
+      "note": "Gaussian linear mixed model fitted by REML to day_14_weight for 3,315 chicks alive and measured at day 14. Fixed effects were signed net_rearing_manipulation, pre-manipulation brood size reconstructed as rear_Cs_at_start_of_rearing minus net_rearing_manipulation, and categorical hatch year. Crossed random intercepts were included for year-specific rearing nest (453 levels) and year-specific natal nest (498 levels). Complete cases on outcome, focal predictor, reconstructed baseline brood size, year, and both nest IDs were used; no imputation. Brood-size manipulation with cross-fostering; enlarged, reduced, and zero-manipulation broods were retained. Native outcome scale is the recorded day-14 weight unit. Asymptotic Wald z = -12.6768771162; inferential df not applicable. Optimizer convergence code 0; fit was nonsingular.",
+      "predictor": "net_rearing_manipulation: signed number of chicks added to the rearing brood (positive = added, negative = removed, zero = unmanipulated); coefficient is the adjusted mean difference in recorded day-14 weight per one chick added",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 47,
+      "estimate": -1.0161397606101599,
+      "se": 0.0894968933135662,
+      "note": "Native-scale effect on day-14 weight (grams). Chick-level OLS: day_14_weight ~ enlarged_vs_reduced + categorical hatch_year, restricted to experimentally enlarged (rear_nest_trt=5) and reduced (rear_nest_trt=6) broods; no outcome or predictor values were missing in this fitted subset. HC cluster covariance with finite-sample correction, clustered by rear_nest_breed_ID, and t reference distribution. Focal t=-11.35391099051849 with inferential df=331; fitted n=2,801 chicks in 332 rearing broods (167 enlarged, 165 reduced). Observation unit: individual chick alive and measured at day 14. Design: experimental enlarged-versus-reduced brood assignment comparison with breeding-year fixed effects. The result is conditional on day-14 survival/measurement and is an assignment contrast, not a per-sibling dose effect. Model residual df=2797.",
+      "predictor": "enlarged_vs_reduced = 1 for experimentally enlarged rearing brood (rear_nest_trt=5) and 0 for experimentally reduced rearing brood (rear_nest_trt=6); coefficient is enlarged minus reduced",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 48,
+      "estimate": -1.0840068284204056,
+      "se": 0.09371160104810769,
+      "note": "Native effect: -1.0840068 g (HC2 SE 0.0937116 g). Robust t = -11.5675 with 329 residual df. Fitted n = 333 rearing-nest-by-year experimental units, representing 2,801 day-14 chicks. Observation unit: rearing nest within breeding year. Design: intention-to-treat, unweighted nest-level OLS of mean day_14_weight on competition_contrast plus categorical hatch_year fixed effects, with HC2 heteroskedasticity-robust covariance and t inference. The focal contrast was coded +0.5 for assigned enlarged broods (rear_nest_trt=5) and -0.5 for assigned reduced broods (rear_nest_trt=6), so its coefficient is exactly enlarged minus reduced mean day-14 mass. The 120 unmanipulated broods (rear_nest_trt=7) were excluded because they were not systematically matched to manipulated broods. No manipulated nest was excluded; assignment category was used even where numeric net_rearing_manipulation was missing. Nest means were not weighted by the post-treatment number of surviving measured chicks.",
+      "predictor": "competition_contrast: +0.5 for assigned enlarged rearing brood (rear_nest_trt=5) and -0.5 for assigned reduced rearing brood (rear_nest_trt=6); coefficient is enlarged minus reduced mean day-14 mass",
+      "orientation": "as_declared"
+    },
+    {
+      "seed": 49,
+      "estimate": -1.08157275956,
+      "se": 0.0893831396575,
+      "note": "Native-scale focal effect from a REML Gaussian linear mixed model of day_14_weight (grams) among chicks in experimentally enlarged or reduced broods only. Fixed effects were the signed competition contrast and categorical hatch year; crossed random intercepts were included for rearing nest and hatch/natal nest. No required model variables were missing. The fit used 2,801 chicks (1,742 enlarged, 1,059 reduced), 332 rearing nests (167 enlarged, 165 reduced), and 377 natal nests. Observation unit: chick measured at day 14. Design: two-arm randomized brood-size manipulation comparison. The fitted effect was -1.0815728 g with SE 0.0893831 g; signed asymptotic Wald t/z = -12.1004, with no finite denominator df supplied by the native lme4 fit. The model converged without messages and was not singular. Unmanipulated broods were excluded because they were not systematically matched to manipulated broods.",
+      "predictor": "competition_contrast coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6); its coefficient is exactly the adjusted day-14 weight contrast enlarged minus reduced, in grams",
+      "orientation": "as_declared"
+    }
+  ],
+  "envelope": [
+    -1.11799289111931,
+    -0.169882188391986
+  ],
+  "width": 0.948110702727324,
+  "q05_q95": [
+    -1.0840068284204072,
+    -0.5579276529296129
+  ],
+  "width_q05_q95": 0.5260791754907943,
+  "iqr": [
+    -1.08157276194678,
+    -1.0161397606101599
+  ],
+  "width_iqr": 0.06543300133662022,
+  "median": -1.0162266194221232,
+  "unique_ends": 12,
+  "mean": -0.9926019414596103,
+  "usd": 7.6946396,
+  "n_failed_reports": 0
+}

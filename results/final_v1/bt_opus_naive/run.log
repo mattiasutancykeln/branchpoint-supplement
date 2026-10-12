@@ -1,0 +1,18 @@
+
+--- launch 2026-08-30 03:41:46 ---
+{
+  "mode": "naive",
+  "dataset": "bt",
+  "model": "claude-opus-5",
+  "n_reported": 50,
+  "envelope": [
+    -0.1840314,
+    -0.05199
+  ],
+  "width": 0.1320414,
+  "width_q05_q95": 0.11538461099999998,
+  "width_iqr": 0.11520999999999999,
+  "median": -0.18045,
+  "unique_ends": 8,
+  "usd": 9.90595
+}

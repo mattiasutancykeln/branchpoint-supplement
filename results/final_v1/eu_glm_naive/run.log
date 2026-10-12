@@ -1,0 +1,18 @@
+
+--- launch 2026-08-30 04:04:39 ---
+{
+  "mode": "naive",
+  "dataset": "eu",
+  "model": "openrouter/z-ai/glm-5.3",
+  "n_reported": 49,
+  "envelope": [
+    -0.1879,
+    0.01704714189994
+  ],
+  "width": 0.20494714189994,
+  "width_q05_q95": 0.0692988,
+  "width_iqr": 0.0076,
+  "median": -0.005311,
+  "unique_ends": 26,
+  "usd": 3.6934184
+}

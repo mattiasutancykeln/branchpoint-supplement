@@ -1,0 +1,70 @@
+# BRANCHPOINT SAMPLER-JUDGE PROMPTS ONLY. The dataset analyst never receives
+# these prompts; Layer-1 analyst prompts live in harness/protocol.toml.
+[sampler]
+cap = 80
+strikes = 2
+seed = 7
+workers = 10
+allocation = "uniform"
+branching_method = "replay"
+
+[intervention]
+note = """For {decision}, do not use any approach in this JSON list: {bans}. Choose a different defensible approach; everything else remains yours to decide."""
+
+[detect]
+prompt = """Research question:
+{question}
+
+Analysis transcript (only NEW events may yield decisions):
+{transcript}
+
+Return at most four consequential contestable analytical decisions. State each decision as a neutral open question naming the axis of choice, not the choice taken: begin it with "Which", "What", or "How", never with "Should", "Is", "Was", "Does", or "Whether". `approach` must be the bare approach actually taken, suitable after "do not"; never return an alternative, a negation prefix, or a comparison. `evidence` must quote the transcript fragment proving that approach was actually taken."""
+
+[detect.schema]
+type = "object"
+additionalProperties = false
+required = ["decisions"]
+
+[detect.schema.properties.decisions]
+type = "array"
+maxItems = 4
+
+[detect.schema.properties.decisions.items]
+type = "object"
+additionalProperties = false
+required = ["event_i", "decision", "approach", "evidence"]
+
+[detect.schema.properties.decisions.items.properties.event_i]
+type = "integer"
+
+[detect.schema.properties.decisions.items.properties.decision]
+type = "string"
+
+[detect.schema.properties.decisions.items.properties.approach]
+type = "string"
+
+[detect.schema.properties.decisions.items.properties.evidence]
+type = "string"
+
+[review]
+prompt = """Decision: {decision}
+Approaches already seen: {bans}
+
+New analysis transcript:
+{transcript}
+
+Methods note:
+{note}
+
+Decide only whether this analysis resolved the named decision differently from every listed approach. A rename or trivial variation is not novel. Do not judge defensibility. Return a short bare label for the approach actually taken."""
+
+[review.schema]
+type = "object"
+additionalProperties = false
+required = ["novel", "approach"]
+
+[review.schema.properties.novel]
+type = "boolean"
+
+[review.schema.properties.approach]
+type = "string"

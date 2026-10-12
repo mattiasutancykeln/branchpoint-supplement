@@ -1,0 +1,16 @@
+{
+  "protocol_version": 6,
+  "dataset": "bt",
+  "model": "openrouter/z-ai/glm-5.3",
+  "mode": "naive",
+  "allocation": "uniform",
+  "seed": 7,
+  "judge_model": "gpt-5.6-sol",
+  "effort": "low",
+  "workers": 6,
+  "provider_route": [
+    "friendli"
+  ],
+  "branching_method": "not_applicable",
+  "agent_interface": "native"
+}

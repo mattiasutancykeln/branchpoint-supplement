@@ -1,0 +1,255 @@
+{
+  "condition": "bt_glm_naive",
+  "dataset": "bt",
+  "judge_model": "gpt-5.6-sol",
+  "input_digests": {
+    "seed000": "103d4d9fb692b18f664908fb78be00ff6dd00c040b4c0f80d4f6bdeea7180ad3",
+    "seed001": "50028aff9ee500099624792d2c69f1ef98bdf33b071811a5aa33868bff54c30c",
+    "seed002": "371e2483990794cd693e0a8b30f953a2910a17b5f9b62bc5a792776bae97fd71",
+    "seed005": "17ea0f641a975c8e7adb486f9af6763f6f33e0f4ec2f2d54071d1a8c8114beb4",
+    "seed006": "608adb8e3fa2d61d25bf6040967245af2aa10354cd4395e884143f3d4918e2d7",
+    "seed008": "9b6161343c04e879d112b5cb488c2de8b18779e645b8f58a620c8e31dfb1e5e4",
+    "seed009": "541a032034d8d727c89cbd5a067a5c66555e833070ae613a230e23f37078fda8",
+    "seed010": "66f5da91eebdfb98378f5fdc842ebcafc598b0df7ee38710c676c21ffa5a68b2",
+    "seed011": "f76a6c984588e88c9500e22f021ca0b858a679b0f90cc451e6e571fc6e2e4d3a",
+    "seed012": "0724eeda4fd761802ef6fbdb2bbbdf927142cf8672aa0c1e9153141474968091",
+    "seed013": "c84b7f50cbd091a489002b273b0c0c702554efc87d1e4c91c5640098f830d24d",
+    "seed014": "c31b474b8009a1fc46615e12d3cda87b1ae88adb788072d16c0a47ce97b5f5b3",
+    "seed015": "74a179c86863a3bd09729739b05569febe87ab8d296c90a96fc40ffe4b63ead2",
+    "seed016": "d3ce80d2f970187628d267a717264e9a9862ba6632d1da4509b87209e3e95b74",
+    "seed017": "26040c1d95eb5719850ecd5f2aae3064aa7862055be70d522ea6c34fedef2b84",
+    "seed019": "b69c09f44f82e219b59a44a417a7042fd4cf702326787c6d9fdac82e2b109645",
+    "seed020": "52d2c042c9e9c629d5e2e83e2af33b94349b9c3c8e4246a572249d0c1017b98e",
+    "seed021": "7c5f36742ff621566bac7de254e422144675519a7cf11f1957284876214964f8",
+    "seed022": "b6166848b44f8ad47a9defe6b36f9c1f4568dada0320465eaa2041b28d7ea6d4",
+    "seed023": "03c10fa728dc97f7cbc885dbd9c14b50d396bd32aa3a5aca8f7c9ad04aa990eb",
+    "seed024": "f79a051355a1aa39a3d5ffe0d35b901f678866a912f71853bf521942ae388ebd",
+    "seed025": "653e791d7aba65f7e55a5332a760766e951333efe88365f31349b4163af0bdc0",
+    "seed026": "2e2826acbd1a33ccc4f1044ae32e109313e643277b9cd0f2c9edaff8366fef67",
+    "seed027": "ac09358c5b83e31d5e2436392f2763869fb69abcf884d1823bdf6b19bc799d27",
+    "seed028": "27eb58ba5b11cdde3793b6de51a0a551d9cae461ceddf359dbd618302b991efe",
+    "seed029": "2213a1cf30ee9fa70100de42ce4ee5788f181c378834c331e381245f993c4e27",
+    "seed032": "7bb31f73063fe5382b61af3bd957a2beedd5096dacf3f7ff47a2312fe6882322",
+    "seed033": "c0fcca629586d2a4203602a40e0d50721aa123673df02a5bfe2af863af4cac34",
+    "seed035": "9a51671e23e46c23648db3870d1dbb6ffd8bc3f0405ec00a380536710f51e679",
+    "seed036": "dfa6b2084cd31967fabeb1686352f72ac44a1e2ad2529a97e8ad5ab17b1a1c05",
+    "seed038": "072304be0a9084442199637d6b491b8df5b19723eab946be57aa32d90a341c63",
+    "seed040": "aa5c5ae5cd52e870fae05a15bedf2d0f61bf67740f8ad5e1f8f0de0ce9476e3f",
+    "seed041": "a430bc7251e2861319c9aa637a825790045c07a08b2b1b5251832c4f3e8b7720",
+    "seed042": "ec617b7b442222e70b84318ab8ecc559373c325c7665f492b3a90039b8905208",
+    "seed043": "fa1d1a3146568bbb7f37cf8dbb78a5715bc466930019e99603a71b569e0a2990",
+    "seed044": "8aed77984371943625c635f4ed59083e7b267f5878f6a87acd3b1bf5817ec0b1",
+    "seed045": "0c56f69219dd6603faae9c815b11438e492e48feec3e2c01e931d7d4aa9d3ef6",
+    "seed046": "3880363b19d0405180adfd77a1e527e47067dcc298e7a8b0d4d20ea954da430e",
+    "seed047": "143a5777361b046d0501026657cd6ea89cac479bb7468ba75d2e6ce0abbeef48",
+    "seed048": "342d003e7035362d6dd092702fbd178094e8717f688a0272fc5603de83bf65a2",
+    "seed049": "0408e544f88a6a854686792d1f7103e5fca28a34ea716b09864ddea15c157d6b"
+  },
+  "scopes": {
+    "seed000": {
+      "scope": "E",
+      "unit_estimated": "Individual chick (3,600 chicks clustered in 435 rearing broods).",
+      "why": "The focal estimate directly addresses the within-frame effect of experimentally imposed sibling competition on day-14 nestling mass. Predictor: net_rearing_manipulation, constructed as the net number of chicks added to the rearing brood (continuous, per chick; negative = brood reduction, 0 = unmanipulated); orientation is as_declared because larger values mean more siblings/competition. REML statsmodels MixedLM: day_14_weight ~ net_rearing_manipulation + hatch_nest_CS + rear_nest_OH + C(hatch_year), with a random intercept for rear_nest_breed_ID. The fitted focal slope is -0.181 g per net chick added (SE 0.016; z = -11.66, p < 0.001; residual df reported as 3,594), on the native linear-model outcome scale. Analysis used listwise-complete observations for weight, manipulation, natal clutch size, rearing-nest hatch date, and year; realized day-14 brood size was excluded as post-treatment. Random-intercept variance was 0.616 and residual variance 0.534."
+    },
+    "seed001": {
+      "scope": "E",
+      "unit_estimated": "Change in an individual chick's day-14 mass (g) per net additional sibling in its rearing brood",
+      "why": "The fitted ML linear mixed model directly targets the declared within-frame effect of sibling competition: net_rearing_manipulation was constructed as chicks added (positive), removed (negative), or zero for unmanipulated broods, so its orientation is as_declared. The focal estimate is -0.182 g per net additional sibling (SE 0.0155; z = -11.73; p = 8.7e-32) on the native gram scale. The model used 3,589 chicks in 434 rearing nests, adjusted for hatch year, natal lay date, and rearing-nest clutch size, with a rearing-nest random intercept; rows missing the focal predictor, lay date, or clutch size were excluded."
+    },
+    "seed002": {
+      "scope": "E",
+      "unit_estimated": "Change in individual chick day-14 weight (g) per net chick added to the rearing brood",
+      "why": "The focal predictor is the experimental net rearing-brood enlargement, oriented so higher values mean more sibling competition, and the outcome is nestling growth represented by day-14 weight. Thus the fitted coefficient directly addresses the declared effect within the stated blue-tit dataset frame; brood clustering and covariate adjustment are analytical choices, not scope changes."
+    },
+    "seed005": {
+      "scope": "E",
+      "unit_estimated": "-0.1806 g of day-14 chick mass per one-chick increase in net_rearing_manipulation (rear-brood chicks added minus removed); rear-nest cluster-robust SE 0.01524 g, 95% CI [-0.211, -0.151], t(439) = -11.85, p = 2.7e-28. Predictor orientation: as_declared, because larger values mean more chicks and thus more sibling competition.",
+      "why": "This directly estimates the declared within-frame effect of experimentally manipulated sibling competition on nestling growth. The fitted chick-level REML linear mixed model was day_14_weight ~ net_rearing_manipulation + C(hatch_year) + C(sex, retaining unknown as a level) + hatch_nest_OH, with a random intercept for rearing nest and rear-nest cluster-robust inference. It used 3,635 chicks in 440 rearing nests from 2001\u20132003, excluding 85 chicks from 13 manipulated nests whose manipulation bookkeeping was missing ('.'). The native model scale is grams of day-14 mass per net chick added."
+    },
+    "seed006": {
+      "scope": "E",
+      "unit_estimated": "Individual-chick day-14 mass: -0.181 g per net cross-fostered chick added to the rearing nest (SE 0.015 g; z = -11.74; approximate 95% CI -0.210 to -0.152 g), on the linear mixed-model scale.",
+      "why": "This answers the declared within-frame estimand: experimentally induced sibling competition is represented by net_rearing_manipulation (negative = reduced, 0 = unmanipulated, positive = enlarged), so larger values mean more competition and the orientation is as_declared. The fitted model was an ML statsmodels MixedLM of day-14 weight in grams on net_rearing_manipulation, C(hatch_year), hatch_nest_OH, and clutch size (hatch_nest_CS filled from rear_nest_CS when missing), with a random intercept for rear_nest_breed_ID. It used 3,600 chicks in 435 rearing nests; excluded 85 chicks in treatments 5/6 with unknown manipulation and 35 lacking both clutch-size measures. Thus each additional rearing-nest chick is estimated to reduce day-14 mass by about 0.181 g."
+    },
+    "seed008": {
+      "scope": "E",
+      "unit_estimated": "Day-14 chick mass in grams per one-chick increase in signed net_rearing_manipulation",
+      "why": "The fitted OLS slope is approximately -0.180 g per chick added (cluster-robust SE approximately 0.015; z = -11.81; analytic n = 3,594 chicks in 434 rearing nests). Predictor: net_rearing_manipulation, constructed as signed net chicks added to the rearing brood (negative=reduced, 0=unmanipulated, positive=enlarged); orientation=as_declared. The model adjusted for rear_nest_OH, rear_nest_CS, and hatch-year dummies, excluded observations with unparseable manipulation or missing rearing-nest clutch size, and clustered SEs by rear_nest_breed_ID. This directly estimates the within-frame effect of experimentally increased sibling competition on nestling growth in the requested native grams-per-chick scale."
+    },
+    "seed009": {
+      "scope": "E",
+      "unit_estimated": "Chick-level day-14 weight, in grams per 1-chick increase in net_rearing_manipulation",
+      "why": "The fitted focal estimate is -0.181 g per net sibling added (SE approximately 0.0156 g, t = -11.63, approximate Satterthwaite df = 431; approximate 95% CI: -0.212 to -0.150 g), on the linear model's native outcome scale. Predictor: net_rearing_manipulation, constructed as the net number of chicks added to the rearing brood by manipulation (range -4 to +4); orientation: as_declared because larger values mean more siblings/competition. Model: REML statsmodels MixedLM of day-14 weight on this predictor, with a random intercept for rear_nest_breed_ID and fixed adjustments for median-imputed natal day-0 brood size, continuous rear_nest_OH, hatch_year factor, molecular-sex factor including an unknown level, and home_or_away factor. The 85 chicks missing the focal exposure were excluded; outcome was complete. The fit used 3,635 chick observations in 439 rearing broods. This directly estimates the declared sibling-competition effect on nestling growth within the stated frame."
+    },
+    "seed010": {
+      "scope": "E",
+      "unit_estimated": "Change in individual chick day-14 mass (grams) per one-chick increase in net_rearing_manipulation; fitted estimate -0.181 g (SE 0.016).",
+      "why": "The fitted mixed model directly relates experimentally manipulated sibling number in the rearing brood to nestling growth within the declared blue-tit dataset. The signed dose is oriented as declared: larger values mean more siblings and thus more sibling competition. The negative coefficient therefore estimates lower day-14 mass with increased competition, on the model's native Gaussian outcome scale."
+    },
+    "seed011": {
+      "scope": "E",
+      "unit_estimated": "-0.1761 g in day-14 mass per 1-chick increase in net_rearing_manipulation (cluster-robust SE 0.0153 g; t = -11.54; df = 438; n = 3,635 chicks; 439 rearing-nest clusters)",
+      "why": "Answers the declared within-frame estimand using the experimental sibling-competition exposure and nestling-growth outcome. Predictor: net_rearing_manipulation in raw chick units (net chicks added to the rearing brood; negative = reduced, 0 = unmanipulated, positive = enlarged). Orientation: as_declared. Model: OLS day_14_weight ~ net_rearing_manipulation + centered rear_nest_OH + C(hatch_year), with CR1 cluster-robust inference by rear_nest_breed_ID and t-based df = clusters - 1. Excluded 85 of 3,720 chicks for missing net_rearing_manipulation; day-14 weight was otherwise complete. Observation unit was chick; treatment codes rear_nest_trt 6/7/5 were checked against the manipulation sign."
+    },
+    "seed012": {
+      "scope": "E",
+      "unit_estimated": "-0.180 g in day-14 chick weight per additional chick imposed in the rearing brood (SE 0.016 g; 95% CI [-0.211, -0.149])",
+      "why": "This directly estimates the declared within-frame effect of experimentally increased sibling competition on nestling growth. Predictor: net_rearing_manipulation, constructed as the signed net number of chicks added to the rearing brood (negative=reduced, 0=unmanipulated, positive=enlarged), entered continuously; orientation: as_declared. Model: ML statsmodels MixedLM, day_14_weight ~ net_rearing_manipulation + hatch_year + sex category + rear_nest_LD + (1 | rear_nest_breed_ID). The fit used 3,583 chicks from 433 rearing broods, excluding 85 rows missing the predictor and 52 missing rear_nest_LD, with missing sex retained as an 'unknown' category. The negative coefficient means more imposed siblings\u2014and thus more sibling competition\u2014produced lower day-14 mass."
+    },
+    "seed013": {
+      "scope": "E",
+      "unit_estimated": "\u22120.084 g in day-14 nestling mass per one-chick increase in d14_rear_nest_brood_size (95% CI: \u22120.112 to \u22120.056 g; z = \u22125.87, p < 0.001).",
+      "why": "This directly estimates the declared effect of realized sibling-competition intensity on nestling growth within the stated blue-tit dataset frame. Predictor: d14_rear_nest_brood_size, the number of chicks alive in the rearing nest at day 14; larger values represent more sibling competition, so orientation is as_declared. The fitted model was a REML statsmodels linear mixed model of day-14 mass in grams, adjusting for hatch year as a factor and rear_nest_OH as a continuous rearing-nest hatch-date covariate, with a random intercept for rear_nest_breed_ID. Chick sex and start-of-rearing brood size were omitted because of missingness. No observations were excluded: 3,720 chicks in 452 rearing nests. Estimated random-intercept variance was 0.794 g\u00b2 and residual variance was 0.538 g\u00b2."
+    },
+    "seed014": {
+      "scope": "E",
+      "unit_estimated": "Grams of day-14 nestling mass per net additional sibling added to the rearing brood",
+      "why": "The fitted OLS slope directly estimates the effect of experimentally induced sibling competition, operationalized as signed net chicks added to the rearing brood, on the represented nestling-growth outcome (day-14 weight) in the dataset\u2019s blue-tit population. Positive predictor values mean more sibling competition, matching the declared orientation. The focal estimate is -0.1774 g per additional sibling with cluster-robust SE 0.0151 (t = -11.77)."
+    },
+    "seed015": {
+      "scope": "E",
+      "unit_estimated": "Change in day-14 nestling mass (g) per one additional chick in the rearing brood: -0.1528 g (95% CI -0.177 to -0.128), on the linear mixed-model scale.",
+      "why": "The predictor `rear_Cs_at_start_of_rearing` directly represents the declared sibling-competition exposure, with larger values meaning more competition (`as_declared`), and day-14 mass is a nestling-growth outcome in the stated blue-tit dataset frame. The fitted REML linear mixed-effects model used 3,333 chicks from 399 rearing nests, adjusted for categorical hatch year and rearing-nest hatch date, and included a rearing-nest random intercept; 387 chicks in 53 nests were excluded because the focal predictor was missing for the entire nest."
+    },
+    "seed016": {
+      "scope": "E",
+      "unit_estimated": "chick-level day-14 mass in grams",
+      "why": "The enlarged-versus-reduced rearing-brood indicator directly contrasts more versus less sibling competition within the stated blue-tit dataset and models the declared day-14 growth outcome. OLS adjusted for centered rearing-nest hatching date and year, excluded unmanipulated broods, and used rearing-nest-clustered inference. The enlarged-brood coefficient is approximately -1.01 g (cluster-robust SE approximately 0.089 g; t(327)=-11.36; approximate 95% CI -1.19 to -0.84 g), so greater sibling competition predicts lower day-14 mass."
+    },
+    "seed017": {
+      "scope": "E",
+      "unit_estimated": "Individual nestling (chick), with rearing-nest random intercepts",
+      "why": "The fitted coefficient directly estimates the association/effect of experimentally induced sibling competition\u2014net_rearing_manipulation, coded as additional chicks in the rearing brood\u2014on day-14 nestling weight within the declared blue-tit dataset frame. It is reported on the native scale as grams of day-14 weight per net chick added, with larger predictor values representing more sibling competition (as_declared). The stated exclusions and covariate-adjusted REML mixed model do not change the estimand's scope."
+    },
+    "seed019": {
+      "scope": "E",
+      "unit_estimated": "individual chick",
+      "why": "Answers the declared estimand within frame: OLS estimated the effect of net_rearing_manipulation\u2014the signed net number of chicks added to the rearing brood\u2014on chick-level day_14_weight, with hatch-year fixed effects and rearing-nest-clustered standard errors. Larger values imply more siblings and thus more sibling competition (orientation: as_declared). Among 2,716 chicks in experimentally manipulated broods (319 rearing nests), excluding unmanipulated broods and 85 chicks missing manipulation, the native-scale estimate was -0.167 g per additional sibling (cluster-robust SE 0.0145; t=-11.53; cluster df=318)."
+    },
+    "seed020": {
+      "scope": "E",
+      "unit_estimated": "Grams of day-14 nestling mass per net chick added to the rearing brood (chick-level OLS coefficient; estimate -0.1747 g per chick added, cluster-robust uncertainty at the rearing-nest level).",
+      "why": "The focal predictor is the experimentally assigned net rearing-brood-size manipulation, oriented as declared (larger values mean more sibling competition), and the outcome is nestling growth represented by day-14 weight. Thus the fitted intention-to-treat analysis directly addresses the effect of sibling competition on nestling growth within the declared blue-tit dataset frame."
+    },
+    "seed021": {
+      "scope": "E",
+      "unit_estimated": "Individual chick day-14 weight (g); effect unit is grams per net chick added to the rearing brood",
+      "why": "Answers the declared within-frame estimand using randomized brood-size manipulation as sibling-competition exposure and day_14_weight as nestling growth. Focal predictor: net_rearing_manipulation = rear_Cs_in - rear_Cs_out (positive means enlarged brood), orientation as_declared. ML MixedLM: day_14_weight ~ net_rearing_manipulation + C(hatch_year) + rear_nest_OH + C(chick sex, retaining unknown as a level), with rearing-nest random intercept. Estimate = -0.180444 g per net chick added, SE = 0.015582, 95% CI [-0.211, -0.150], z = -11.580. Fit used 3,635 chicks in 439 nests; 85 chicks missing unrecoverable manipulation data were excluded."
+    },
+    "seed022": {
+      "scope": "E",
+      "unit_estimated": "Chick-level change in day-14 weight (grams) per one-unit increase in net_rearing_manipulation\u2014i.e., one net chick added to the rearing brood.",
+      "why": "The fitted ITT analysis directly addresses sibling competition and nestling growth in the framed blue-tit data. Chick-level OLS modeled day_14_weight as a function of numeric net_rearing_manipulation, rear_Cs_at_start_of_rearing, C(hatch_year), and rear_nest_LD, using cluster-robust uncertainty by rear_nest_breed_ID \u00d7 hatch_year (434 clusters; n=3,583 chicks). Missing start-of-rearing brood size was imputed with d14_rear_nest_brood_size as described. The focal coefficient was approximately -0.09 g per net added chick, with cluster-robust SE approximately 0.025 g (t=-3.56, p=0.0004). Larger predictor values mean more siblings/competition, so the reported sign is as_declared. The imputation and covariate choices may affect validity but do not change estimand scope."
+    },
+    "seed023": {
+      "scope": "E",
+      "unit_estimated": "grams of day-14 nestling mass per net sibling added to the rearing brood",
+      "why": "The fitted slope directly estimates the declared effect of sibling competition on nestling growth within the dataset frame: net_rearing_manipulation represents sibling-competition exposure, and day_14_weight is the nestling-growth outcome. The focal estimate is -0.1749 g per net sibling added (cluster-robust SE 0.015; 95% CI [-0.204, -0.145]) on the native OLS outcome scale. Predictor: net_rearing_manipulation, constructed as net chicks added to the rearing brood (positive=enlarged, negative=reduced, zero=unmanipulated); orientation: as_declared. Model: OLS adjusted for C(hatch_year), hatch_nest_CS, and hatch_nest_LD, with SEs clustered by rear_nest_breed_ID; n=3,595 chicks in 435 rearing nests. Exclusions were 85 manipulated-brood chicks with unknown net_rearing_manipulation and 40 chicks missing hatch_nest_LD/CS; post-manipulation brood size was excluded as a mediator."
+    },
+    "seed024": {
+      "scope": "E",
+      "unit_estimated": "Chick-level day-14 weight: -0.1774 g per one-chick increase in net_rearing_manipulation (cluster-robust SE 0.0151 g; t = -11.77, df \u2248 427, p < 1e-27).",
+      "why": "This directly estimates the within-frame effect of experimentally increasing sibling competition on nestling growth. Predictor: net_rearing_manipulation, constructed as the signed number of chicks added to the rearing nest at cross-fostering (positive=enlarged, negative=reduced, zero=unmanipulated); orientation: as_declared because larger values mean more siblings and hence more competition. Model: OLS of day-14 weight (g) on net_rearing_manipulation, adjusted for rear-nest clutch size, rear-nest lay date, and year factors (2001 reference), with t-based cluster-robust uncertainty clustered by rearing nest. It used 3,583 chicks alive at day 14 from 433 rearing nests; chicks with undefined manipulation or missing clutch-size/lay-date covariates were excluded. The observation unit was the chick, while manipulation was assigned at the rearing-nest level."
+    },
+    "seed025": {
+      "scope": "E",
+      "unit_estimated": "-0.184 g day-14 weight per 1-chick increase in net_rearing_manipulation (SE 0.015 g; t = -11.87; native linear-model scale)",
+      "why": "Answers the declared within-frame effect of sibling competition on nestling growth. Predictor: net_rearing_manipulation, constructed as the continuous net number of chicks experimentally added to the rearing brood (negative=reduced, 0=unmanipulated, positive=enlarged); orientation=as_declared because larger values represent more sibling competition. REML statsmodels MixedLM modeled day_14_weight with this predictor, rear_nest_CS, rear_nest_OH, and hatch_year as fixed effects and a random intercept for rear_nest_breed_ID. Excluded 85 chicks missing net_rearing_manipulation and 41 missing rear_nest_CS; fitted 3,594 chicks in 434 rearing broods."
+    },
+    "seed026": {
+      "scope": "E",
+      "unit_estimated": "Individual chick day-14 weight: \u22120.0812 g per additional sibling present in the rearing nest at day 14 (SE 0.0161 g; z = \u22125.04), on the linear model scale.",
+      "why": "This directly estimates the declared effect of sibling competition, operationalized as continuous day-14 rearing-nest brood size, on nestling growth, operationalized as individual day-14 weight, within the represented blue-tit population. The ML linear mixed model used lay date, clutch size, and hatch year as fixed covariates and rearing-nest ID as a random intercept; 3,668 complete-case chicks in 446 nests were analyzed. The predictor is oriented as_declared because larger values mean more siblings and hence more competition."
+    },
+    "seed027": {
+      "scope": "E",
+      "unit_estimated": "Day-14 nestling mass in grams per one-chick increase in net rearing-brood size (\u03b2 = -0.180 g, SE = 0.0159; 95% CI [-0.211, -0.149]), fitted over 3,635 chick observations.",
+      "why": "This directly addresses the declared estimand within frame: the signed manipulation measures sibling competition, with larger values meaning more competing siblings (as_declared), and day-14 mass is a nestling-growth outcome. The mixed model\u2019s covariate adjustment, chick-level observations, and rearing-nest random intercept are analytical choices rather than scope changes."
+    },
+    "seed028": {
+      "scope": "E",
+      "unit_estimated": "Chick-level change in day-14 mass, in grams, per one-chick increase in experimentally assigned net rearing-brood size.",
+      "why": "The signed manipulation directly varies sibling competition within the stated blue-tit dataset, and day-14 mass is the declared nestling-growth outcome. The OLS coefficient, approximately -0.17 g per net chick added (cluster-robust SE approximately 0.015 g), is therefore on the requested native scale and has the declared orientation: larger predictor values mean more sibling competition."
+    },
+    "seed029": {
+      "scope": "E",
+      "unit_estimated": "Chick (3,635 chicks nested in 439 rearing nests).",
+      "why": "Answers the declared estimand within frame: sibling competition was constructed as net_rearing_manipulation, the signed net number of chicks added to the rearing nest (negative=reduced, 0=unmanipulated, positive=enlarged), so its orientation is as_declared. OLS modeled day-14 chick mass (g) on this predictor, centered rearing-nest hatching date, and categorical hatch year, with cluster-robust uncertainty by rearing nest (df=438). The focal estimate is \u22120.176 g per net chick added (cluster-robust SE\u22480.0153 g; t=\u221211.54; approximate 95% CI \u22120.206 to \u22120.146; p\u22484.4\u00d710^\u221227), on the native linear-model scale. The analysis excluded 85 chicks with '.'-coded missing manipulation values; mass was otherwise complete. Treatment decoding was 5=enlarged (mean +3), 6=reduced (mean \u22123), and 7=unmanipulated (0)."
+    },
+    "seed032": {
+      "scope": "E",
+      "unit_estimated": "Chicks in experimentally enlarged versus reduced rearing broods; difference in day-14 body mass (grams), conditional on rearing-nest hatch date, with rearing-nest random intercepts.",
+      "why": "The signed enlarged-minus-reduced brood contrast directly estimates the effect of experimentally manipulated sibling competition on nestling growth within the specified blue-tit dataset. Its orientation is as declared, and the fitted coefficient is -1.067 g (SE 0.093) on the native outcome scale. The model retains unmanipulated broods, adjusts for rear_nest_OH, clusters outcomes by rearing nest via a random intercept, and excludes only chicks whose manipulation could not be decoded."
+    },
+    "seed033": {
+      "scope": "E",
+      "unit_estimated": "\u22120.1775 g of day-14 chick mass per net chick added to the rearing nest (95% cluster-robust CI: \u22120.207 to \u22120.148; t = \u221211.66, p < 0.001).",
+      "why": "This answers the within-frame estimand: the predictor was net_rearing_manipulation, constructed as the signed net number of chicks added to the rearing brood (+ enlarged, \u2212 reduced, 0 unmanipulated), so its orientation is as_declared because larger values represent more sibling competition. OLS modeled day_14_weight (g) as a function of net_rearing_manipulation, rear_nest_OH, categorical rear_nest_CS, and categorical hatch_year, with sandwich SEs clustered by rear_nest_breed_ID (439 nests; cluster df 438). The fit used 3,635 individual chicks and excluded 85 records with missing '.' manipulation magnitudes from manipulated nests; unmanipulated records were assigned net = 0. Post-manipulation brood-size variables were excluded. The estimate is on the model\u2019s native outcome scale of grams per net sibling added."
+    },
+    "seed035": {
+      "scope": "E",
+      "unit_estimated": "Chick (3,635 observations; exposure assigned at 439 rearing nests)",
+      "why": "The OLS coefficient on signed net_rearing_manipulation directly estimates the within-frame effect of experimentally adding one sibling on an individual chick\u2019s day-14 mass, in the requested native scale of grams per additional sibling. The estimate is \u22120.1737 g (cluster-robust 95% CI: \u22120.203 to \u22120.144), with larger predictor values representing more sibling competition (as_declared). Covariate adjustment and rearing-nest-clustered inference are analytical choices, not scope changes."
+    },
+    "seed036": {
+      "scope": "E",
+      "unit_estimated": "OLS coefficient for net_rearing_manipulation: -0.1727 g of day-14 nestling weight per additional chick added to the rearing nest (cluster-robust SE 0.0153; t=-11.30; cluster-based df=426; p<0.001). Predictor: signed net number of chicks added at cross-fostering, continuous from -4 to +4. Orientation: as_declared.",
+      "why": "This directly estimates the declared within-frame effect of sibling competition on nestling growth: positive manipulation enlarges the brood and represents more competition. The fitted model used chick-level day-14 weight as the outcome; net_rearing_manipulation as the focal continuous predictor; categorical hatch year; categorical molecular sex with missing coded as 'unknown'; and continuous rear-nest lay date. OLS sandwich SEs were clustered by rearing nest. Chicks missing net manipulation (85 chicks in 13 nests) or rear-nest lay date (52 chicks) were excluded; post-treatment brood size was excluded. The fit included 3,583 chicks in 433 rearing nests. The negative coefficient indicates lower day-14 mass with greater sibling competition."
+    },
+    "seed038": {
+      "scope": "E",
+      "unit_estimated": "Individual chick: day-14 body mass in grams per one-chick increase in experimentally manipulated rearing-brood size",
+      "why": "The fitted coefficient directly targets the declared within-frame effect: experimentally increasing sibling competition, represented by net chicks added to the rearing brood, on nestling growth, represented by day-14 weight. The predictor is oriented as declared, and the estimate is \u22120.1751 g per additional chick (95% CI \u22120.205 to \u22120.145) from chick-level OLS with hatch-year adjustment and rearing-nest-clustered CR1 standard errors."
+    },
+    "seed040": {
+      "scope": "E",
+      "unit_estimated": "Individual chick: change in day-14 weight (g) per one-chick increase in net rearing-brood manipulation",
+      "why": "The fitted OLS directly addresses the declared within-frame estimand: net chicks added is a signed manipulation of sibling competition (larger values mean more competition), and day_14_weight is a nestling-growth outcome. The focal estimate is -0.093 g per net chick added (cluster-robust SE about 0.024 g; 95% CI [-0.141, -0.045]) among 3,315 complete-case chicks, adjusting for hatch year, rearing-nest hatch date, and starting brood size, with uncertainty clustered by rearing nest."
+    },
+    "seed041": {
+      "scope": "E",
+      "unit_estimated": "Chick-level OLS coefficient: grams of day-14 mass per one additional chick in the day-14 rearing brood.",
+      "why": "This directly addresses the declared estimand within the dataset frame. Predictor: d14_rear_nest_brood_size, constructed as the realized number of chicks in the rearing brood at day 14; larger values represent MORE sibling competition, so orientation is as_declared. Focal estimate: -0.0932 g per additional chick (cluster-robust SE 0.0134; t = -6.94; inferential df = 451), on the native linear-model scale. Model: OLS day_14_weight (g) ~ d14_rear_nest_brood_size + C(hatch_year) + rear_nest_OH + C(sex3), with SEs clustered by rear_nest_breed_ID. The fit used all 3,720 chicks in 452 rearing-nest clusters; no rows were excluded. Missing chick_sex_molec values were represented by an 'unknown' sex3 level. Thus the estimate is the adjusted association/effect of realized brood size\u2014a sibling-competition exposure\u2014on nestling day-14 mass."
+    },
+    "seed042": {
+      "scope": "E",
+      "unit_estimated": "Individual chick; 3,594 chicks nested in 434 rearing broods.",
+      "why": "The analysis directly targets the within-frame effect of experimentally manipulated sibling competition on nestling growth. Predictor: net_rearing_manipulation, constructed as rear_Cs_in - rear_Cs_out, i.e. net chicks added to the rearing brood; orientation: as_declared because larger values mean more sibling competition. ML linear mixed model: day_14_weight (g) ~ net_rearing_manipulation + hatch_year + chick_sex_molec (including unknown) + rear_nest_CS + rear_nest_OH, with a random intercept for rear_nest_breed_ID. The focal estimate on the native linear-model scale is -0.183 g per net chick added (SE 0.0154; t=-11.92; residual df approximately 3,586). The fit excluded 85 chicks from nests lacking manipulation values and 41 chicks from nests lacking rear_nest_CS; n=3,594. Random-intercept variance was 0.604 g^2 and residual variance 0.486 g^2. The linear term partly relies on comparability between matched manipulated broods and unmatched unmanipulated controls."
+    },
+    "seed043": {
+      "scope": "E",
+      "unit_estimated": "One chick; 3,594 chicks nested in 434 rearing broods.",
+      "why": "The fitted focal coefficient is -0.182 g per 1-chick increase in net_rearing_manipulation (SE 0.0156 g; z = -11.62; p < 0.001; 95% CI [-0.212, -0.151] g), on the linear model's native day-14-weight scale. Predictor: net_rearing_manipulation, constructed as net chicks added at cross-fostering (-4 to +4; 0 unmanipulated); larger values mean more siblings and thus more sibling competition, so orientation is as_declared. Model: statsmodels MixedLM fitted by ML, with day-14 weight in grams as outcome; fixed effects for continuous net_rearing_manipulation, pre-manipulation rearing-nest clutch size rear_nest_CS, and hatch-year factor (2001/2002/2003); random intercept for rear_nest_breed_ID. Excluded were 85 chicks missing net_rearing_manipulation and 41 missing rear_nest_CS; 1,094 chicks with unknown molecular sex were retained because sex was omitted. rear_Cs_at_start_of_rearing was not adjusted for because it is post-treatment. This directly estimates the within-frame effect of experimentally altered sibling competition on nestling mass, so it answers the declared estimand."
+    },
+    "seed044": {
+      "scope": "E",
+      "unit_estimated": "Chick-level day-14 weight in grams; OLS coefficient per one-chick increase in numeric signed net_rearing_manipulation.",
+      "why": "This directly estimates the declared within-frame effect of experimentally induced sibling competition on nestling growth. Predictor: net_rearing_manipulation, constructed as the signed net number of chicks added to the rearing brood (positive=enlarged, negative=reduced), entered as one continuous linear term; orientation: as_declared. The focal estimate is -0.1670 g per net chick added (cluster-robust SE 0.0145; t=-11.525; p\u22485e-30), so greater sibling competition predicts lower day-14 mass. Model: chick-level OLS of day-14 weight on net_rearing_manipulation plus hatch_year fixed effects, with SEs clustered by rear_nest_breed_ID. Included only experimentally manipulated broods (rear_nest_trt 5 or 6); excluded 85 chicks with missing manipulation and 919 chicks from unmanipulated broods. Fitted n=2,716 chicks in 319 rearing nests."
+    },
+    "seed045": {
+      "scope": "E",
+      "unit_estimated": "-0.0932 g of day-14 chick mass per additional sibling cohabiting in the day-14 rearing nest (cluster-robust SE 0.0134; t=-6.94 on 451 cluster df; 95% CI [-0.120, -0.067]).",
+      "why": "This answers the declared within-frame estimand using sibling competition operationalized as the continuous predictor d14_rear_nest_brood_size (day-14 brood size of the rearing nest; number of cohabiting siblings). Larger values mean more sibling competition, so orientation is as_declared; the coefficient is reported without sign reversal. Chick-level OLS fit: day_14_weight ~ d14_rear_nest_brood_size + C(sex, 3 levels including '.' as unknown) + C(hatch_year) + rear_nest_OH. It used all 3,720 chicks with no exclusions and small-sample-corrected cluster-robust SEs clustered by rear_nest_breed_ID (452 clusters). Observation unit: chick; experimental context: brood-size manipulation with cross-fostering among enlarged, reduced, and unmanipulated rearing nests. Native model scale: grams per sibling."
+    },
+    "seed046": {
+      "scope": "E",
+      "unit_estimated": "Day-14 nestling mass in grams per one-chick increase in net_rearing_manipulation; 3,635 individual chicks nested in 439 rearing nests.",
+      "why": "The fitted ML linear mixed model directly addresses the framed estimand: day_14_weight ~ net_rearing_manipulation + C(hatch_year), with a random intercept for rear_nest_breed_ID. The predictor was net_rearing_manipulation exactly as constructed (continuous \u22124 to +4; 0 unmanipulated), so larger values mean more experimentally added siblings (orientation: as_declared). The focal native-scale coefficient was \u22120.1807 g per additional sibling (SE 0.0157; t = \u221211.48; df_resid = 3631; p < 0.001). The analysis included chicks with observed day-14 weight and manipulation, excluding 85 of 3,720 for missing net_rearing_manipulation."
+    },
+    "seed047": {
+      "scope": "E",
+      "unit_estimated": "OLS coefficient for net_rearing_manipulation (signed net number of chicks added to the rearing brood: negative=reduced, 0=unmanipulated, positive=enlarged; orientation=as_declared): \u22120.1775 g in chick day-14 mass per additional sibling; rear-nest-cluster-robust SE 0.0150 g; 95% CI [\u22120.207, \u22120.148].",
+      "why": "This estimates the declared within-frame effect of experimentally manipulated sibling competition on nestling growth, on the native gram scale. Model: individual-chick day-14 weight regressed by OLS on net_rearing_manipulation, adjusting for categorical hatch_year, rear_nest_OH, and rear_nest_CS; sandwich SEs clustered by rear_nest_breed_ID. The fitted sample contained 3,594 chicks from 434 rearing nests in 2001\u20132003, excluding 85 observations missing net_rearing_manipulation and 41 missing rear_nest_CS. Larger predictor values mean more sibling competition, so the negative coefficient indicates lower day-14 mass with each sibling added."
+    },
+    "seed048": {
+      "scope": "E",
+      "unit_estimated": "Within matched pair, the chick-level linear-regression coefficient for day-14 mass (grams) per one-chick increase in signed net_rearing_manipulation; cluster-robust t = -10.9421 with 135 df. The numeric coefficient and standard error/interval are not supplied in the analysis description.",
+      "why": "This directly targets the within-frame effect of experimentally increased sibling competition on nestling growth. The predictor is the signed number of chicks added to the rearing brood (larger values mean more competition, so orientation is as_declared), and the outcome is day-14 chick mass. The model excludes nonrandomized unmanipulated broods, includes matched-pair fixed effects, clusters uncertainty by matched pair, and uses 2,327 chicks from 136 complete enlarged/reduced pairs. Predictor: signed net_rearing_manipulation."
+    },
+    "seed049": {
+      "scope": "E",
+      "unit_estimated": "grams of chick day-14 mass per additional day-14 rearing-nest nestmate",
+      "why": "The fitted model targets the declared within-frame effect of realized sibling competition on nestling growth. OLS used chick day-14 mass (g) as the outcome and d14_rear_nest_brood_size as one signed numeric predictor, adjusting for breeding-season year indicators and linear rearing-nest hatch date; cluster-robust uncertainty was computed by rearing nest (452 clusters). All 3,720 chicks were included, with no sex adjustment or exclusions. The focal estimate is -0.0934 g per additional nestmate (cluster-robust SE 0.0136; t = -6.861; approximate 95% CI -0.120 to -0.067; p approximately 7e-12). Predictor: d14_rear_nest_brood_size, constructed as the realized number of nestmates in the chick's rearing nest at day 14. Orientation: as_declared, because larger values indicate more sibling competition."
+    }
+  }
+}

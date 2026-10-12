@@ -1,0 +1,18 @@
+[tokens]
+paper = "#FDFCFA"
+ink = "#111111"
+ink_2 = "#6B6B66"
+rule = "#E6E3DD"
+grey_soft = "#D7D4CF"
+neon = "#FF2E88"
+# BpDynamic. Validated against the Branchpoint pink: CVD dE 10.8 deutan /
+# 36.0 tritan, against 3.9 tritan for the red it replaces.
+spread = "#2E8B57"
+naive = "#3F72B0"
+branchpoint = "#D94C3E"
+
+[marks]
+hairline = 0.6
+interval = 1.2
+series = 1.8
+gap = 2.0

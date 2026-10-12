@@ -1,0 +1,18 @@
+
+--- launch 2026-08-30 03:54:56 ---
+{
+  "mode": "branchpoint",
+  "dataset": "eu",
+  "model": "openrouter/z-ai/glm-5.3",
+  "n_reported": 51,
+  "envelope": [
+    -0.10151229909844513,
+    0.01346
+  ],
+  "width": 0.11497229909844513,
+  "width_q05_q95": 0.02703301681237353,
+  "width_iqr": 0.007487229909844519,
+  "median": -0.00725,
+  "unique_ends": 23,
+  "usd": 2.76568876
+}

@@ -1,0 +1,46 @@
+{
+  "stat": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "found",
+      "n_obs",
+      "unit",
+      "design",
+      "t_stat",
+      "z_stat",
+      "df_resid",
+      "df_reference",
+      "direct_effect",
+      "direct_effect_kind"
+    ],
+    "properties": {
+      "found": {"type": "boolean"},
+      "n_obs": {"type": ["number", "null"]},
+      "unit": {"type": ["string", "null"]},
+      "design": {
+        "type": "string",
+        "enum": ["individual_rows", "aggregated_units", "meta_analytic_pooling", "unclear"]
+      },
+      "t_stat": {"type": ["number", "null"]},
+      "z_stat": {"type": ["number", "null"]},
+      "df_resid": {"type": ["number", "null"]},
+      "df_reference": {"type": ["number", "null"]},
+      "direct_effect": {"type": ["number", "null"]},
+      "direct_effect_kind": {
+        "type": "string",
+        "enum": ["pearson_r", "partial_r", "beta_std", "fisher_z", "none"]
+      }
+    }
+  },
+  "scope": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["scope", "unit_estimated", "why"],
+    "properties": {
+      "scope": {"type": "string", "enum": ["E", "N", "U"]},
+      "unit_estimated": {"type": "string"},
+      "why": {"type": "string"}
+    }
+  }
+}

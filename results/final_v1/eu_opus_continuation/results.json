@@ -1,0 +1,3394 @@
+{
+  "protocol_version": 6,
+  "dataset": "eu",
+  "model": "claude-opus-5",
+  "mode": "branchpoint",
+  "allocation": "uniform",
+  "seed": 7,
+  "judge_model": "gpt-5.6-sol",
+  "effort": "low",
+  "workers": 6,
+  "provider_route": [],
+  "branching_method": "continuation",
+  "agent_interface": "native",
+  "registry": {
+    "2704d5b246": {
+      "event_i": 0,
+      "decision": "Which ground-cover variables operationalize grass cover?",
+      "approach": "sum exotic annual grass, exotic perennial grass, and native perennial grass percent cover while excluding native perennial graminoid cover",
+      "evidence": "\"construct total grass cover = sum of the four grass columns (exotic annual, exotic perennial, native perennial grass, native perennial graminoid excluded \u2014 graminoid is not grass)\"",
+      "occurrence_i": 0,
+      "boundary_i": 0,
+      "boundary": "after_completed_response",
+      "home": "",
+      "bans": [
+        "sum exotic annual grass, exotic perennial grass, and native perennial grass percent cover while excluding native perennial graminoid cover",
+        "sum exotic annual grass, exotic perennial grass, native perennial grass, and native perennial graminoid percent cover",
+        "sum exotic annual grass and exotic perennial grass percent cover"
+      ],
+      "branches": [
+        "forks/bp/61a418a5-1",
+        "forks/bp/61a418a5-10"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "726926db9e": {
+      "event_i": 6,
+      "decision": "What recruitment outcome is modeled?",
+      "approach": "sum seedling counts across all three height classes",
+      "evidence": "\"outcome = total seedlings (sum of three height classes)\"",
+      "occurrence_i": 6,
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "home": "",
+      "bans": [
+        "sum seedling counts across all three height classes",
+        "model only 0\u201350 cm seedling counts",
+        "model 0\u20132 m seedling counts",
+        "model occurrence of any seedling across all height classes"
+      ],
+      "branches": [
+        "forks/bp/b4b9c37b-2",
+        "forks/bp/b4b9c37b-4",
+        "forks/bp/b4b9c37b-19"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "ec85f2ed93": {
+      "event_i": 6,
+      "decision": "Which model, dependence correction, covariates, and missing-data rule are used?",
+      "approach": "fit a negative binomial GLM with Property-clustered robust standard errors, adjust for eucalypt canopy cover and distance to canopy, and use complete cases",
+      "evidence": "\"negative binomial GLM with cluster-robust SEs by Property, complete cases\" and \"covariates Euc_canopy_cover and distance to canopy\"",
+      "occurrence_i": 6,
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "home": "",
+      "bans": [
+        "fit a negative binomial GLM with Property-clustered robust standard errors, adjust for eucalypt canopy cover and distance to canopy, and use complete cases",
+        "Poisson log-link GEE with Property clusters, exchangeable working correlation and robust SEs; adjust for Season; treat missing grass components as zero and otherwise use complete cases",
+        "Quasi-Poisson log-link GLM with Pearson-scaled SEs, Property and Season fixed effects, adjustment for eucalypt canopy cover and distance to canopy, using complete cases",
+        "REML linear mixed model of log1p(total seedlings) with a Property random intercept, adjusting for eucalypt canopy cover and distance to canopy, using complete cases"
+      ],
+      "branches": [
+        "forks/bp/661e11a1-0",
+        "forks/bp/661e11a1-7",
+        "forks/bp/661e11a1-27"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "d9cfbd1848": {
+      "event_i": 9,
+      "decision": "How is a dispersion estimate at the search-grid boundary handled?",
+      "approach": "retain the fitted model and report the grass coefficient because it was stable",
+      "evidence": "\"Alpha hit grid boundary but coefficient is stable; report the grass coefficient.\"",
+      "occurrence_i": 9,
+      "boundary_i": 9,
+      "boundary": "after_completed_response",
+      "home": "",
+      "bans": [
+        "retain the fitted model and report the grass coefficient because it was stable",
+        "replace the boundary-grid estimate with a freely estimated dispersion via NB2 MLE",
+        "replace the boundary-dispersion model with a Poisson mean model using property-clustered robust standard errors",
+        "replace the boundary-dispersion model with a quasi-Poisson mean model using property-cluster bootstrap standard errors"
+      ],
+      "branches": [
+        "forks/bp/c3676123-3",
+        "forks/bp/c3676123-9"
+      ],
+      "strikes": 1,
+      "closed": false
+    },
+    "b0650260c8": {
+      "event_i": 10,
+      "decision": "What model scale should be used for the focal grass-cover effect estimate?",
+      "approach": "report the grass coefficient as a log-rate change per percentage point of cover",
+      "evidence": "\u201creport the grass coefficient (log-rate per percent cover)\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/b4b9c37b-2",
+      "bans": [
+        "report the grass coefficient as a log-rate change per percentage point of cover",
+        "report the grass coefficient as a log-rate change per 1 SD increase in cover",
+        "report the grass coefficient as a log-rate change per 10 percentage-point increase in cover",
+        "report the grass coefficient as a log-rate change per full-range increase in cover (0 to 100 percentage points)",
+        "log-rate change per interquartile-range (37.55 percentage-point) increase in grass cover",
+        "high (>=50%) vs low (<50%) grass-cover contrast"
+      ],
+      "branches": [
+        "forks/bp/57a12c15-5",
+        "forks/bp/57a12c15-11",
+        "forks/bp/57a12c15-16",
+        "forks/bp/57a12c15-23",
+        "forks/bp/57a12c15-25"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "14eb570c8c": {
+      "event_i": 10,
+      "decision": "What model scale should be used for the focal grass-cover effect estimate?",
+      "approach": "log-rate scale",
+      "evidence": "\u201cModel fitted; report the grass coefficient (log-rate scale).\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-0",
+      "bans": [
+        "log-rate scale",
+        "count-scale average marginal effect"
+      ],
+      "branches": [
+        "forks/bp/57a12c15-6"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "ffa1ea519c": {
+      "event_i": 13,
+      "decision": "How should overdispersion in the seedling-count outcome be modeled?",
+      "approach": "Estimate the dispersion parameter freely by maximum likelihood",
+      "evidence": "\u201cDispersion freely estimated (alpha=9.22) by MLE\u201d",
+      "occurrence_i": 13,
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3676123-3",
+      "bans": [
+        "Estimate the dispersion parameter freely by maximum likelihood"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "5823170fb6": {
+      "event_i": 13,
+      "decision": "How should uncertainty for the focal grass-cover coefficient account for clustered observations?",
+      "approach": "Use cluster-robust standard errors",
+      "evidence": "\u201creport the grass coefficient with cluster-robust SE\u201d",
+      "occurrence_i": 13,
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3676123-3",
+      "bans": [
+        "Use cluster-robust standard errors",
+        "Property-level cluster bootstrap standard errors",
+        "Poisson GEE model-based standard errors with exchangeable property-level correlation",
+        "Property fixed-effects negative binomial GLM with model-based standard errors"
+      ],
+      "branches": [
+        "forks/bp/d80cfe5a-8",
+        "forks/bp/d80cfe5a-34",
+        "forks/bp/d80cfe5a-46"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "345f8c1dde": {
+      "event_i": 4,
+      "decision": "Which grass-cover variables define the focal exposure?",
+      "approach": "sum all four grass/graminoid cover columns, including graminoids",
+      "evidence": "\"grass = sum of all four grass/graminoid cover columns, i.e. including graminoids\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-1",
+      "bans": [
+        "sum all four grass/graminoid cover columns, including graminoids",
+        "sum exotic annual and exotic perennial grass cover only"
+      ],
+      "branches": [
+        "forks/bp/d044babd-45"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "c6abd30438": {
+      "event_i": 4,
+      "decision": "How is total Eucalyptus seedling recruitment constructed from the size-class outcomes?",
+      "approach": "sum the seedling counts across size classes",
+      "evidence": "\"print exact column names, then build totals\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-1",
+      "bans": [
+        "sum the seedling counts across size classes"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "30ad7d52dd": {
+      "event_i": 4,
+      "decision": "Which count model, adjustment covariates, and dependence correction are used?",
+      "approach": "fit a negative binomial GLM adjusted for Euc_canopy_cover and distance with cluster-robust standard errors by Property",
+      "evidence": "\"fit the negative binomial GLM ... with Euc_canopy_cover and distance as covariates, cluster-robust SE by Property\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-1",
+      "bans": [
+        "fit a negative binomial GLM adjusted for Euc_canopy_cover and distance with cluster-robust standard errors by Property",
+        "Poisson GEE adjusted for Season and Euc_canopy_cover, with exchangeable within-Property correlation and robust sandwich standard errors",
+        "quasi-Poisson GLM adjusted for Season, Euc_canopy_cover, log1p(distance), and Property fixed effects, with Pearson-dispersion-scaled standard errors",
+        "negative binomial NB2 GLM adjusted for Season, Euc_canopy_cover, log1p(distance), and Property fixed effects, with nonrobust MLE standard errors"
+      ],
+      "branches": [
+        "forks/bp/a55a4bcf-13",
+        "forks/bp/a55a4bcf-21",
+        "forks/bp/a55a4bcf-29"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "dc835b3877": {
+      "event_i": 7,
+      "decision": "What scale and inferential summary are used for the focal grass effect?",
+      "approach": "report the grass coefficient on the log-count scale with a cluster-robust z statistic",
+      "evidence": "\"submit the report with the grass coefficient (log-count scale), cluster-robust z, n=348, 18 property clusters\"",
+      "occurrence_i": 7,
+      "boundary_i": 7,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-1",
+      "bans": [
+        "report the grass coefficient on the log-count scale with a cluster-robust z statistic",
+        "report the average marginal grass effect on the expected-count scale with a cluster-robust delta-method t statistic using 17 cluster degrees of freedom",
+        "report the grass coefficient on the log-count scale with a non-robust likelihood-ratio chi-square summary"
+      ],
+      "branches": [
+        "forks/bp/d89d34ed-12",
+        "forks/bp/d89d34ed-32"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "e7312a2068": {
+      "event_i": 10,
+      "decision": "What focal model parameter should be reported as the estimate of the grass-cover effect?",
+      "approach": "report the grass coefficient",
+      "evidence": "\u201cModel converged; report the grass coefficient.\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/b4b9c37b-4",
+      "bans": [
+        "report the grass coefficient",
+        "report the grass coefficient",
+        "report the grass coefficient"
+      ],
+      "branches": [],
+      "strikes": 2,
+      "closed": true
+    },
+    "0fabe8f939": {
+      "event_i": 14,
+      "decision": "How should the focal grass-cover effect be scaled for reporting?",
+      "approach": "report the coefficient per one standard deviation of the constructed grass-cover predictor",
+      "evidence": "\u201cSubmit the per-SD standardized coefficient.\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-5",
+      "bans": [
+        "report the coefficient per one standard deviation of the constructed grass-cover predictor",
+        "report the coefficient per 10 percentage-point increase in constructed grass cover"
+      ],
+      "branches": [
+        "forks/bp/6f3401cf-44"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "38e8c19fa4": {
+      "event_i": 14,
+      "decision": "What scale should be used to report the focal effect?",
+      "approach": "report the average marginal effect on the count scale",
+      "evidence": "\u201cReport the average marginal effect on the count scale.\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-6",
+      "bans": [
+        "report the average marginal effect on the count scale"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f3a5a9ca44": {
+      "event_i": 13,
+      "decision": "What mean\u2013variance model and uncertainty estimator are used for the seedling count outcome?",
+      "approach": "Poisson mean model with cluster-robust uncertainty",
+      "evidence": "\u201cReport the quasi-Poisson (Poisson mean model, cluster-robust) grass coefficient.\u201d",
+      "occurrence_i": 13,
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3676123-9",
+      "bans": [
+        "Poisson mean model with cluster-robust uncertainty",
+        "Poisson mean model with cluster-robust uncertainty"
+      ],
+      "branches": [],
+      "strikes": 1,
+      "closed": false
+    },
+    "9270794f75": {
+      "event_i": 13,
+      "decision": "Which fitted coefficient is treated as the focal effect?",
+      "approach": "grass coefficient",
+      "evidence": "\u201cReport the quasi-Poisson (Poisson mean model, cluster-robust) grass coefficient.\u201d",
+      "occurrence_i": 13,
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3676123-9",
+      "bans": [
+        "grass coefficient"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "a684d9ec07": {
+      "event_i": 10,
+      "decision": "Which count-model variance specification should be used to quantify uncertainty under overdispersion?",
+      "approach": "quasi-Poisson (Pearson-scaled) standard errors",
+      "evidence": "\u201csame Poisson fixed-effects model but with quasi-Poisson (Pearson-scaled) SEs to handle overdispersion\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-7",
+      "bans": [
+        "quasi-Poisson (Pearson-scaled) standard errors",
+        "NB2 MLE with jointly estimated dispersion"
+      ],
+      "branches": [
+        "forks/bp/c3bc56c8-18"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "b035b8ba94": {
+      "event_i": 10,
+      "decision": "What reference distribution should be used for inference from the fitted model?",
+      "approach": "t-based inference",
+      "evidence": "\u201creport scale and t-based inference\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-7",
+      "bans": [
+        "t-based inference",
+        "normal-based inference",
+        "cluster-bootstrap inference"
+      ],
+      "branches": [
+        "forks/bp/3ae7056d-22",
+        "forks/bp/3ae7056d-26"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "579da9a4d7": {
+      "event_i": 10,
+      "decision": "Which mean-model structure should be used for Eucalyptus seedling recruitment?",
+      "approach": "Poisson fixed-effects model",
+      "evidence": "\u201csame Poisson fixed-effects model\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-7",
+      "bans": [
+        "Poisson fixed-effects model"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "79f947b103": {
+      "event_i": 13,
+      "decision": "What fitted focal estimate should be selected for reporting?",
+      "approach": "quasi-Poisson estimate",
+      "evidence": "\u201cDone; report the quasi-Poisson estimate.\u201d",
+      "occurrence_i": 13,
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-7",
+      "bans": [
+        "quasi-Poisson estimate"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "dc8a97f0ed": {
+      "event_i": 14,
+      "decision": "What unit change in grass cover defines the focal effect?",
+      "approach": "Report the log-rate change per 10 percentage-point increase in grass cover",
+      "evidence": "\u201cSubmit: log-rate change per 10 percentage points grass cover.\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-11",
+      "bans": [
+        "Report the log-rate change per 10 percentage-point increase in grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "43070739e4": {
+      "event_i": 11,
+      "decision": "What effect summary and exposure increment are used for the focal estimate?",
+      "approach": "average marginal effect in seedlings per 1 percentage-point grass cover",
+      "evidence": "\u201cSubmit the AME (seedlings per 1 percentage-point grass cover)\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d89d34ed-12",
+      "bans": [
+        "average marginal effect in seedlings per 1 percentage-point grass cover",
+        "log-count coefficient per 1-SD (23.72 percentage-point) increase in total grass cover",
+        "log-count coefficient per 10 percentage-point increase in total grass cover"
+      ],
+      "branches": [
+        "forks/bp/06e847c6-17",
+        "forks/bp/06e847c6-30"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "3b26997c13": {
+      "event_i": 11,
+      "decision": "How is uncertainty estimated for the focal effect?",
+      "approach": "cluster-robust delta-method standard error",
+      "evidence": "\u201cwith cluster-robust delta-method SE\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d89d34ed-12",
+      "bans": [
+        "cluster-robust delta-method standard error",
+        "nonparametric property-cluster bootstrap standard error"
+      ],
+      "branches": [
+        "forks/bp/8aa4916d-36"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "f9abc8951b": {
+      "event_i": 11,
+      "decision": "What reference distribution and degrees of freedom are used for uncertainty inference?",
+      "approach": "cluster t distribution with 17 degrees of freedom",
+      "evidence": "\u201cand cluster t-df=17\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d89d34ed-12",
+      "bans": [
+        "cluster t distribution with 17 degrees of freedom"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "e56c89beb6": {
+      "event_i": 4,
+      "decision": "Which grass-cover variables define the focal exposure?",
+      "approach": "Sum ExoticAnnualGrass_cover and ExoticPerennialGrass_cover",
+      "evidence": "\"build exotic grass cover = ExoticAnnualGrass + ExoticPerennialGrass\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-10",
+      "bans": [
+        "Sum ExoticAnnualGrass_cover and ExoticPerennialGrass_cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "5e547260d4": {
+      "event_i": 4,
+      "decision": "How is Eucalyptus seedling recruitment operationalized as the outcome?",
+      "approach": "Sum the seedling counts across height classes into a total count",
+      "evidence": "\"build ... total seedling count\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-10",
+      "bans": [
+        "Sum the seedling counts across height classes into a total count"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "42963715eb": {
+      "event_i": 4,
+      "decision": "Which model family, covariate adjustment set, and clustering structure are used?",
+      "approach": "Fit a negative binomial GLM adjusted for eucalypt canopy cover and distance to canopy with property-clustered standard errors",
+      "evidence": "\"fit the negative binomial GLM with Property-clustered SEs, adjusting for canopy cover and distance to canopy\"",
+      "occurrence_i": 4,
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-10",
+      "bans": [
+        "Fit a negative binomial GLM adjusted for eucalypt canopy cover and distance to canopy with property-clustered standard errors"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "05aff8fc16": {
+      "event_i": 7,
+      "decision": "How is negative-binomial overdispersion parameterized and estimated?",
+      "approach": "Use an NB2 variance model with alpha estimated by auxiliary regression",
+      "evidence": "\"NB2 with alpha=7.86 estimated by auxiliary regression\"",
+      "occurrence_i": 7,
+      "boundary_i": 7,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/61a418a5-10",
+      "bans": [
+        "Use an NB2 variance model with alpha estimated by auxiliary regression"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "4d2c95bac5": {
+      "event_i": 14,
+      "decision": "What unit and native model scale define the focal grass-cover effect?",
+      "approach": "log-rate change per unit proportion from 0% to 100% grass cover",
+      "evidence": "\u201cSubmit: log-rate change per unit proportion (0\u2192100% grass cover).\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-16",
+      "bans": [
+        "log-rate change per unit proportion from 0% to 100% grass cover",
+        "log-rate change per 25-percentage-point increase in total grass cover"
+      ],
+      "branches": [
+        "forks/bp/3ce1559f-42"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "78be74924d": {
+      "event_i": 15,
+      "decision": "What scale and unit define the focal grass-cover effect?",
+      "approach": "log-count effect per 1 SD (23.72 percentage points) of total grass cover",
+      "evidence": "\u201clog-count effect per 1 SD (23.72 pp) of total grass cover\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-17",
+      "bans": [
+        "log-count effect per 1 SD (23.72 percentage points) of total grass cover",
+        "log-count effect per 10 percentage-point increase in total grass cover"
+      ],
+      "branches": [
+        "forks/bp/a71a4e17-24"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "da8d6f9f95": {
+      "event_i": 15,
+      "decision": "How is uncertainty adjusted for the clustered survey design?",
+      "approach": "cluster-robust standard error",
+      "evidence": "\u201ccluster-robust SE\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-17",
+      "bans": [
+        "cluster-robust standard error",
+        "cluster-robust standard error",
+        "cluster-robust standard error"
+      ],
+      "branches": [],
+      "strikes": 2,
+      "closed": true
+    },
+    "99e2b5fd18": {
+      "event_i": 15,
+      "decision": "What reference distribution and degrees of freedom are used for uncertainty?",
+      "approach": "t distribution with 17 degrees of freedom",
+      "evidence": "\u201ct with df=17\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-17",
+      "bans": [
+        "t distribution with 17 degrees of freedom",
+        "normal (z) reference distribution with no finite degrees of freedom"
+      ],
+      "branches": [
+        "forks/bp/bd3e9d13-47"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "ea39d61315": {
+      "event_i": 8,
+      "decision": "What recruitment outcome construction should represent Eucalyptus seedling recruitment?",
+      "approach": "Sum counts across all three seedling height classes",
+      "evidence": "\"outcome = total seedlings across all three height classes\"",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-13",
+      "bans": [
+        "Sum counts across all three seedling height classes"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "74edc2aa98": {
+      "event_i": 8,
+      "decision": "What grass-cover construction should operationalize the focal exposure?",
+      "approach": "Sum all four grass and graminoid cover columns",
+      "evidence": "\"predictor = total grass cover (all four grass/graminoid cover columns)\"",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-13",
+      "bans": [
+        "Sum all four grass and graminoid cover columns"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "b2559cb4f0": {
+      "event_i": 8,
+      "decision": "Which model and dependence structure should estimate the grass-cover effect?",
+      "approach": "Poisson GEE with exchangeable working correlation clustered by Property and robust sandwich standard errors",
+      "evidence": "\"fit a Poisson GEE (exchangeable working correlation, clusters = Property, robust sandwich SEs)\"",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-13",
+      "bans": [
+        "Poisson GEE with exchangeable working correlation clustered by Property and robust sandwich standard errors"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "7f989d7ce6": {
+      "event_i": 8,
+      "decision": "Which covariates should be included for adjustment?",
+      "approach": "Adjust for Season and Euc_canopy_cover",
+      "evidence": "\"adjusting for Season and Euc_canopy_cover\"",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-13",
+      "bans": [
+        "Adjust for Season and Euc_canopy_cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "7723badfff": {
+      "event_i": 10,
+      "decision": "What native model scale and uncertainty estimator are used for the focal grass-cover effect?",
+      "approach": "report the grass coefficient as log-odds per percentage point with a cluster-robust standard error",
+      "evidence": "\u201creport the grass coefficient (log-odds per percentage point) with cluster-robust SE.\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/b4b9c37b-19",
+      "bans": [
+        "report the grass coefficient as log-odds per percentage point with a cluster-robust standard error"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "59647e24ff": {
+      "event_i": 14,
+      "decision": "How should overdispersion be handled when quantifying uncertainty for the focal count-model coefficient?",
+      "approach": "quasi-Poisson scale adjustment with a normal-reference statistic",
+      "evidence": "\u201cOverdispersion scale \u22489.4; quasi-Poisson SE = 0.00735, z = \u22121.33 (normal reference).\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ae7056d-22",
+      "bans": [
+        "quasi-Poisson scale adjustment with a normal-reference statistic"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "054640a92a": {
+      "event_i": 14,
+      "decision": "What fitted coefficient and uncertainty should be treated as the final focal result?",
+      "approach": "coefficient implied by z \u00d7 SE, approximately \u22120.00978, with SE 0.00735 on the native model scale",
+      "evidence": "\u201cquasi-Poisson SE = 0.00735, z = \u22121.33 (normal reference). This is the final estimate\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ae7056d-22",
+      "bans": [
+        "coefficient implied by z \u00d7 SE, approximately \u22120.00978, with SE 0.00735 on the native model scale",
+        "Quasi-Poisson log-scale coefficient rescaled to a 50-percentage-point increase: \u22120.4878 (SE 0.3676), equivalent to \u22120.009756 (SE 0.007351) per percentage point"
+      ],
+      "branches": [],
+      "strikes": 1,
+      "closed": false
+    },
+    "606e95a37c": {
+      "event_i": 14,
+      "decision": "What exposure contrast and effect scale define the focal estimate?",
+      "approach": "Report the log-rate change for a 37.55-percentage-point IQR increase in total grass cover",
+      "evidence": "\u201cSubmit: log-rate change per IQR (37.55 pp) increase in total grass cover.\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-23",
+      "bans": [
+        "Report the log-rate change for a 37.55-percentage-point IQR increase in total grass cover",
+        "Report the log rate ratio for high (\u2265 median 26.8%) versus low total grass cover",
+        "Report the log rate ratio for high (top tertile, \u226539.03%) versus lower-two-tertile total grass cover"
+      ],
+      "branches": [
+        "forks/bp/78e5d8d4-28",
+        "forks/bp/78e5d8d4-37"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "2d4fe8d24a": {
+      "event_i": 8,
+      "decision": "How was Eucalyptus seedling recruitment operationalized as an outcome?",
+      "approach": "sum the three seedling height-class counts into `euc_sdlgs_all`",
+      "evidence": "\u201coutcome `euc_sdlgs_all`\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-21",
+      "bans": [
+        "sum the three seedling height-class counts into `euc_sdlgs_all`"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "2e880f3236": {
+      "event_i": 8,
+      "decision": "Which measured cover classes were combined to operationalize grass cover?",
+      "approach": "sum the four grass/graminoid cover columns, including native perennial graminoid",
+      "evidence": "\u201cgrass = sum of the four grass/graminoid cover columns (including native perennial graminoid)\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-21",
+      "bans": [
+        "sum the four grass/graminoid cover columns, including native perennial graminoid",
+        "sum exotic annual grass and exotic perennial grass cover only"
+      ],
+      "branches": [
+        "forks/bp/2ba4f685-35"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "5c54c9b261": {
+      "event_i": 8,
+      "decision": "What model structure and adjustment set were used to estimate the grass-cover effect?",
+      "approach": "fit a quasi-Poisson GLM with Property fixed-effect dummies, Season dummies, Euc_canopy_cover, and log1p distance to eucalypt canopy",
+      "evidence": "\u201cfit a quasi-Poisson (Poisson GLM with estimated dispersion scale) including Property fixed-effect dummies to absorb spatial clustering, plus Season dummies, Euc_canopy_cover and log1p(distance)\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-21",
+      "bans": [
+        "fit a quasi-Poisson GLM with Property fixed-effect dummies, Season dummies, Euc_canopy_cover, and log1p distance to eucalypt canopy"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "930375553d": {
+      "event_i": 8,
+      "decision": "How was uncertainty for the focal coefficient estimated and reported?",
+      "approach": "use a Pearson-dispersion-scaled standard error and t-statistic",
+      "evidence": "\u201cReport t-statistic and Pearson-dispersion-scaled SE.\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-21",
+      "bans": [
+        "use a Pearson-dispersion-scaled standard error and t-statistic"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "e3cd0d19be": {
+      "event_i": 19,
+      "decision": "What scale and increment should define the focal grass-cover effect?",
+      "approach": "log-count coefficient per 10 percentage points of total grass cover",
+      "evidence": "\u201cSubmit this: log-count coefficient per 10 percentage points of total grass cover.\u201d",
+      "occurrence_i": 19,
+      "boundary_i": 19,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a71a4e17-24",
+      "bans": [
+        "log-count coefficient per 10 percentage points of total grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "5cbc2242b0": {
+      "event_i": 19,
+      "decision": "Which grass-cover classes should operationalize the focal exposure?",
+      "approach": "total grass cover",
+      "evidence": "\u201cSubmit this: log-count coefficient per 10 percentage points of total grass cover.\u201d",
+      "occurrence_i": 19,
+      "boundary_i": 19,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a71a4e17-24",
+      "bans": [
+        "total grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "5c84e1796e": {
+      "event_i": 19,
+      "decision": "How should Eucalyptus seedling recruitment be represented in the fitted model?",
+      "approach": "count outcome",
+      "evidence": "\u201cSubmit this: log-count coefficient per 10 percentage points of total grass cover.\u201d",
+      "occurrence_i": 19,
+      "boundary_i": 19,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a71a4e17-24",
+      "bans": [
+        "count outcome"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "272c47557e": {
+      "event_i": 14,
+      "decision": "How should the grass-cover effect be parameterized and reported?",
+      "approach": "high-vs-low grass contrast",
+      "evidence": "\u201cReport the high-vs-low grass contrast.\u201d",
+      "occurrence_i": 14,
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/57a12c15-25",
+      "bans": [
+        "high-vs-low grass contrast",
+        "continuous log1p grass-cover effect"
+      ],
+      "branches": [
+        "forks/bp/785ead02-39"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "7a06bc5f5b": {
+      "event_i": 10,
+      "decision": "How should the magnitude of the fitted grass-cover effect be characterized?",
+      "approach": "characterize the fitted effect as essentially zero",
+      "evidence": "\u201cModel converged; effect essentially zero. Report it.\u201d",
+      "occurrence_i": 10,
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/661e11a1-27",
+      "bans": [
+        "characterize the fitted effect as essentially zero"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "1fafcf446a": {
+      "event_i": 18,
+      "decision": "How should the grass-cover effect be expressed on the predictor scale?",
+      "approach": "high-vs-low grass contrast",
+      "evidence": "\u201cSubmit the high-vs-low grass contrast.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/78e5d8d4-28",
+      "bans": [
+        "high-vs-low grass contrast"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "06eaf31660": {
+      "event_i": 15,
+      "decision": "Which outcome scale and model family should represent Eucalyptus seedling recruitment?",
+      "approach": "negative-binomial log-count model",
+      "evidence": "\u201clog-count NB coefficient\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-30",
+      "bans": [
+        "negative-binomial log-count model"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "93245649ac": {
+      "event_i": 15,
+      "decision": "How should the grass-cover effect be scaled for reporting?",
+      "approach": "coefficient per 10 percentage-point increase in total grass cover",
+      "evidence": "\u201ccoefficient per +10 percentage points total grass cover\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-30",
+      "bans": [
+        "coefficient per 10 percentage-point increase in total grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "3c9d1d98b3": {
+      "event_i": 15,
+      "decision": "What clustering level should be used for uncertainty estimation?",
+      "approach": "property-cluster-robust standard errors",
+      "evidence": "\u201ccluster-robust SE (18 properties)\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-30",
+      "bans": [
+        "property-cluster-robust standard errors"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f79210dd60": {
+      "event_i": 15,
+      "decision": "Which reference distribution and degrees of freedom should be used for uncertainty inference?",
+      "approach": "t reference distribution with 17 degrees of freedom",
+      "evidence": "\u201ct-df 17\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/06e847c6-30",
+      "bans": [
+        "t reference distribution with 17 degrees of freedom",
+        "nonparametric property-cluster bootstrap with percentile confidence interval and no parametric degrees of freedom"
+      ],
+      "branches": [
+        "forks/bp/b2f56f7b-43"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "fb8f67edf4": {
+      "event_i": 17,
+      "decision": "How should within-property dependence be handled when estimating uncertainty?",
+      "approach": "nonparametric cluster bootstrap resampling the 18 properties with replacement",
+      "evidence": "\u201cAlternative clustering approach: nonparametric cluster bootstrap resampling the 18 properties with replacement\u201d",
+      "occurrence_i": 17,
+      "boundary_i": 17,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-8",
+      "bans": [
+        "nonparametric cluster bootstrap resampling the 18 properties with replacement"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "170043055c": {
+      "event_i": 23,
+      "decision": "What dispersion treatment should be used when fitting the negative-binomial model within bootstrap replicates?",
+      "approach": "fixed-alpha negative-binomial GLM with alpha set to 9.22 from the full-sample MLE",
+      "evidence": "\u201cuse fixed-alpha NB GLM (alpha=9.22 from the full-sample MLE) inside the bootstrap\u201d",
+      "occurrence_i": 23,
+      "boundary_i": 23,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-8",
+      "bans": [
+        "fixed-alpha negative-binomial GLM with alpha set to 9.22 from the full-sample MLE"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "0ebec96c8b": {
+      "event_i": 23,
+      "decision": "How many cluster-bootstrap replicates should be used to estimate uncertainty?",
+      "approach": "100 cluster-bootstrap replicates",
+      "evidence": "\u201cCut to 100 replicates\u201d",
+      "occurrence_i": 23,
+      "boundary_i": 23,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-8",
+      "bans": [
+        "100 cluster-bootstrap replicates"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "71b7e7b9f3": {
+      "event_i": 26,
+      "decision": "What uncertainty summary should accompany the fitted NB2 grass-cover coefficient?",
+      "approach": "cluster-bootstrap standard error",
+      "evidence": "\u201cReport the NB2 grass coefficient with the cluster-bootstrap SE.\u201d",
+      "occurrence_i": 26,
+      "boundary_i": 26,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-8",
+      "bans": [
+        "cluster-bootstrap standard error",
+        "model-based MLE standard error with property fixed effects"
+      ],
+      "branches": [
+        "forks/bp/33107af3-38"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "b2f19a409b": {
+      "event_i": 8,
+      "decision": "How should grass cover be operationalized from the available cover classes?",
+      "approach": "sum all four grass/graminoid cover columns",
+      "evidence": "\u201cgrass = sum of all four grass/graminoid cover columns\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-29",
+      "bans": [
+        "sum all four grass/graminoid cover columns"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "2d63131f61": {
+      "event_i": 8,
+      "decision": "What recruitment outcome and count-model family should be used?",
+      "approach": "fit an NB2 model to total Eucalyptus seedling count",
+      "evidence": "\u201cfit a negative binomial (NB2, MLE with estimated dispersion) count model for `euc_sdlgs_all`\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-29",
+      "bans": [
+        "fit an NB2 model to total Eucalyptus seedling count"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "9a3d485417": {
+      "event_i": 8,
+      "decision": "How should property clustering and measured contextual covariates be incorporated?",
+      "approach": "include Property fixed effects, Season, Euc_canopy_cover, and log1p(distance)",
+      "evidence": "\u201cwith Property fixed effects to absorb cluster-level heterogeneity, plus Season, Euc_canopy_cover, log1p(distance)\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-29",
+      "bans": [
+        "include Property fixed effects, Season, Euc_canopy_cover, and log1p(distance)"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f4c0de8062": {
+      "event_i": 8,
+      "decision": "What uncertainty estimator and inferential test should be used for the focal coefficient?",
+      "approach": "use observation-information maximum-likelihood standard errors and a z-test",
+      "evidence": "\u201cstandard MLE (observation-information) SEs, z-test\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/a55a4bcf-29",
+      "bans": [
+        "use observation-information maximum-likelihood standard errors and a z-test"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "4db64ba2eb": {
+      "event_i": 17,
+      "decision": "Which count-model estimation method and dispersion treatment should be used?",
+      "approach": "Fit statsmodels' NegativeBinomial maximum-likelihood model with alpha estimated jointly",
+      "evidence": "\u201cUse statsmodels' NegativeBinomial MLE (which estimates alpha jointly) on the same design matrix\u201d",
+      "occurrence_i": 17,
+      "boundary_i": 17,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3bc56c8-18",
+      "bans": [
+        "Fit statsmodels' NegativeBinomial maximum-likelihood model with alpha estimated jointly"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "fa177d270b": {
+      "event_i": 20,
+      "decision": "What fitted model result should supply the focal grass-cover estimate?",
+      "approach": "Report the grass coefficient from the converged NB2 maximum-likelihood fit with estimated alpha about 5.23",
+      "evidence": "\u201cEstimation converged with jointly estimated dispersion (alpha\u22485.23). I'll submit this NB2 MLE coefficient.\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/c3bc56c8-18",
+      "bans": [
+        "Report the grass coefficient from the converged NB2 maximum-likelihood fit with estimated alpha about 5.23"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "0b7c8c3613": {
+      "event_i": 11,
+      "decision": "Which count-model family and parameterization should represent Eucalyptus seedling recruitment?",
+      "approach": "NB2 maximum-likelihood model",
+      "evidence": "\u201cReport the NB2 MLE grass coefficient\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d89d34ed-32",
+      "bans": [
+        "NB2 maximum-likelihood model"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "a21d2bf8d9": {
+      "event_i": 11,
+      "decision": "What inferential procedure should quantify uncertainty for the focal grass-cover coefficient?",
+      "approach": "likelihood-ratio test with signed square-root LR summary",
+      "evidence": "\u201cwith a likelihood-ratio inferential summary (signed sqrt-LR = \u22120.90, LR \u03c7\u00b2(1)=0.814, p=0.367)\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d89d34ed-32",
+      "bans": [
+        "likelihood-ratio test with signed square-root LR summary"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f029689fb8": {
+      "event_i": 12,
+      "decision": "What focal model coefficient and uncertainty should be reported?",
+      "approach": "report the grass coefficient of 0.00351 with standard error 0.01072 on the fitted model's native scale",
+      "evidence": "\u201cModel fitted; grass coefficient 0.00351 (SE 0.01072), t=0.327 on 325 residual df. Next step: submit this as the report.\u201d",
+      "occurrence_i": 12,
+      "boundary_i": 12,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/2ba4f685-35",
+      "bans": [
+        "report the grass coefficient of 0.00351 with standard error 0.01072 on the fitted model's native scale"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "400ba18c8a": {
+      "event_i": 18,
+      "decision": "What inferential contrast is reported?",
+      "approach": "submit this contrast",
+      "evidence": "\u201cSubmit this contrast.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/78e5d8d4-37",
+      "bans": [
+        "submit this contrast"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "df0e7447a9": {
+      "event_i": 30,
+      "decision": "How should clustering by property be represented in the model?",
+      "approach": "Property fixed effects",
+      "evidence": "\u201cReport this within-property (Property fixed effects) NB2 estimate.\u201d",
+      "occurrence_i": 30,
+      "boundary_i": 30,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/33107af3-38",
+      "bans": [
+        "Property fixed effects"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f7fdb95f34": {
+      "event_i": 30,
+      "decision": "Which count-model distribution should be used for seedling recruitment?",
+      "approach": "NB2 negative binomial model",
+      "evidence": "\u201cReport this within-property (Property fixed effects) NB2 estimate.\u201d",
+      "occurrence_i": 30,
+      "boundary_i": 30,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/33107af3-38",
+      "bans": [
+        "NB2 negative binomial model",
+        "Quasi-Poisson GLM"
+      ],
+      "branches": [
+        "forks/bp/47d8a4c8-48"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "0b564ebef8": {
+      "event_i": 18,
+      "decision": "What predictor scale and corresponding coefficient should define the focal effect estimate?",
+      "approach": "Use the log-grass coefficient as the focal estimate",
+      "evidence": "\u201cSubmit the log-grass coefficient.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/785ead02-39",
+      "bans": [
+        "Use the log-grass coefficient as the focal estimate"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "2579b3f2fd": {
+      "event_i": 17,
+      "decision": "Which model structure should represent property-level clustering and accommodate properties with all-zero outcomes?",
+      "approach": "Poisson mixed model with a random Property intercept fitted by variational Bayes using statsmodels PoissonBayesMixedGLM",
+      "evidence": "\u201creplace the non-converging fixed-effects specification with a Poisson mixed model with a random Property intercept (statsmodels PoissonBayesMixedGLM, VB), which handles the all-zero properties gracefully and models clustering as a variance component\u201d",
+      "occurrence_i": 17,
+      "boundary_i": 17,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-34",
+      "bans": [
+        "Poisson mixed model with a random Property intercept fitted by variational Bayes using statsmodels PoissonBayesMixedGLM"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "3233c7d173": {
+      "event_i": 20,
+      "decision": "Which fitted model should replace the divergent variational-Bayes mixed model?",
+      "approach": "Poisson GEE with exchangeable working correlation clustered by Property",
+      "evidence": "\u201cVB diverged. Instead fit a Poisson GEE with exchangeable working correlation clustered by Property\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-34",
+      "bans": [
+        "Poisson GEE with exchangeable working correlation clustered by Property"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "c8483b26a4": {
+      "event_i": 20,
+      "decision": "What uncertainty estimator should be reported for the Poisson GEE coefficient?",
+      "approach": "naive model-based standard error with an estimated scale parameter",
+      "evidence": "\u201creport the naive (model-based) SE, which accounts for within-property correlation through the working correlation structure plus an estimated scale parameter\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-34",
+      "bans": [
+        "naive model-based standard error with an estimated scale parameter"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f9a22d0fa9": {
+      "event_i": 23,
+      "decision": "Which fitted focal coefficient should be reported after assessing convergence?",
+      "approach": "GEE grass coefficient",
+      "evidence": "\u201cConverged sensibly; report this GEE grass coefficient.\u201d",
+      "occurrence_i": 23,
+      "boundary_i": 23,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-34",
+      "bans": [
+        "GEE grass coefficient",
+        "Marginal NB2 grass coefficient"
+      ],
+      "branches": [
+        "forks/bp/a9bae78b-49"
+      ],
+      "strikes": 0,
+      "closed": false
+    },
+    "2b6a5e3291": {
+      "event_i": 18,
+      "decision": "What scaling defines the focal grass-cover effect?",
+      "approach": "report the log-rate change per 25-percentage-point increase in total grass cover",
+      "evidence": "\u201cSubmit this estimate: log-rate change per 25-percentage-point increase in total grass cover.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ce1559f-42",
+      "bans": [
+        "report the log-rate change per 25-percentage-point increase in total grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "92a8501a42": {
+      "event_i": 18,
+      "decision": "Which grass-cover construction operationalizes the exposure?",
+      "approach": "use total grass cover",
+      "evidence": "\u201cSubmit this estimate: log-rate change per 25-percentage-point increase in total grass cover.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ce1559f-42",
+      "bans": [
+        "use total grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "bb697532ba": {
+      "event_i": 18,
+      "decision": "What model scale is used for the focal estimate?",
+      "approach": "use the log-rate scale",
+      "evidence": "\u201cSubmit this estimate: log-rate change per 25-percentage-point increase in total grass cover.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ce1559f-42",
+      "bans": [
+        "use the log-rate scale"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f23561cd8e": {
+      "event_i": 20,
+      "decision": "What mean\u2013variance model was used for the seedling recruitment count outcome?",
+      "approach": "quasi-Poisson",
+      "evidence": "\u201cReport: quasi-Poisson point estimate with cluster (Property) bootstrap SE and percentile CI as inference.\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ae7056d-26",
+      "bans": [
+        "quasi-Poisson"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "39eac841bd": {
+      "event_i": 20,
+      "decision": "How was clustering represented in the uncertainty analysis?",
+      "approach": "Property-level cluster bootstrap",
+      "evidence": "\u201cReport: quasi-Poisson point estimate with cluster (Property) bootstrap SE and percentile CI as inference.\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ae7056d-26",
+      "bans": [
+        "Property-level cluster bootstrap"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "1072b46386": {
+      "event_i": 20,
+      "decision": "What uncertainty summaries were reported for the focal estimate?",
+      "approach": "bootstrap standard error and percentile confidence interval",
+      "evidence": "\u201cReport: quasi-Poisson point estimate with cluster (Property) bootstrap SE and percentile CI as inference.\u201d",
+      "occurrence_i": 20,
+      "boundary_i": 20,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/3ae7056d-26",
+      "bans": [
+        "bootstrap standard error and percentile confidence interval"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "9ca14fa0ba": {
+      "event_i": 18,
+      "decision": "How should the focal grass-cover effect be scaled for reporting?",
+      "approach": "report the log-count change per 10 percentage points of grass cover",
+      "evidence": "\u201ceffect = -0.1348 (log count change per 10 percentage points grass cover), SE 0.0923.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/6f3401cf-44",
+      "bans": [
+        "report the log-count change per 10 percentage points of grass cover"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "884e5715f6": {
+      "event_i": 18,
+      "decision": "What uncertainty summary should accompany the focal estimate?",
+      "approach": "report the standard error",
+      "evidence": "\u201cSE 0.0923.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/6f3401cf-44",
+      "bans": [
+        "report the standard error"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "8fb939e01a": {
+      "event_i": 15,
+      "decision": "How many bootstrap replicates and what implementation strategy to use for uncertainty estimation?",
+      "approach": "property-level cluster bootstrap with precomputed NumPy index arrays and 600 replicates",
+      "evidence": "\u201cI'll speed it up using numpy index arrays precomputed per property and fewer replicates (600).\u201d",
+      "occurrence_i": 15,
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/8aa4916d-36",
+      "bans": [
+        "property-level cluster bootstrap with precomputed NumPy index arrays and 600 replicates"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "dc61e1f59c": {
+      "event_i": 18,
+      "decision": "What effect summary and native-scale uncertainty measure to report for grass cover?",
+      "approach": "average marginal effect in seedlings per one percentage-point grass cover with cluster-bootstrap standard error",
+      "evidence": "\u201cSubmit: AME = \u22120.0122 seedlings per 1 pp grass cover, cluster bootstrap SE 0.0187.\u201d",
+      "occurrence_i": 18,
+      "boundary_i": 18,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/8aa4916d-36",
+      "bans": [
+        "average marginal effect in seedlings per one percentage-point grass cover with cluster-bootstrap standard error"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "a456794c08": {
+      "event_i": 8,
+      "decision": "Which recruitment outcome construction should represent Eucalyptus seedling recruitment?",
+      "approach": "sum only the three primitive seedling height-class counts",
+      "evidence": "\u201crebuild the total from only the three primitive height classes\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d044babd-45",
+      "bans": [
+        "sum only the three primitive seedling height-class counts"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "49f97796ab": {
+      "event_i": 8,
+      "decision": "What model family should be used for the total seedling count outcome?",
+      "approach": "negative-binomial generalized linear model",
+      "evidence": "\u201crefit the same NB GLM\u201d",
+      "occurrence_i": 8,
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d044babd-45",
+      "bans": [
+        "negative-binomial generalized linear model"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "cb69c24ed0": {
+      "event_i": 11,
+      "decision": "What model scale should be used to report the focal grass-cover estimate?",
+      "approach": "grass coefficient on the log-rate scale",
+      "evidence": "\u201csubmit the grass coefficient (log-rate scale)\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d044babd-45",
+      "bans": [
+        "grass coefficient on the log-rate scale"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "ae084a0a5f": {
+      "event_i": 11,
+      "decision": "How should uncertainty account for dependence in the observations?",
+      "approach": "cluster-robust standard error",
+      "evidence": "\u201cwith cluster-robust SE\u201d",
+      "occurrence_i": 11,
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d044babd-45",
+      "bans": [
+        "cluster-robust standard error"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "f9dd55a843": {
+      "event_i": 34,
+      "decision": "Which count-model variance specification is used for the focal estimate and uncertainty?",
+      "approach": "quasi-Poisson",
+      "evidence": "\u201cReport this quasi-Poisson estimate.\u201d",
+      "occurrence_i": 34,
+      "boundary_i": 34,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/47d8a4c8-48",
+      "bans": [
+        "quasi-Poisson"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "53dcf13824": {
+      "event_i": 19,
+      "decision": "How should uncertainty account for clustering and be summarized?",
+      "approach": "Use 400 cluster bootstrap replicates and report the bootstrap standard error and percentile confidence interval without t- or z-based degrees of freedom",
+      "evidence": "\u201crerun with 400 cluster bootstrap replicates and report bootstrap SE and percentile CI (bootstrap-based inference, no t/z df).\u201d",
+      "occurrence_i": 19,
+      "boundary_i": 19,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/b2f56f7b-43",
+      "bans": [
+        "Use 400 cluster bootstrap replicates and report the bootstrap standard error and percentile confidence interval without t- or z-based degrees of freedom"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "b6c583f007": {
+      "event_i": 22,
+      "decision": "What uncertainty estimate should accompany the focal estimate?",
+      "approach": "Report the bootstrap standard error",
+      "evidence": "\u201cSubmit the estimate with bootstrap SE.\u201d",
+      "occurrence_i": 22,
+      "boundary_i": 22,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/b2f56f7b-43",
+      "bans": [
+        "Report the bootstrap standard error"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "82235dd79a": {
+      "event_i": 17,
+      "decision": "How should between-property heterogeneity and clustering be represented?",
+      "approach": "Negative-binomial model with Property fixed-effect dummies and model-based standard errors",
+      "evidence": "\"fit NB2 MLE with Property fixed-effect dummies to absorb between-property heterogeneity, using model-based SEs; grass effect is then within-property.\"",
+      "occurrence_i": 17,
+      "boundary_i": 17,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-46",
+      "bans": [
+        "Negative-binomial model with Property fixed-effect dummies and model-based standard errors"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "537780ef3f": {
+      "event_i": 23,
+      "decision": "What estimation method should be used after the fixed-effects NB2 maximum-likelihood fit failed to converge?",
+      "approach": "IRLS-based negative-binomial GLM with Property dummies and dispersion alpha profiled over a grid",
+      "evidence": "\"Switch to IRLS-based NB GLM with property dummies and alpha profiled over a grid (IRLS is stable), reporting model-based SEs.\"",
+      "occurrence_i": 23,
+      "boundary_i": 23,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-46",
+      "bans": [
+        "IRLS-based negative-binomial GLM with Property dummies and dispersion alpha profiled over a grid"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    },
+    "353496a29f": {
+      "event_i": 26,
+      "decision": "How should negative-binomial dispersion be selected and uncertainty quantified?",
+      "approach": "Profile-grid dispersion estimate of alpha 5.2 with model-based standard errors",
+      "evidence": "\"Converged interior alpha (5.2); report grass coefficient from this within-property NB model.\"",
+      "occurrence_i": 26,
+      "boundary_i": 26,
+      "boundary": "after_completed_response",
+      "home": "forks/bp/d80cfe5a-46",
+      "bans": [
+        "Profile-grid dispersion estimate of alpha 5.2 with model-based standard errors"
+      ],
+      "branches": [],
+      "strikes": 0,
+      "closed": false
+    }
+  },
+  "n_branches": 50,
+  "errors": [],
+  "rng_state": [
+    3,
+    [
+      2209797851,
+      1310782419,
+      3119086015,
+      1729616049,
+      3847713558,
+      3139771108,
+      2455593149,
+      3244754123,
+      3577021632,
+      1913712266,
+      737322571,
+      3615952240,
+      18424935,
+      1596446038,
+      916716787,
+      2212648123,
+      769310697,
+      3313257811,
+      3293819628,
+      3627437201,
+      36460796,
+      2846190702,
+      3878573405,
+      2747625764,
+      1428796091,
+      1628432771,
+      2260628874,
+      1519186401,
+      1063032541,
+      1709885350,
+      2738772443,
+      1979201122,
+      114541802,
+      2883602358,
+      4077737636,
+      173898411,
+      2342798504,
+      2450926409,
+      2232824625,
+      4033330503,
+      2343616686,
+      1515570958,
+      4051615260,
+      3522546727,
+      533417299,
+      3759121372,
+      696316160,
+      2870856616,
+      3323407354,
+      2866088407,
+      3692585413,
+      843123312,
+      2332531573,
+      405676999,
+      2415026264,
+      4280820917,
+      2774053132,
+      4108276368,
+      1219140474,
+      903806648,
+      3377497524,
+      108303057,
+      4102665952,
+      2550424930,
+      2100374658,
+      3266874912,
+      4077700395,
+      2986480159,
+      139009351,
+      3041653074,
+      3839964247,
+      4199433129,
+      1936388353,
+      1838224327,
+      2781758059,
+      4239229206,
+      856134791,
+      861511663,
+      581911872,
+      2786597277,
+      161930731,
+      445774403,
+      2395212803,
+      3311681945,
+      3758626802,
+      925604840,
+      517910525,
+      1064137318,
+      695871777,
+      3016363843,
+      2805185051,
+      1230244323,
+      2835894583,
+      290837395,
+      1816834323,
+      3421863065,
+      3594521870,
+      2677875623,
+      4256153362,
+      1405132945,
+      791242287,
+      766814324,
+      1464935610,
+      2427611059,
+      3944445252,
+      1276868917,
+      1051991688,
+      3108471098,
+      2375801108,
+      130419865,
+      2775849674,
+      3718610980,
+      2752757474,
+      2555610261,
+      731605625,
+      4283257435,
+      597342503,
+      94149598,
+      1947300720,
+      3674159161,
+      3642772569,
+      171502344,
+      3062579376,
+      1893076807,
+      3467331993,
+      1938238711,
+      1173227143,
+      4225576996,
+      2389174523,
+      1254780947,
+      32373735,
+      654097312,
+      3633648030,
+      1765314267,
+      1033437443,
+      2404206575,
+      3142312706,
+      346022565,
+      3757977821,
+      3975284955,
+      172054339,
+      141173632,
+      3294911448,
+      3847655497,
+      3128512066,
+      3166827120,
+      2909018246,
+      1745154100,
+      2581131425,
+      3032815063,
+      4171776785,
+      1561944867,
+      1736557639,
+      4280846812,
+      3336183825,
+      3773651363,
+      1187013754,
+      3337926801,
+      557553004,
+      2492430200,
+      3031824664,
+      2471699653,
+      2044248862,
+      2979841546,
+      1197296108,
+      2204504526,
+      2891924611,
+      3630721777,
+      2235864090,
+      2407183217,
+      4267192286,
+      3219204226,
+      1467462895,
+      1362378104,
+      213283131,
+      1644127254,
+      4292149487,
+      1518053450,
+      2625923248,
+      4079228224,
+      84463266,
+      3848195982,
+      1458295978,
+      1774367083,
+      1811631071,
+      781530395,
+      3367450532,
+      410798176,
+      312908111,
+      525593586,
+      280418179,
+      2123030836,
+      4211165599,
+      1461861714,
+      3626322618,
+      2710631310,
+      2434646958,
+      1656130410,
+      1378799180,
+      2779553398,
+      1758697796,
+      363954851,
+      4195654717,
+      4142148649,
+      3556992360,
+      1445991129,
+      2712977377,
+      2623222904,
+      3995417036,
+      3115788929,
+      1699325857,
+      509693981,
+      917411528,
+      600406579,
+      2061828895,
+      1876262424,
+      3795137002,
+      3270017248,
+      1347667415,
+      2479809997,
+      2036299856,
+      1042672787,
+      994669106,
+      433972083,
+      2502275038,
+      2635213551,
+      1402784491,
+      1116441945,
+      2581750609,
+      1873499699,
+      744207079,
+      2742614651,
+      2608503629,
+      2626117734,
+      1428853800,
+      28090190,
+      3696488853,
+      930414318,
+      4047203678,
+      1034926196,
+      202997008,
+      2388538012,
+      1475336311,
+      1795307474,
+      3168055834,
+      2131291408,
+      3231249933,
+      3728385138,
+      596052658,
+      3596044582,
+      1203065752,
+      1748127939,
+      3932865294,
+      149286079,
+      1953265224,
+      719931609,
+      2888978460,
+      3142736816,
+      3705800512,
+      3523583006,
+      837382245,
+      3599650457,
+      2286439512,
+      4018165742,
+      3724674978,
+      1336004804,
+      462879669,
+      1727727622,
+      531401034,
+      212853857,
+      1136148421,
+      238676462,
+      3349901886,
+      2915514296,
+      287788277,
+      3864137436,
+      2932501431,
+      882058814,
+      6462233,
+      1701589250,
+      670526219,
+      2293543260,
+      3754637968,
+      4233368352,
+      745686586,
+      3991380204,
+      278647854,
+      2766957114,
+      1734452913,
+      2073953046,
+      919618676,
+      2632861443,
+      3416910172,
+      3581023649,
+      1721790903,
+      3904737182,
+      3116750505,
+      2114602060,
+      1399141197,
+      2668710826,
+      2708969026,
+      2009997944,
+      3043948900,
+      2857570347,
+      1504356700,
+      3476754486,
+      337605601,
+      911541056,
+      4293815931,
+      965782150,
+      1795609552,
+      298342213,
+      650242036,
+      3453531348,
+      2748987729,
+      2269603523,
+      502899805,
+      2625258973,
+      1852894249,
+      660403865,
+      3100750820,
+      978021276,
+      3316199148,
+      4145513117,
+      1788569554,
+      3439492090,
+      3283779360,
+      3044239256,
+      160181619,
+      3084803175,
+      2577591468,
+      1376054904,
+      2092719290,
+      2359281501,
+      3297694246,
+      1842825422,
+      1015770166,
+      1246673105,
+      2184121317,
+      1431854310,
+      3554900576,
+      431607805,
+      1831438130,
+      4227227974,
+      3051300990,
+      2757854026,
+      1255948428,
+      2055851598,
+      3761123598,
+      1196946284,
+      124437989,
+      862640847,
+      1975991680,
+      3371472232,
+      3981850462,
+      2639877961,
+      1184932315,
+      3046627654,
+      2358835955,
+      796076182,
+      1724397586,
+      600760907,
+      2731800228,
+      1040790674,
+      1663004970,
+      4110944865,
+      3176958951,
+      3197997473,
+      3764669238,
+      648306548,
+      3028635007,
+      1326689237,
+      3099174219,
+      1406987327,
+      4169621564,
+      1077284560,
+      2516588097,
+      2471331236,
+      3175561268,
+      217180289,
+      779878243,
+      1879375519,
+      1828672530,
+      3941218980,
+      399632375,
+      1004177505,
+      1473602859,
+      1904936758,
+      1900322626,
+      1544744567,
+      3189862981,
+      58354446,
+      2834805588,
+      2219429266,
+      2405529016,
+      1179509839,
+      4010806002,
+      540066322,
+      4058066641,
+      2591914617,
+      2604737954,
+      512638304,
+      655555105,
+      2179475744,
+      3877613125,
+      3960129923,
+      3514780936,
+      124580710,
+      1449363681,
+      2013889872,
+      1215106344,
+      4197253243,
+      1771495503,
+      630786633,
+      900482710,
+      1973567676,
+      1003676130,
+      392009020,
+      929303200,
+      307990821,
+      733333158,
+      4216766864,
+      2751800975,
+      3091636639,
+      1334769440,
+      2463922810,
+      3388610742,
+      762363895,
+      224523551,
+      3653083983,
+      29571225,
+      599315482,
+      4206135812,
+      793042001,
+      1301837150,
+      540221098,
+      3673904522,
+      1535115606,
+      3126969041,
+      188941058,
+      4131222413,
+      467618210,
+      3433545803,
+      1667939342,
+      3286581763,
+      3426271201,
+      4134542474,
+      276670496,
+      2094650693,
+      3323406832,
+      2146918767,
+      1031272631,
+      613070666,
+      3181618072,
+      562645249,
+      2224965962,
+      3334254493,
+      308090498,
+      614051428,
+      2859866281,
+      2195356933,
+      1528160606,
+      1665293824,
+      3560386823,
+      1653238791,
+      2725687622,
+      2222859255,
+      1219747448,
+      2762083723,
+      4064948773,
+      3751507603,
+      1521076257,
+      1526035386,
+      1994271318,
+      634479170,
+      126809755,
+      1304318434,
+      227083616,
+      3463927535,
+      1085672862,
+      59608601,
+      3469172179,
+      3610547909,
+      686220939,
+      2770248908,
+      1064340784,
+      2561249201,
+      3958823323,
+      328331370,
+      513803273,
+      4280021345,
+      3710545529,
+      3066618007,
+      3163774037,
+      144496269,
+      3103743181,
+      1449446697,
+      3814810562,
+      284014431,
+      3179178546,
+      218875862,
+      3770807197,
+      3474860314,
+      3787757823,
+      1433030609,
+      1131933,
+      4205876781,
+      3299645145,
+      1827636727,
+      3286057352,
+      709834818,
+      2264172117,
+      1495718922,
+      3772531191,
+      1805614860,
+      2228073479,
+      3516977410,
+      656116110,
+      2175707694,
+      540089995,
+      2360458992,
+      3180823070,
+      275972642,
+      334044058,
+      2622249266,
+      2638122058,
+      1496683466,
+      1280312640,
+      718933516,
+      1185455907,
+      3399448045,
+      1225333306,
+      3862527484,
+      3917756875,
+      1175269666,
+      2032851053,
+      2284216277,
+      333256132,
+      1254954251,
+      3394290506,
+      2793673908,
+      4107471281,
+      3714584622,
+      2652656726,
+      3049257932,
+      405616044,
+      2858270748,
+      2307569624,
+      2160637854,
+      1985096318,
+      2943306173,
+      3827956010,
+      3726200833,
+      3803601849,
+      1648722156,
+      1913238844,
+      177235316,
+      974080905,
+      3599530103,
+      2194255292,
+      504324636,
+      1234932344,
+      3153476750,
+      4159951556,
+      1044841595,
+      2594661005,
+      4107966045,
+      2214358026,
+      1144592615,
+      81000664,
+      701228785,
+      1774651308,
+      1033723981,
+      92419257,
+      318046185,
+      2811172968,
+      2718056043,
+      638283309,
+      2334846417,
+      1444830275,
+      3291925066,
+      3995904012,
+      829773945,
+      3208331298,
+      3341973591,
+      2586768678,
+      3109668288,
+      3713918033,
+      3171783699,
+      3359880185,
+      1714687774,
+      692911729,
+      2576318252,
+      1390186656,
+      1833519037,
+      2874524020,
+      3460414965,
+      750244811,
+      1042970649,
+      1287970903,
+      1600266623,
+      1324127159,
+      2085884600,
+      1826115555,
+      1695027055,
+      1110468416,
+      2345100366,
+      464296305,
+      1086661894,
+      2891767629,
+      1889238492,
+      836501391,
+      1443901550,
+      4204111709,
+      1381984794,
+      1249215042,
+      4121858473,
+      96740386,
+      1973019081,
+      3581678156,
+      2034987407,
+      3211712661,
+      1320598276,
+      935579968,
+      74
+    ],
+    null
+  ],
+  "in_flight": {},
+  "probes": {
+    "forks/bp/661e11a1-0": {
+      "decision_key": "ec85f2ed93",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For Which model, dependence correction, covariates, and missing-data rule are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM with Property-clustered robust standard errors, adjust for eucalypt canopy cover and distance to canopy, and use complete cases\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Poisson log-link GEE with Property clusters, exchangeable working correlation and robust SEs; adjust for Season; treat missing grass components as zero and otherwise use complete cases"
+      }
+    },
+    "forks/bp/61a418a5-1": {
+      "decision_key": "2704d5b246",
+      "source_segment": "",
+      "boundary_i": 0,
+      "boundary": "after_completed_response",
+      "intervention": "For Which ground-cover variables operationalize grass cover?, do not use any approach in this JSON list: [\"sum exotic annual grass, exotic perennial grass, and native perennial grass percent cover while excluding native perennial graminoid cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "sum exotic annual grass, exotic perennial grass, native perennial grass, and native perennial graminoid percent cover"
+      }
+    },
+    "forks/bp/b4b9c37b-2": {
+      "decision_key": "726926db9e",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For What recruitment outcome is modeled?, do not use any approach in this JSON list: [\"sum seedling counts across all three height classes\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "model only 0\u201350 cm seedling counts"
+      }
+    },
+    "forks/bp/c3676123-3": {
+      "decision_key": "d9cfbd1848",
+      "source_segment": "",
+      "boundary_i": 9,
+      "boundary": "after_completed_response",
+      "intervention": "For How is a dispersion estimate at the search-grid boundary handled?, do not use any approach in this JSON list: [\"retain the fitted model and report the grass coefficient because it was stable\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "replace the boundary-grid estimate with a freely estimated dispersion via NB2 MLE"
+      }
+    },
+    "forks/bp/b4b9c37b-4": {
+      "decision_key": "726926db9e",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For What recruitment outcome is modeled?, do not use any approach in this JSON list: [\"sum seedling counts across all three height classes\", \"model only 0\\u201350 cm seedling counts\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "model 0\u20132 m seedling counts"
+      }
+    },
+    "forks/bp/57a12c15-5": {
+      "decision_key": "b0650260c8",
+      "source_segment": "forks/bp/b4b9c37b-2",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"report the grass coefficient as a log-rate change per percentage point of cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the grass coefficient as a log-rate change per 1 SD increase in cover"
+      }
+    },
+    "forks/bp/57a12c15-6": {
+      "decision_key": "14eb570c8c",
+      "source_segment": "forks/bp/661e11a1-0",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"log-rate scale\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "count-scale average marginal effect"
+      }
+    },
+    "forks/bp/661e11a1-7": {
+      "decision_key": "ec85f2ed93",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For Which model, dependence correction, covariates, and missing-data rule are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM with Property-clustered robust standard errors, adjust for eucalypt canopy cover and distance to canopy, and use complete cases\", \"Poisson log-link GEE with Property clusters, exchangeable working correlation and robust SEs; adjust for Season; treat missing grass components as zero and otherwise use complete cases\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Quasi-Poisson log-link GLM with Pearson-scaled SEs, Property and Season fixed effects, adjustment for eucalypt canopy cover and distance to canopy, using complete cases"
+      }
+    },
+    "forks/bp/d80cfe5a-8": {
+      "decision_key": "5823170fb6",
+      "source_segment": "forks/bp/c3676123-3",
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "intervention": "For How should uncertainty for the focal grass-cover coefficient account for clustered observations?, do not use any approach in this JSON list: [\"Use cluster-robust standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Property-level cluster bootstrap standard errors"
+      }
+    },
+    "forks/bp/c3676123-9": {
+      "decision_key": "d9cfbd1848",
+      "source_segment": "",
+      "boundary_i": 9,
+      "boundary": "after_completed_response",
+      "intervention": "For How is a dispersion estimate at the search-grid boundary handled?, do not use any approach in this JSON list: [\"retain the fitted model and report the grass coefficient because it was stable\", \"replace the boundary-grid estimate with a freely estimated dispersion via NB2 MLE\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "replace the boundary-dispersion model with a Poisson mean model using property-clustered robust standard errors"
+      }
+    },
+    "forks/bp/61a418a5-10": {
+      "decision_key": "2704d5b246",
+      "source_segment": "",
+      "boundary_i": 0,
+      "boundary": "after_completed_response",
+      "intervention": "For Which ground-cover variables operationalize grass cover?, do not use any approach in this JSON list: [\"sum exotic annual grass, exotic perennial grass, and native perennial grass percent cover while excluding native perennial graminoid cover\", \"sum exotic annual grass, exotic perennial grass, native perennial grass, and native perennial graminoid percent cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "sum exotic annual grass and exotic perennial grass percent cover"
+      }
+    },
+    "forks/bp/57a12c15-11": {
+      "decision_key": "b0650260c8",
+      "source_segment": "forks/bp/b4b9c37b-2",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"report the grass coefficient as a log-rate change per percentage point of cover\", \"report the grass coefficient as a log-rate change per 1 SD increase in cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the grass coefficient as a log-rate change per 10 percentage-point increase in cover"
+      }
+    },
+    "forks/bp/d89d34ed-12": {
+      "decision_key": "dc835b3877",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 7,
+      "boundary": "after_completed_response",
+      "intervention": "For What scale and inferential summary are used for the focal grass effect?, do not use any approach in this JSON list: [\"report the grass coefficient on the log-count scale with a cluster-robust z statistic\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the average marginal grass effect on the expected-count scale with a cluster-robust delta-method t statistic using 17 cluster degrees of freedom"
+      }
+    },
+    "forks/bp/a55a4bcf-13": {
+      "decision_key": "30ad7d52dd",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "intervention": "For Which count model, adjustment covariates, and dependence correction are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM adjusted for Euc_canopy_cover and distance with cluster-robust standard errors by Property\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Poisson GEE adjusted for Season and Euc_canopy_cover, with exchangeable within-Property correlation and robust sandwich standard errors"
+      }
+    },
+    "forks/bp/c3676123-14": {
+      "decision_key": "d9cfbd1848",
+      "source_segment": "",
+      "boundary_i": 9,
+      "boundary": "after_completed_response",
+      "intervention": "For How is a dispersion estimate at the search-grid boundary handled?, do not use any approach in this JSON list: [\"retain the fitted model and report the grass coefficient because it was stable\", \"replace the boundary-grid estimate with a freely estimated dispersion via NB2 MLE\", \"replace the boundary-dispersion model with a Poisson mean model using property-clustered robust standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "replace the boundary-dispersion model with a quasi-Poisson mean model using property-cluster bootstrap standard errors"
+      }
+    },
+    "forks/bp/a3e99f8f-15": {
+      "decision_key": "e7312a2068",
+      "source_segment": "forks/bp/b4b9c37b-4",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What focal model parameter should be reported as the estimate of the grass-cover effect?, do not use any approach in this JSON list: [\"report the grass coefficient\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "report the grass coefficient"
+      }
+    },
+    "forks/bp/57a12c15-16": {
+      "decision_key": "b0650260c8",
+      "source_segment": "forks/bp/b4b9c37b-2",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"report the grass coefficient as a log-rate change per percentage point of cover\", \"report the grass coefficient as a log-rate change per 1 SD increase in cover\", \"report the grass coefficient as a log-rate change per 10 percentage-point increase in cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the grass coefficient as a log-rate change per full-range increase in cover (0 to 100 percentage points)"
+      }
+    },
+    "forks/bp/06e847c6-17": {
+      "decision_key": "43070739e4",
+      "source_segment": "forks/bp/d89d34ed-12",
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "intervention": "For What effect summary and exposure increment are used for the focal estimate?, do not use any approach in this JSON list: [\"average marginal effect in seedlings per 1 percentage-point grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "log-count coefficient per 1-SD (23.72 percentage-point) increase in total grass cover"
+      }
+    },
+    "forks/bp/c3bc56c8-18": {
+      "decision_key": "a684d9ec07",
+      "source_segment": "forks/bp/661e11a1-7",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For Which count-model variance specification should be used to quantify uncertainty under overdispersion?, do not use any approach in this JSON list: [\"quasi-Poisson (Pearson-scaled) standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "NB2 MLE with jointly estimated dispersion"
+      }
+    },
+    "forks/bp/b4b9c37b-19": {
+      "decision_key": "726926db9e",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For What recruitment outcome is modeled?, do not use any approach in this JSON list: [\"sum seedling counts across all three height classes\", \"model only 0\\u201350 cm seedling counts\", \"model 0\\u20132 m seedling counts\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "model occurrence of any seedling across all height classes"
+      }
+    },
+    "forks/bp/92a72596-20": {
+      "decision_key": "da8d6f9f95",
+      "source_segment": "forks/bp/06e847c6-17",
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "intervention": "For How is uncertainty adjusted for the clustered survey design?, do not use any approach in this JSON list: [\"cluster-robust standard error\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "cluster-robust standard error"
+      }
+    },
+    "forks/bp/a55a4bcf-21": {
+      "decision_key": "30ad7d52dd",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "intervention": "For Which count model, adjustment covariates, and dependence correction are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM adjusted for Euc_canopy_cover and distance with cluster-robust standard errors by Property\", \"Poisson GEE adjusted for Season and Euc_canopy_cover, with exchangeable within-Property correlation and robust sandwich standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "quasi-Poisson GLM adjusted for Season, Euc_canopy_cover, log1p(distance), and Property fixed effects, with Pearson-dispersion-scaled standard errors"
+      }
+    },
+    "forks/bp/3ae7056d-22": {
+      "decision_key": "b035b8ba94",
+      "source_segment": "forks/bp/661e11a1-7",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What reference distribution should be used for inference from the fitted model?, do not use any approach in this JSON list: [\"t-based inference\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "normal-based inference"
+      }
+    },
+    "forks/bp/57a12c15-23": {
+      "decision_key": "b0650260c8",
+      "source_segment": "forks/bp/b4b9c37b-2",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"report the grass coefficient as a log-rate change per percentage point of cover\", \"report the grass coefficient as a log-rate change per 1 SD increase in cover\", \"report the grass coefficient as a log-rate change per 10 percentage-point increase in cover\", \"report the grass coefficient as a log-rate change per full-range increase in cover (0 to 100 percentage points)\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "log-rate change per interquartile-range (37.55 percentage-point) increase in grass cover"
+      }
+    },
+    "forks/bp/a71a4e17-24": {
+      "decision_key": "78be74924d",
+      "source_segment": "forks/bp/06e847c6-17",
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "intervention": "For What scale and unit define the focal grass-cover effect?, do not use any approach in this JSON list: [\"log-count effect per 1 SD (23.72 percentage points) of total grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "log-count effect per 10 percentage-point increase in total grass cover"
+      }
+    },
+    "forks/bp/57a12c15-25": {
+      "decision_key": "b0650260c8",
+      "source_segment": "forks/bp/b4b9c37b-2",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What model scale should be used for the focal grass-cover effect estimate?, do not use any approach in this JSON list: [\"report the grass coefficient as a log-rate change per percentage point of cover\", \"report the grass coefficient as a log-rate change per 1 SD increase in cover\", \"report the grass coefficient as a log-rate change per 10 percentage-point increase in cover\", \"report the grass coefficient as a log-rate change per full-range increase in cover (0 to 100 percentage points)\", \"log-rate change per interquartile-range (37.55 percentage-point) increase in grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "high (>=50%) vs low (<50%) grass-cover contrast"
+      }
+    },
+    "forks/bp/3ae7056d-26": {
+      "decision_key": "b035b8ba94",
+      "source_segment": "forks/bp/661e11a1-7",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What reference distribution should be used for inference from the fitted model?, do not use any approach in this JSON list: [\"t-based inference\", \"normal-based inference\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "cluster-bootstrap inference"
+      }
+    },
+    "forks/bp/661e11a1-27": {
+      "decision_key": "ec85f2ed93",
+      "source_segment": "",
+      "boundary_i": 6,
+      "boundary": "after_completed_response",
+      "intervention": "For Which model, dependence correction, covariates, and missing-data rule are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM with Property-clustered robust standard errors, adjust for eucalypt canopy cover and distance to canopy, and use complete cases\", \"Poisson log-link GEE with Property clusters, exchangeable working correlation and robust SEs; adjust for Season; treat missing grass components as zero and otherwise use complete cases\", \"Quasi-Poisson log-link GLM with Pearson-scaled SEs, Property and Season fixed effects, adjustment for eucalypt canopy cover and distance to canopy, using complete cases\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "REML linear mixed model of log1p(total seedlings) with a Property random intercept, adjusting for eucalypt canopy cover and distance to canopy, using complete cases"
+      }
+    },
+    "forks/bp/78e5d8d4-28": {
+      "decision_key": "606e95a37c",
+      "source_segment": "forks/bp/57a12c15-23",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For What exposure contrast and effect scale define the focal estimate?, do not use any approach in this JSON list: [\"Report the log-rate change for a 37.55-percentage-point IQR increase in total grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Report the log rate ratio for high (\u2265 median 26.8%) versus low total grass cover"
+      }
+    },
+    "forks/bp/a55a4bcf-29": {
+      "decision_key": "30ad7d52dd",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "intervention": "For Which count model, adjustment covariates, and dependence correction are used?, do not use any approach in this JSON list: [\"fit a negative binomial GLM adjusted for Euc_canopy_cover and distance with cluster-robust standard errors by Property\", \"Poisson GEE adjusted for Season and Euc_canopy_cover, with exchangeable within-Property correlation and robust sandwich standard errors\", \"quasi-Poisson GLM adjusted for Season, Euc_canopy_cover, log1p(distance), and Property fixed effects, with Pearson-dispersion-scaled standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "negative binomial NB2 GLM adjusted for Season, Euc_canopy_cover, log1p(distance), and Property fixed effects, with nonrobust MLE standard errors"
+      }
+    },
+    "forks/bp/06e847c6-30": {
+      "decision_key": "43070739e4",
+      "source_segment": "forks/bp/d89d34ed-12",
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "intervention": "For What effect summary and exposure increment are used for the focal estimate?, do not use any approach in this JSON list: [\"average marginal effect in seedlings per 1 percentage-point grass cover\", \"log-count coefficient per 1-SD (23.72 percentage-point) increase in total grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "log-count coefficient per 10 percentage-point increase in total grass cover"
+      }
+    },
+    "forks/bp/92a72596-31": {
+      "decision_key": "da8d6f9f95",
+      "source_segment": "forks/bp/06e847c6-17",
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "intervention": "For How is uncertainty adjusted for the clustered survey design?, do not use any approach in this JSON list: [\"cluster-robust standard error\", \"cluster-robust standard error\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "cluster-robust standard error"
+      }
+    },
+    "forks/bp/d89d34ed-32": {
+      "decision_key": "dc835b3877",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 7,
+      "boundary": "after_completed_response",
+      "intervention": "For What scale and inferential summary are used for the focal grass effect?, do not use any approach in this JSON list: [\"report the grass coefficient on the log-count scale with a cluster-robust z statistic\", \"report the average marginal grass effect on the expected-count scale with a cluster-robust delta-method t statistic using 17 cluster degrees of freedom\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the grass coefficient on the log-count scale with a non-robust likelihood-ratio chi-square summary"
+      }
+    },
+    "forks/bp/feb239dd-33": {
+      "decision_key": "054640a92a",
+      "source_segment": "forks/bp/3ae7056d-22",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For What fitted coefficient and uncertainty should be treated as the final focal result?, do not use any approach in this JSON list: [\"coefficient implied by z \\u00d7 SE, approximately \\u22120.00978, with SE 0.00735 on the native model scale\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "Quasi-Poisson log-scale coefficient rescaled to a 50-percentage-point increase: \u22120.4878 (SE 0.3676), equivalent to \u22120.009756 (SE 0.007351) per percentage point"
+      }
+    },
+    "forks/bp/d80cfe5a-34": {
+      "decision_key": "5823170fb6",
+      "source_segment": "forks/bp/c3676123-3",
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "intervention": "For How should uncertainty for the focal grass-cover coefficient account for clustered observations?, do not use any approach in this JSON list: [\"Use cluster-robust standard errors\", \"Property-level cluster bootstrap standard errors\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Poisson GEE model-based standard errors with exchangeable property-level correlation"
+      }
+    },
+    "forks/bp/2ba4f685-35": {
+      "decision_key": "2e880f3236",
+      "source_segment": "forks/bp/a55a4bcf-21",
+      "boundary_i": 8,
+      "boundary": "after_completed_response",
+      "intervention": "For Which measured cover classes were combined to operationalize grass cover?, do not use any approach in this JSON list: [\"sum the four grass/graminoid cover columns, including native perennial graminoid\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "sum exotic annual grass and exotic perennial grass cover only"
+      }
+    },
+    "forks/bp/8aa4916d-36": {
+      "decision_key": "3b26997c13",
+      "source_segment": "forks/bp/d89d34ed-12",
+      "boundary_i": 11,
+      "boundary": "after_completed_response",
+      "intervention": "For How is uncertainty estimated for the focal effect?, do not use any approach in this JSON list: [\"cluster-robust delta-method standard error\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "nonparametric property-cluster bootstrap standard error"
+      }
+    },
+    "forks/bp/78e5d8d4-37": {
+      "decision_key": "606e95a37c",
+      "source_segment": "forks/bp/57a12c15-23",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For What exposure contrast and effect scale define the focal estimate?, do not use any approach in this JSON list: [\"Report the log-rate change for a 37.55-percentage-point IQR increase in total grass cover\", \"Report the log rate ratio for high (\\u2265 median 26.8%) versus low total grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Report the log rate ratio for high (top tertile, \u226539.03%) versus lower-two-tertile total grass cover"
+      }
+    },
+    "forks/bp/33107af3-38": {
+      "decision_key": "71b7e7b9f3",
+      "source_segment": "forks/bp/d80cfe5a-8",
+      "boundary_i": 26,
+      "boundary": "after_completed_response",
+      "intervention": "For What uncertainty summary should accompany the fitted NB2 grass-cover coefficient?, do not use any approach in this JSON list: [\"cluster-bootstrap standard error\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "model-based MLE standard error with property fixed effects"
+      }
+    },
+    "forks/bp/785ead02-39": {
+      "decision_key": "272c47557e",
+      "source_segment": "forks/bp/57a12c15-25",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For How should the grass-cover effect be parameterized and reported?, do not use any approach in this JSON list: [\"high-vs-low grass contrast\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "continuous log1p grass-cover effect"
+      }
+    },
+    "forks/bp/a3e99f8f-40": {
+      "decision_key": "e7312a2068",
+      "source_segment": "forks/bp/b4b9c37b-4",
+      "boundary_i": 10,
+      "boundary": "after_completed_response",
+      "intervention": "For What focal model parameter should be reported as the estimate of the grass-cover effect?, do not use any approach in this JSON list: [\"report the grass coefficient\", \"report the grass coefficient\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "report the grass coefficient"
+      }
+    },
+    "forks/bp/55e386bc-41": {
+      "decision_key": "f3a5a9ca44",
+      "source_segment": "forks/bp/c3676123-9",
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "intervention": "For What mean\u2013variance model and uncertainty estimator are used for the seedling count outcome?, do not use any approach in this JSON list: [\"Poisson mean model with cluster-robust uncertainty\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "rejected",
+      "verdict": {
+        "novel": false,
+        "approach": "Poisson mean model with cluster-robust uncertainty"
+      }
+    },
+    "forks/bp/3ce1559f-42": {
+      "decision_key": "4d2c95bac5",
+      "source_segment": "forks/bp/57a12c15-16",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For What unit and native model scale define the focal grass-cover effect?, do not use any approach in this JSON list: [\"log-rate change per unit proportion from 0% to 100% grass cover\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "log-rate change per 25-percentage-point increase in total grass cover"
+      }
+    },
+    "forks/bp/b2f56f7b-43": {
+      "decision_key": "f79210dd60",
+      "source_segment": "forks/bp/06e847c6-30",
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "intervention": "For Which reference distribution and degrees of freedom should be used for uncertainty inference?, do not use any approach in this JSON list: [\"t reference distribution with 17 degrees of freedom\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "nonparametric property-cluster bootstrap with percentile confidence interval and no parametric degrees of freedom"
+      }
+    },
+    "forks/bp/6f3401cf-44": {
+      "decision_key": "0fabe8f939",
+      "source_segment": "forks/bp/57a12c15-5",
+      "boundary_i": 14,
+      "boundary": "after_completed_response",
+      "intervention": "For How should the focal grass-cover effect be scaled for reporting?, do not use any approach in this JSON list: [\"report the coefficient per one standard deviation of the constructed grass-cover predictor\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "report the coefficient per 10 percentage-point increase in constructed grass cover"
+      }
+    },
+    "forks/bp/d044babd-45": {
+      "decision_key": "345f8c1dde",
+      "source_segment": "forks/bp/61a418a5-1",
+      "boundary_i": 4,
+      "boundary": "after_completed_response",
+      "intervention": "For Which grass-cover variables define the focal exposure?, do not use any approach in this JSON list: [\"sum all four grass/graminoid cover columns, including graminoids\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "sum exotic annual and exotic perennial grass cover only"
+      }
+    },
+    "forks/bp/d80cfe5a-46": {
+      "decision_key": "5823170fb6",
+      "source_segment": "forks/bp/c3676123-3",
+      "boundary_i": 13,
+      "boundary": "after_completed_response",
+      "intervention": "For How should uncertainty for the focal grass-cover coefficient account for clustered observations?, do not use any approach in this JSON list: [\"Use cluster-robust standard errors\", \"Property-level cluster bootstrap standard errors\", \"Poisson GEE model-based standard errors with exchangeable property-level correlation\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Property fixed-effects negative binomial GLM with model-based standard errors"
+      }
+    },
+    "forks/bp/bd3e9d13-47": {
+      "decision_key": "99e2b5fd18",
+      "source_segment": "forks/bp/06e847c6-17",
+      "boundary_i": 15,
+      "boundary": "after_completed_response",
+      "intervention": "For What reference distribution and degrees of freedom are used for uncertainty?, do not use any approach in this JSON list: [\"t distribution with 17 degrees of freedom\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "normal (z) reference distribution with no finite degrees of freedom"
+      }
+    },
+    "forks/bp/47d8a4c8-48": {
+      "decision_key": "f7fdb95f34",
+      "source_segment": "forks/bp/33107af3-38",
+      "boundary_i": 30,
+      "boundary": "after_completed_response",
+      "intervention": "For Which count-model distribution should be used for seedling recruitment?, do not use any approach in this JSON list: [\"NB2 negative binomial model\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Quasi-Poisson GLM"
+      }
+    },
+    "forks/bp/a9bae78b-49": {
+      "decision_key": "f9a22d0fa9",
+      "source_segment": "forks/bp/d80cfe5a-34",
+      "boundary_i": 23,
+      "boundary": "after_completed_response",
+      "intervention": "For Which fitted focal coefficient should be reported after assessing convergence?, do not use any approach in this JSON list: [\"GEE grass coefficient\"]. Choose a different defensible approach; everything else remains yours to decide.",
+      "status": "retained",
+      "verdict": {
+        "novel": true,
+        "approach": "Marginal NB2 grass coefficient"
+      }
+    }
+  },
+  "options": {
+    "seed": 7,
+    "allocation": "uniform",
+    "strikes": 2,
+    "branching_method": "continuation"
+  },
+  "decisions": 96,
+  "open_at_stop": [
+    "054640a92a",
+    "05aff8fc16",
+    "06eaf31660",
+    "0b564ebef8",
+    "0b7c8c3613",
+    "0ebec96c8b",
+    "0fabe8f939",
+    "1072b46386",
+    "14eb570c8c",
+    "170043055c",
+    "1fafcf446a",
+    "2579b3f2fd",
+    "2704d5b246",
+    "272c47557e",
+    "2b6a5e3291",
+    "2d4fe8d24a",
+    "2d63131f61",
+    "2e880f3236",
+    "30ad7d52dd",
+    "3233c7d173",
+    "345f8c1dde",
+    "353496a29f",
+    "38e8c19fa4",
+    "39eac841bd",
+    "3b26997c13",
+    "3c9d1d98b3",
+    "400ba18c8a",
+    "42963715eb",
+    "43070739e4",
+    "49f97796ab",
+    "4d2c95bac5",
+    "4db64ba2eb",
+    "537780ef3f",
+    "53dcf13824",
+    "579da9a4d7",
+    "5823170fb6",
+    "59647e24ff",
+    "5c54c9b261",
+    "5c84e1796e",
+    "5cbc2242b0",
+    "5e547260d4",
+    "606e95a37c",
+    "71b7e7b9f3",
+    "726926db9e",
+    "74edc2aa98",
+    "7723badfff",
+    "78be74924d",
+    "79f947b103",
+    "7a06bc5f5b",
+    "7f989d7ce6",
+    "82235dd79a",
+    "884e5715f6",
+    "8fb939e01a",
+    "9270794f75",
+    "92a8501a42",
+    "930375553d",
+    "93245649ac",
+    "99e2b5fd18",
+    "9a3d485417",
+    "9ca14fa0ba",
+    "a21d2bf8d9",
+    "a456794c08",
+    "a684d9ec07",
+    "ae084a0a5f",
+    "b035b8ba94",
+    "b0650260c8",
+    "b2559cb4f0",
+    "b2f19a409b",
+    "b6c583f007",
+    "bb697532ba",
+    "c6abd30438",
+    "c8483b26a4",
+    "cb69c24ed0",
+    "d9cfbd1848",
+    "dc61e1f59c",
+    "dc835b3877",
+    "dc8a97f0ed",
+    "df0e7447a9",
+    "e3cd0d19be",
+    "e56c89beb6",
+    "ea39d61315",
+    "ec85f2ed93",
+    "f029689fb8",
+    "f23561cd8e",
+    "f3a5a9ca44",
+    "f4c0de8062",
+    "f79210dd60",
+    "f7fdb95f34",
+    "f9a22d0fa9",
+    "f9abc8951b",
+    "f9dd55a843",
+    "fa177d270b",
+    "fb8f67edf4",
+    "ffa1ea519c"
+  ],
+  "stop_reason": "cap-reached",
+  "extensions": [
+    {
+      "from": 0,
+      "to": 50,
+      "wall_clock_s": 1069.0
+    }
+  ],
+  "wall_clock_s": 1069.0,
+  "n_requested": 50,
+  "n_reported": 44,
+  "rows": [
+    {
+      "branch": "root",
+      "estimate": -0.00642,
+      "se": 0.008343,
+      "note": "Negative binomial GLM (log link, alpha=6.0 chosen by LL grid search 0.1-6, boundary), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m counts); predictor = total grass cover % = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; covariates Euc_canopy_cover and distance to nearest eucalypt canopy (m). Complete cases n=348 quadrat-visits, 18 properties; cluster-robust SEs by Property. Native effect: log-count change per 1 percentage point grass cover = -0.00642, SE 0.00834, z = -0.770, p=0.44, df: 18 clusters (residual df 344). Observation unit: quadrat-visit; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (percent of quadrat) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "661e11a1-0",
+      "estimate": -0.014,
+      "se": 0.0115,
+      "note": "GEE Poisson log-link, exchangeable working correlation clustered by Property (18 clusters), robust SEs. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Focal predictor: total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (NA treated as 0). Covariates: Season dummies (Autumn 2007 reference). No exclusions; n=351 quadrat-visits. Wald z = -1.217, p=0.224; robust GEE inference (no finite df). Native scale: log rate ratio per 1 percentage point grass cover.",
+      "predictor": "Total grass cover percent (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "61a418a5-1",
+      "estimate": -0.005612,
+      "se": 0.008304,
+      "note": "Negative binomial GLM (log link, alpha=8.15 estimated by Poisson-residual auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover, Euc_canopy_cover, and Distance_to_Eucalypt_canopy(m). Grass cover = sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover (graminoids INCLUDED). Cluster-robust (Property, 18 clusters) SEs. Unit = quadrat-visit; n=348 complete cases of 351; z = -0.676, p=0.499; df large-sample (clusters-1 = 17 if t-approx). Native scale: log expected count per 1 percentage-point grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "b4b9c37b-2",
+      "estimate": -0.01348,
+      "se": 0.009226,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_50cm (0-50 cm seedling count, the recent-recruitment class; NOT the sum of all classes) on total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Complete cases n=348 quadrat-visits (unit = one quadrat in one survey round), cluster-robust SEs by Property (18 clusters). Focal coef = -0.01348 log-count per +1% grass cover; z = -1.461, p=0.144; residual df=344. Design: repeated cross-sectional quadrat survey.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "c3676123-3",
+      "estimate": -0.006412,
+      "se": 0.008325,
+      "note": "NB2 (log link) MLE, statsmodels negativebinomial, dispersion freely estimated (alpha=9.22, replacing earlier boundary grid value). Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count per quadrat-visit). Focal predictor: total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (graminoids excluded). Covariates: Euc_canopy_cover (%), Distance_to_Eucalypt_canopy(m). Complete cases n=348 quadrat-visits in 18 properties; cluster-robust (Property) SEs. z = -0.770, p=0.441; df (residual) = 344. Observation unit: one quadrat in one survey round; repeated-cross-section design with property clusters. Coefficient = log rate ratio per 1 percentage point grass cover.",
+      "predictor": "Total grass cover, percent (exotic annual + exotic perennial + native perennial grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "b4b9c37b-4",
+      "estimate": -0.0049,
+      "se": 0.009,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_2m (seedlings 0-2 m, pre-existing dataset column) on total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits; unit = one quadrat in one survey round. Native scale: log count per 1 percentage point grass cover. z = -0.545, p=0.586; df residual 344 (robust inference uses 18 clusters).",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-5",
+      "estimate": -0.3173,
+      "se": 0.2171,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_50cm (smallest/recent-recruitment height class) on standardized total grass cover (z of ExoticAnnualGrass+ExoticPerennialGrass+NativePerennialGrass percent cover; SD=23.54), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters); complete cases n=348 quadrat-visits (one row = one quadrat in one survey round). Native scale: log rate ratio per 1 SD grass cover = -0.3173 (SE 0.2171), z = -1.461, p = 0.144, normal reference (df large/clusters-1=17). Unstandardized coefficient was -0.01348 per percentage point.",
+      "predictor": "z-standardized total grass cover (exotic annual + exotic perennial + native perennial grass % cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-6",
+      "estimate": -0.02506,
+      "se": 0.0206,
+      "note": "GEE Poisson (log link, exchangeable working correlation, robust/clustered by Property, 18 clusters), outcome = total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m), predictor = total grass cover % (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, missing treated as 0), adjusted for Season (3 rounds, dummy-coded). n=351 quadrat-visits, all rows retained. Log-rate coef = -0.01396 (SE 0.01147, z = -1.217, robust Wald z; cluster df \u2248 17). Reported native scale: average marginal effect on the count scale = coef \u00d7 mean fitted count (1.795) = -0.0251 seedlings per 1 percentage point grass cover, SE 0.0206 (delta method, other terms held via mean fitted value). Observation unit = quadrat visit; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "661e11a1-7",
+      "estimate": -0.0097564,
+      "se": 0.0073514,
+      "note": "Quasi-Poisson (Poisson GLM, log link, Pearson-scaled SEs; scale=9.42) of total eucalypt seedlings (sum of 0-50cm, 50cm-2m, >2m) on total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover, adjusting for Euc_canopy_cover, distance to nearest eucalypt canopy, Property fixed effects (dependence correction) and Season fixed effects. Complete cases: n=348 quadrat-visits (unit = one quadrat in one round), df_resid=325, t=-1.327, p=0.184. Native scale: log count per 1 percentage point grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d80cfe5a-8",
+      "estimate": -0.006412,
+      "se": 0.010233,
+      "note": "Negative binomial (NB2, log link) MLE with freely estimated dispersion (alpha=9.22): y = total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) ~ grass + Euc_canopy_cover + Distance_to_Eucalypt_canopy(m). grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover; NativePerennialGraminoid excluded as not a grass). Complete cases: n=348 quadrat-visits (3 rows dropped for missing values), 18 properties. Native scale: log count ratio per 1 percentage point of grass cover, coef=-0.00641. SE=0.01023 from a nonparametric cluster bootstrap resampling the 18 properties (100 replicates, dispersion held at the full-sample MLE alpha inside replicates); percentile 95% CI [-0.0336, 0.0065]. Wald z = -0.63 (bootstrap SE); model-based nonrobust z = -0.88 with df residual = 344. Design: cross-sectional repeated survey of non-persistent quadrats clustered in properties; observation unit = one quadrat visit.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "c3676123-9",
+      "estimate": -0.007241,
+      "se": 0.009262,
+      "note": "Quasi-Poisson-style analysis: log-link Poisson GLM for mean, coefficients estimated by IRLS, inference via cluster-robust (sandwich) SEs clustered on Property (18 clusters), avoiding the boundary NB dispersion grid issue. Outcome = total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m). Focal predictor = total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (graminoids excluded). Covariates: Euc_canopy_cover (%), Distance_to_Eucalypt_canopy(m). Complete cases, n=348 quadrat-visits (of 351). Native scale: log rate ratio per 1 percentage point grass cover. z = -0.782, p = 0.434; inferential df \u2248 17 (clusters-1). Unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (percent): ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover; larger = more grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "61a418a5-10",
+      "estimate": -0.014992939306,
+      "se": 0.008729373312,
+      "note": "Negative binomial (NB2, log link, alpha=7.865 estimated via auxiliary Poisson-residual regression) GLM of total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on exotic grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover, percent), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases: n=348 quadrat-visits (3 dropped for missing covariates). Native grass/graminoid cover deliberately excluded from the exposure. Focal effect: log-count change per 1 percentage point exotic grass cover = -0.01499, SE 0.00873, z = -1.718, p = 0.086; Wald z inference, robust df ~ 17 clusters. Observation unit: one 15x15 m quadrat in one survey round; design: repeated cross-sectional survey nested in properties.",
+      "predictor": "Exotic grass percent cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover); larger = more grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-11",
+      "estimate": -0.1348,
+      "se": 0.0923,
+      "note": "Negative binomial GLM (log link, alpha=1) of count of eucalypt seedlings 0-50 cm (recent recruitment; NOT the all-class sum) on grass cover, adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover, scaled per 10 percentage points. Cluster-robust (Property) SEs; complete cases n=348 quadrat-visits, 18 property clusters. Native scale: log rate ratio per +10 pp grass cover = -0.1348, SE 0.0923, z=-1.461, p=0.144, Wald z with cluster-robust cov (18 clusters); df residual 344. Unit = quadrat-visit; repeated-cross-section survey over 3 rounds.",
+      "predictor": "Total grass cover (exotic annual + exotic perennial + native perennial grass, % cover) per 10 percentage points",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d89d34ed-12",
+      "estimate": -0.01221,
+      "se": 0.015747,
+      "note": "Data: data.csv, 351 quadrat-visits; n=348 after listwise deletion (missing cover/covariates). Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count). Focal predictor: total grass/graminoid cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover (graminoids included). Model: negative binomial GLM (log link, alpha=8.153 estimated by Poisson-residual auxiliary regression), covariates Euc_canopy_cover and Distance_to_Eucalypt_canopy(m); cluster-robust covariance by Property (18 clusters). Reported focal quantity: average marginal effect on the count scale = -0.0122 seedlings per 1 percentage-point grass cover, delta-method cluster-robust SE 0.0157, t = -0.775 with df = 17 (clusters-1). Observation unit: one 15x15 m quadrat in one survey round; design: repeated cross-sectional survey, properties as clusters. Log-scale coefficient was -0.00561 (not the reported scale).",
+      "predictor": "Average marginal effect of total grass cover (sum of exotic annual, exotic perennial, native perennial grass, and native perennial graminoid percent cover) on expected seedling count",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "a55a4bcf-13",
+      "estimate": -0.0149,
+      "se": 0.0123,
+      "note": "Poisson GEE (log link), exchangeable working correlation, clusters = Property (18), robust sandwich SE. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count per quadrat-visit). Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover + NativePerennialGraminoid_cover (percent cover, graminoids included). Adjusted for Season (3 levels, Autumn 2007 reference) and Euc_canopy_cover. Rows with missing values in model variables dropped: n = 350 of 351. Native scale: log rate ratio per 1 percentage point grass cover; coef -0.0149, robust SE 0.0123, z = -1.210, p = 0.226 (GEE Wald z, large-sample; cluster df ~ 18-5=13 if t-approximated). Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (sum of exotic annual, exotic perennial, native perennial grass, and native perennial graminoid percent cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-16",
+      "estimate": -1.348,
+      "se": 0.9226,
+      "note": "Negative binomial GLM (log link, alpha=1) of small-seedling count (euc_sdlgs0_50cm, 0-50 cm class) on total grass cover as proportion of quadrat (=(ExoticAnnualGrass+ExoticPerennialGrass+NativePerennialGrass)/100), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits, df_resid=344. Native scale: log rate ratio per unit proportion (0->100% grass cover). z=-1.461, p=0.144. Unit=quadrat visit (15x15 m, non-persistent quadrats, 3 rounds); design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover as proportion (exotic annual + exotic perennial + native perennial grass, /100)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "06e847c6-17",
+      "estimate": -0.1573,
+      "se": 0.195,
+      "note": "Negative binomial GLM (log link, alpha=8.153 estimated from Poisson-residual aux regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on grass cover, Euc_canopy_cover, and Distance_to_Eucalypt_canopy(m). Grass cover = sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover (graminoids included). n=348 quadrat-visits (3 rows dropped for missing cover/covariates), 18 Property clusters; cluster-robust (Property) SEs. Focal estimate rescaled to a 1-SD increment of grass cover (SD=23.72 pp): coef -0.1573, SE 0.1950, t=-0.807, df=17 (clusters-1). Unit = one quadrat sampled in one round; repeated-cross-section design with property clustering.",
+      "predictor": "Total grass cover (exotic annual + exotic perennial + native perennial grass + native perennial graminoid, % cover), per 1 SD = 23.72 percentage points",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "c3bc56c8-18",
+      "estimate": -0.0030978,
+      "se": 0.0092918,
+      "note": "NB2 (negative binomial, log link) MLE with jointly estimated dispersion alpha=5.23. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count per quadrat-visit). Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover; graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), Property fixed effects (dependence handled via within-property contrasts), Season fixed effects. Complete cases: n=348 of 351. Native scale: log rate ratio per 1 percentage point grass cover. z = -0.333, p = 0.739, df_resid = 325. Observation unit: one quadrat sampled in one survey round; design: repeated cross-sectional quadrats nested in 18 properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "b4b9c37b-19",
+      "estimate": -0.0024,
+      "se": 0.009,
+      "note": "Logistic GLM (logit link) of seedling occurrence (euc_sdlgs_all>0, any height class) on total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass (% cover), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust (Property, 18 clusters) covariance. Complete cases n=348 quadrat-visits (unit = quadrat sampled in one round); df model=3, df resid=344. Focal test: z = -0.272, p=0.786. Native scale: change in log-odds of occurrence per 1 percentage point of grass cover.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "a55a4bcf-21",
+      "estimate": -0.009718847809088,
+      "se": 0.007457041138264,
+      "note": "Quasi-Poisson GLM (log link, Pearson-X2 dispersion scale = 9.91) of euc_sdlgs_all (total eucalypt seedlings, all height classes) on grass cover + log1p(distance to eucalypt canopy) + Euc_canopy_cover + Property fixed effects (18) + Season fixed effects (3 rounds). Grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover + NativePerennialGraminoid_cover (percent cover, graminoids included). Complete cases only: n = 348 quadrat-visits (3 dropped for missing cover), df_resid = 325, t = -1.303, p = 0.19. Native scale: log rate ratio per 1 percentage point of grass cover. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties (clustering absorbed by property dummies). Three properties with zero seedlings throughout have separated coefficients; this does not affect the grass coefficient materially.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass + native perennial graminoid cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "3ae7056d-22",
+      "estimate": -0.009756,
+      "se": 0.007351,
+      "note": "Quasi-Poisson (Poisson GLM, log link, Pearson X2 scale=9.42) on total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) per quadrat-visit. Predictors: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover; graminoids excluded), plus Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), Property fixed effects (absorbing spatial clustering) and Season fixed effects. Complete cases: n=348 quadrat-visits, df_resid=325. Native scale: log count per 1% grass cover; coef=-0.00976, SE=0.00735, Wald z=-1.33 (normal reference distribution, p=0.18). Design: repeated cross-sectional quadrat survey, 18 properties, 3 rounds; observation unit = quadrat-visit.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-23",
+      "estimate": -0.5062,
+      "se": 0.3464,
+      "note": "Negative binomial GLM (log link, alpha=1) of count of 0-50 cm eucalypt seedlings per quadrat-visit on total grass cover (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass, percent), adjusting for Euc_canopy_cover and distance to nearest eucalypt canopy. Cluster-robust (Property, 18 clusters) SEs. Complete cases n=348 quadrat-visits (rows), df resid 344. Focal scale: log rate ratio per interquartile-range (37.55 pp) increase in grass cover; z = -1.461, p=0.144. Per-pp coefficient was -0.01348 (SE 0.00923). Observation unit: one quadrat sampled in one round; design: repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Total grass cover (sum of exotic annual, exotic perennial, native perennial grass percent cover), scaled per IQR = 37.55 percentage points",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "a71a4e17-24",
+      "estimate": -0.06634,
+      "se": 0.08224,
+      "note": "Negative binomial GLM (log link, alpha=8.153 estimated from Poisson-based moment auxiliary regression) of total eucalypt seedling count (sum of 0-50cm, 50cm-2m, >2m) on grass cover per 10 percentage points, adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid cover (graminoids included). Cluster-robust (Property, 18 clusters) SEs; test = cluster-robust t = -0.807, df = 17. n = 348 quadrat-visits (3 rows dropped for missing cover/covariates); observation unit = one 15x15 m quadrat in one survey round; design = repeated cross-sectional survey, quadrats nested in properties. Native scale: log expected count per 10 pp grass cover.",
+      "predictor": "total grass cover (%) / 10, i.e. log-count change per 10 percentage-point increase in summed exotic annual + exotic perennial + native perennial grass + native perennial graminoid cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "57a12c15-25",
+      "estimate": -0.7312,
+      "se": 0.485,
+      "note": "Negative binomial GLM (log link, alpha=1) of small-seedling counts (euc_sdlgs0_50cm, 0-50cm class only) on a binary grass-cover contrast (total grass = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; high = >=50% cover, 22.7% of quadrats, vs low <50%), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits (unit = one 15x15m quadrat in one survey round); design = repeated cross-sectional survey, quadrats nested in properties. Native scale: log rate ratio = -0.7312, SE 0.485, z = -1.508, p = 0.132, residual df = 344 (Wald z inference, robust).",
+      "predictor": "Indicator for high total grass cover (>=50% summed exotic annual + exotic perennial + native perennial grass cover) vs <50%",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "3ae7056d-26",
+      "estimate": -0.009756,
+      "se": 0.015671,
+      "note": "Quasi-Poisson (Poisson GLM, log link, Pearson-scaled, scale=9.42) of total eucalypt seedlings (sum of euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover (ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover, percent; graminoids excluded), adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), Property fixed effects and Season fixed effects. Complete cases (rows with any missing grass component, outcome, canopy or distance dropped): n=348 quadrat-visits, model df_resid=325. Inference by nonparametric cluster bootstrap resampling the 18 Properties (200 replicates): SE=0.0157, 95% percentile CI [-0.0447, 0.0133], bootstrap two-sided p\u22480.5; native scale = log rate ratio per 1 percentage point grass cover (quasi-Poisson model SE would be 0.0074). Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "661e11a1-27",
+      "estimate": 3.1e-06,
+      "se": 0.002036,
+      "note": "Linear mixed model (REML, statsmodels MixedLM) on log1p(total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m), random intercept for Property (18 groups), fixed effects: grass cover, Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded). Complete cases: n=348 quadrat-visits (of 351). Focal coef = 0.0000031 per percentage point grass cover, SE 0.002036, z=0.0015, p=0.999; Wald z (large-sample df). Unit: quadrat-visit; design: repeated cross-sectional quadrats nested in properties across 3 seasons.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "78e5d8d4-28",
+      "estimate": -0.5484,
+      "se": 0.5978,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_50cm (0-50 cm seedling count, smallest/most recent recruitment class) on a binary high-grass indicator (total grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass; high = >= median 26.8%), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Cluster-robust SEs by Property (18 clusters). Complete cases n=348 quadrat-visits (of 351); observation unit = quadrat visit; design = repeated cross-sectional survey, quadrats nested in properties. Native scale: log rate ratio = -0.5484, SE 0.5978, z = -0.917, p = 0.359, df_resid = 344.",
+      "predictor": "high_grass = 1 if total grass cover (exotic annual + exotic perennial + native perennial grass, %) >= median 26.8%, else 0",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "a55a4bcf-29",
+      "estimate": -0.0029775,
+      "se": 0.0090985,
+      "note": "Negative binomial (NB2, MLE, alpha=5.16) GLM with log link. Outcome: euc_sdlgs_all (total eucalypt seedlings, all height classes) per quadrat-visit. Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover + NativePerennialGraminoid_cover (percent cover, all four grass/graminoid classes summed). Adjusted for C(Season), Euc_canopy_cover, log1p(Distance_to_Eucalypt_canopy), and Property fixed effects (18 properties, absorbing cluster heterogeneity in place of random effects/robust SEs). Nonrobust MLE SEs. Exclusions: rows with missing values in any model variable (348 of 351 fitted). Native effect: log count-ratio per 1 percentage point grass cover = -0.00298, SE 0.00910, z = -0.327, p = 0.743, df_resid = 325. Observation unit: one quadrat sampled in one survey round; repeated-cross-section design nested in properties. A few properties with all-zero counts are perfectly separated (large dummy coefficients) but this does not affect the focal estimate materially.",
+      "predictor": "Total grass cover (%) = exotic annual + exotic perennial + native perennial grass + native perennial graminoid cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "06e847c6-30",
+      "estimate": -0.06634,
+      "se": 0.08224,
+      "note": "Negative binomial GLM (log link, alpha=8.153 estimated from Poisson-based auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on grass cover, adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover, scaled per 10 percentage points. Cluster-robust (Property, 18 clusters) SEs. Native scale: log-count coefficient per +10pp grass cover = -0.0663, SE 0.0822, t = -0.807, df = 17, p = 0.431. n = 348 quadrat-visits (3 rows dropped for missing cover); observation unit = quadrat sampled in one round; design = repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Total grass cover (exotic annual + exotic perennial + native perennial grass + native perennial graminoid, % cover) per 10-percentage-point increase",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d89d34ed-32",
+      "estimate": -0.006632,
+      "se": 0.007222,
+      "note": "NB2 (log link) MLE: sdl ~ grass + Euc_canopy_cover + dist, statsmodels negativebinomial, non-robust ML SE. grass = sum of ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover + NativePerennialGraminoid_cover (percent cover, graminoids included). Outcome = total eucalypt seedlings across all three height classes. Complete cases on model variables: n=348 quadrat-visits (3 dropped), 18 properties (clustering not modelled here). Native scale: log expected count per 1 percentage-point grass cover. Inference by likelihood-ratio test vs model without grass: LR chi2(1)=0.814, p=0.367, signed sqrt-LR = -0.902; df=1 (inferential df for the focal contrast); model df resid=344. Observation unit: one 15x15 m quadrat in one survey round; design: repeated cross-sectional survey of fresh random quadrats within 18 properties. Estimated alpha=9.21.",
+      "predictor": "Total grass cover (percent of quadrat) = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid; larger = more grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d80cfe5a-34",
+      "estimate": -0.0083016,
+      "se": 0.0086854,
+      "note": "Poisson GEE (log link), exchangeable working correlation with Property as cluster (18 clusters), naive/model-based SEs with Pearson chi2 scale (18.27; within-cluster corr 0.049). Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover; graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Complete cases n=348 quadrat-visits (of 351). Native scale: log rate ratio per 1 percentage point of grass cover; beta=-0.00830, SE=0.00869, z=-0.956, p=0.339, df_resid=344. Unit of observation: one quadrat sampled in one survey round; design: repeated cross-sectional quadrats nested in properties. Earlier NB attempts: alpha grid hit boundary, so dispersion freely estimated (NB2 MLE alpha=9.22, grass=-0.0064); Property fixed effects and Bayesian Poisson mixed model failed to converge (zero-seedling properties), hence GEE.",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "2ba4f685-35",
+      "estimate": 0.003508,
+      "se": 0.010716,
+      "note": "Quasi-Poisson GLM (log link, Pearson-X2 scale=11.08) of euc_sdlgs_all (total eucalypt seedlings, all height classes) on grass cover + log1p(distance to eucalypt canopy) + Euc_canopy_cover + Season dummies + Property fixed-effect dummies (absorbing spatial clustering). Grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover (exotic grass layer only). Unit = one quadrat-visit; n=348 (3 rows dropped for missingness); df_resid=325. Native effect on log-count scale per 1 percentage point of exotic grass cover: 0.00351, SE 0.01072, t=0.327, p=0.74. Three properties with all-zero counts are perfectly separated (large negative dummies) but this does not affect the focal coefficient's identification.",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover (percent cover of quadrat); larger = more grass",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "8aa4916d-36",
+      "estimate": -0.012211,
+      "se": 0.018653,
+      "note": "Data: data.csv, 351 rows; complete cases on model variables -> n=348 quadrat-visits (unit = one 15x15 m quadrat in one survey round), 18 properties. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Focal predictor: grass cover = sum of ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover + NativePerennialGraminoid_cover (graminoids included), percent cover. Model: negative binomial GLM (log link, alpha=8.153 fixed from Poisson-residual auxiliary regression), covariates Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Reported focal quantity: average marginal effect on the count scale = mean(mu_i)*beta_grass = -0.0122 seedlings per +1 percentage point grass cover. Uncertainty: nonparametric cluster bootstrap resampling whole properties, B=600 successful replicates, bootstrap SE = 0.01865, percentile 95% CI [-0.0594, 0.0146]; test statistic t = AME/bootSE = -0.655, df = 17 (18 clusters - 1). Design: repeated cross-sectional survey clustered by property; clustering handled by the property bootstrap.",
+      "predictor": "Total grass cover (percent): ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid; effect = average marginal effect on expected seedling count per +1 percentage point",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "78e5d8d4-37",
+      "estimate": -1.1042,
+      "se": 0.4701,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_50cm (0-50 cm seedling count, recent recruitment) on a binary grass-cover contrast plus Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover; contrast = top tertile (>=39.03%) vs lower two tertiles. Complete cases n=348 quadrat-visits (unit = quadrat sampled in one round), 18 properties; cluster-robust SEs by Property. Native scale: log rate ratio = -1.1042, SE 0.4701, z = -2.349, p=0.019; inference via cluster-robust normal z (18 clusters). Design: repeated cross-sectional survey, quadrats nested in properties.",
+      "predictor": "Indicator for high total grass cover (top tertile, >=39.03% summed exotic annual + exotic perennial + native perennial grass cover) vs lower two tertiles",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "33107af3-38",
+      "estimate": -0.003572,
+      "se": 0.0041613,
+      "note": "Negative binomial (NB2, log link, alpha freely estimated by MLE = 1.05) regression of total eucalypt seedling count (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on total grass cover, adjusting for Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Property fixed effects (18 dummies absorbing the spatial cluster structure, so the estimate is within-property). Complete cases: n=348 quadrat-visits (3 dropped for missing covariates); observation unit = one quadrat in one survey round; design = repeated cross-sectional survey, quadrats nested in properties. Native effect: log rate ratio per 1 percentage point of grass cover = -0.003572, model-based MLE SE 0.004161, z = -0.858, df_resid = 327 (p ~ 0.39).",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover of quadrat; graminoids excluded); larger = more grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "785ead02-39",
+      "estimate": -0.1424,
+      "se": 0.2249,
+      "note": "Negative binomial GLM (log link, alpha=1) of small eucalypt seedling counts (euc_sdlgs0_50cm, 0-50 cm class = recent recruitment) on log1p(total grass cover), adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover (graminoids excluded). Complete cases n=348 quadrat-visits (rows dropped for missing covariates); observation unit = one quadrat in one survey round; cross-sectional repeated survey clustered in 18 properties; cluster-robust (Property) SEs. Focal effect: coefficient on log1p(grass cover) = -0.1424, SE 0.2249, z = -0.633, p = 0.53, residual df = 344. Native scale = log rate ratio per unit increase in log(1+grass %).",
+      "predictor": "log1p(ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "3ce1559f-42",
+      "estimate": -0.33699,
+      "se": 0.23064,
+      "note": "Negative binomial GLM (log link, alpha=1) of euc_sdlgs0_50cm (0-50 cm seedling count, recent recruitment) on grass cover, Euc_canopy_cover, and Distance_to_Eucalypt_canopy(m); cluster-robust SEs by Property (18 clusters). Grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover (graminoids excluded), rescaled to 25-percentage-point units. Complete cases n=348 quadrat-visits (rows dropped for missing values); observation unit = quadrat in a survey round; design = repeated cross-sectional survey nested in properties. Native scale: log rate ratio per 25 pp grass cover = -0.337, SE 0.231, z = -1.461, df_resid = 344.",
+      "predictor": "Total grass cover (exotic annual + exotic perennial + native perennial grass, % cover) / 25, i.e. per 25 percentage points",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "b2f56f7b-43",
+      "estimate": -0.06634,
+      "se": 0.09658,
+      "note": "Negative binomial GLM (log link, alpha=8.153 from Poisson-based moment estimate), outcome = total eucalypt seedlings across all three height classes per quadrat-visit; predictors: grass10 = (ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover)/10, plus Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). n=348 quadrat-visits (3 dropped for missing cover/covariates), 18 properties. Native effect: log-count change per +10 percentage points total grass cover = -0.0663. Inference by nonparametric cluster bootstrap resampling the 18 properties (400 replicates, seed 7): SE 0.0966, 95% percentile CI [-0.292, 0.085], bootstrap two-sided p ~0.49; test statistic = bootstrap ratio -0.687, no parametric df used. Observation unit: one quadrat in one survey round; design: repeated cross-sectional survey clustered in properties.",
+      "predictor": "grass10 = total grass/graminoid percent cover (exotic annual + exotic perennial + native perennial grass + native perennial graminoid) divided by 10; effect per +10 percentage points",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "6f3401cf-44",
+      "estimate": -0.1348,
+      "se": 0.0923,
+      "note": "Negative binomial GLM (log link, alpha=1 fixed) of euc_sdlgs0_50cm (0-50 cm seedling count, recent recruitment) on grass cover per 10 percentage points, adjusting for Euc_canopy_cover and Distance_to_Eucalypt_canopy(m). Grass cover = ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass percent cover (graminoids excluded), divided by 10. Complete cases n=348 quadrat-visits; unit = quadrat sampled in one round; 18 properties; cluster-robust (Property) SEs. z = -1.461, p = 0.144, df_resid = 344. Native scale: log rate ratio per 10 pp grass cover (RR=0.874).",
+      "predictor": "(ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover)/10, i.e. per 10 percentage points total grass cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d044babd-45",
+      "estimate": -0.015142,
+      "se": 0.008507,
+      "note": "Negative binomial GLM (log link, alpha=8.66 estimated from Poisson-based auxiliary regression), outcome = total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m. Focal predictor: exotic grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover (percent). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Cluster-robust (Property, 18 clusters) SEs. n=348 quadrat-visits (3 dropped for missing values); observation unit = one quadrat in one survey round; design = repeated cross-sectional survey clustered in properties. Native effect: log rate ratio per 1 percentage-point exotic grass cover = -0.01514, SE 0.00851, z = -1.78, p = 0.075; df: large-sample z (residual df 344).",
+      "predictor": "ExoticAnnualGrass_cover + ExoticPerennialGrass_cover (percent cover; larger = more grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "d80cfe5a-46",
+      "estimate": -0.004466,
+      "se": 0.007446,
+      "note": "Negative binomial (log link) GLM via IRLS, dispersion alpha profiled on grid 0.2\u201320 (max llf at interior alpha=5.2, llf=-413.98). Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count per quadrat-visit). Focal predictor: total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (graminoids excluded). Covariates: Euc_canopy_cover (%), Distance_to_Eucalypt_canopy(m), and Property fixed-effect dummies (absorbing property clustering; effect is within-property), model-based SEs. Complete cases: n=348 quadrat-visits (of 351), 18 properties. Test: z = -0.600, p=0.55; inferential df_resid = 327. Native scale: log rate ratio per 1 percentage point of grass cover (exp = 0.9955).",
+      "predictor": "Total grass cover, percent of quadrat = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (larger = more grass)",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "bd3e9d13-47",
+      "estimate": -0.15734,
+      "se": 0.19505,
+      "note": "Negative binomial GLM (log link, alpha=8.153 from Poisson-residual auxiliary regression) of total eucalypt seedlings (euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m) on grass cover, Euc_canopy_cover, and Distance_to_Eucalypt_canopy(m). Grass cover = sum of ExoticAnnualGrass + ExoticPerennialGrass + NativePerennialGrass + NativePerennialGraminoid percent cover (graminoids included). n=348 quadrat-visits (3 rows dropped for missing cover/covariates), 18 property clusters; observation unit = quadrat in one survey round; design = repeated cross-sectional survey, cluster-robust (Property) SEs. Focal estimate rescaled to a 1-SD increment of grass cover (SD=23.717 pp): coef -0.005612*23.717 = -0.1573 on log-count scale, SE 0.1950. Inference: normal (z) reference distribution, z = -0.807, p = 0.42 (large-sample cluster-robust normal approximation; no finite df).",
+      "predictor": "Total grass cover (exotic annual + exotic perennial + native perennial grass + native perennial graminoid, % cover), per 1 SD = 23.72 pp increase",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "47d8a4c8-48",
+      "estimate": -0.00744,
+      "se": 0.006721,
+      "note": "Quasi-Poisson GLM (log link, Poisson variance with Pearson dispersion phi=10.11 scaling SEs) on total eucalypt seedling count (sum of euc_sdlgs0_50cm, euc_sdlgs50cm_2m, euc_sdlgs>2m). Predictor: total grass cover = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent; graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m), and Property fixed effects (18 properties) to absorb spatial clustering (within-property contrast). Complete cases: n=348 quadrat-visits (3 dropped for missing values); unit = one quadrat in one survey round; design = repeated cross-sectional survey, quadrats not persistent. Native scale: log rate ratio per 1 percentage point grass cover. Focal coef -0.00744, SE 0.00672, t = -1.107, df_resid = 327, p ~ 0.27.",
+      "predictor": "Total grass cover (%) = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover",
+      "orientation": "as_declared"
+    },
+    {
+      "branch": "a9bae78b-49",
+      "estimate": -0.006411738286934638,
+      "se": 0.007317,
+      "note": "Reported model: negative binomial (NB2) regression by MLE, freely estimated dispersion (alpha=9.22), model-based (nonrobust) SEs; the earlier alpha-grid GLM hit the grid boundary and was replaced by free-alpha MLE, and the Property fixed-effects and Bayesian/VB mixed alternatives failed to converge (separation/overflow), so the marginal NB MLE fit is reported. Outcome: total eucalypt seedlings = euc_sdlgs0_50cm + euc_sdlgs50cm_2m + euc_sdlgs>2m (count per quadrat-visit). Focal predictor: grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover; graminoids excluded). Covariates: Euc_canopy_cover, Distance_to_Eucalypt_canopy(m). Complete cases n=348 quadrat-visits across 18 properties (3 rows dropped for missingness). Native scale: log rate ratio per 1 percentage point grass cover = -0.00641, SE 0.00732, z = -0.876, p = 0.381, residual df = 344. Observation unit: one quadrat sampled in one survey round; design: repeated cross-sectional survey nested in 18 properties (clustering not modeled in the reported SE).",
+      "predictor": "grass = ExoticAnnualGrass_cover + ExoticPerennialGrass_cover + NativePerennialGrass_cover (percent cover of quadrat); coefficient on log-count scale",
+      "orientation": "as_declared"
+    }
+  ],
+  "envelope": [
+    -1.348,
+    0.003508
+  ],
+  "width": 1.3515080000000002,
+  "q05_q95": [
+    -0.70378,
+    -0.0024866249999999993
+  ],
+  "width_q05_q95": 0.701293375,
+  "iqr": [
+    -0.1348,
+    -0.006412
+  ],
+  "width_iqr": 0.128388,
+  "median": -0.012210499999999999,
+  "unique_ends": 26,
+  "mean": -0.13767540285004598,
+  "usd": 11.365735,
+  "n_failed_reports": 0
+}

@@ -1,0 +1,255 @@
+{
+  "condition": "bt_sol_continuation",
+  "dataset": "bt",
+  "judge_model": "gpt-5.6-sol",
+  "input_digests": {
+    "root": "b3df7a298c2b8a70c1e4f7321527e2cd634c9c5bc9dd3fe216cd2bbb7c172562",
+    "bfb995a6-0": "a67acf07530ff1aaac32fc37ff0f5b11699193dd8ddaea7addc4510382d15bf2",
+    "331df9c9-1": "d942069a96fc09518bea96ed367c2a5347d4ab2b19af65176773cc89d8c9ce32",
+    "79e86c0f-3": "1a101db3644311dd51dbe098478bdeb17ab0c8c536d2c31838b8bfa60ffb2737",
+    "bfb995a6-4": "05b87f1716652ab10ce360c36fa0c616443f2bb8b791d91f8fa7623f5b46f275",
+    "fd920bf8-5": "ec507d95486438b8aa36fd5a0fde82ee10de6131ce310546aeb92695aa1826ff",
+    "f794a1a2-6": "22e480475f467a07dbc5ee75ebc6ce4efd1425a4d0f12174e63461bfd6b4ce67",
+    "4f833484-7": "45a8b9ce5cbcbb9636e85176adf5222b007d9a43f3fea730a32e0514d7f00687",
+    "331df9c9-8": "9cf675bc815fa0f1ec3a939e8c50f63f55b57b61d1347c7fb44730e0def06aed",
+    "5c748913-9": "316a217a9c7d0384846c7bcff1485a838373fde4442ba892395d0060e9b021c0",
+    "83e2b161-10": "d6fa7efabe15b86cb181dbf872129a5eb262361b396f5c509cf01f650a5653ea",
+    "a0011ac1-11": "94df31621fd1e94b041c94f5f10a19609cbd310d2e18fd5876f03cc3713c5bde",
+    "bfb995a6-12": "335abde009139de49f30123198b68d1b76dc39d33be6ce887fcb15278e7f5c64",
+    "f794a1a2-13": "29734cd186ca573d5f8b0c0fec538166cf8dd9e91e3beb2bdce8d0d8dfb932fd",
+    "4f8e6c2f-14": "50fc13107178b758b904655c99ea9508287d64e7375ed4e2d9ac4a544f8c7f66",
+    "0690017d-15": "99f61b1df5ecdb819974a8559d9f28c800507d13f98296334b1d5c2006284bfa",
+    "528f8188-16": "1b7ef929773ce7b8a2f9e336bd7bcbb7dbbb087be980e92b94be93c84fab736b",
+    "943d9ec2-19": "ea15678c765ab3c650a06231a3e30875cf1d9a7373e781f9b5953c33932f18a0",
+    "0690017d-20": "b833d30a29757b7c7ced500da6e7c9d70118e895661b4e15244dc1ce1388721d",
+    "79e86c0f-21": "c93782cbc690b2cce1d1836ff5d14fad537b7b2bd38c5090153bbbafb41bce42",
+    "d30378d1-22": "8acbc31da68cd400c441054e814d09deceb83277a357042a7de775f1f9ef552a",
+    "38765910-23": "c93e4330c7bb9e4a467b22289651f7385130223ab31eb3b6108855e0bc9c30b9",
+    "4f8e6c2f-24": "2eddf7265da068bf87a35bde7482ef1245357e39e345fe32f60669b7d72fb8b9",
+    "a0011ac1-26": "2bcf1fb386f2e4dba5937431e54ecb14d433e8266eca188f84f06dd591319916",
+    "7be072ca-29": "acd453ec26d54b4f76cf4d1d3c772fbff5ddb9e0256da840e83e74ed4067a1a9",
+    "44ec2395-31": "06f89e85e3ab052617db73de0f33570a39ddf0c21c787bda1e3c0fee9afabc04",
+    "46352af6-32": "3e51fe00cc8d85697d4f572258af3ed2907653360c1dfbe900248cb3294cd3ca",
+    "661606ec-33": "c3cdcc09633bb05042cf6653f43bbac430e5c98514d1fda9e8828aa5bc9019c5",
+    "edb22655-34": "9e3811f7827a1c53edd880af796c961b30f1270753c47ad28f6637ff32eba03f",
+    "943d9ec2-35": "b098d0f43c1a33ab0f649f612a1a43ffb78ddf9996d265e82eafdd932144e7fd",
+    "d30378d1-36": "85168b19975ecd56be5f8ab99fddd380339f8337a8baaf043630764556626f19",
+    "1fe4ca65-38": "c73c251544104bfaa526e77dc1e70e37f6e1227d04a42c04c73907f97935da29",
+    "1fa958ea-39": "1150128a356d81497253ec4f22e77184d274e5a62b1dbd566485f448ea5d7a34",
+    "68faddb3-41": "913a554c99d521749f5f182d1e4f5afed1e205a53c21957b3045581544104707",
+    "6a34d443-43": "aa02b41ab31e271870edb64cdc37e29f0065fec803f0256502e646aa12215c58",
+    "11b5edbf-44": "d0e8f23d3bf3faa272df2eeaa2facec3ca4aa40abdd557e6b1fcd8332b9c4a5e",
+    "25105c38-45": "613d4831b587fb43c35283621ef6f42b8f2f073a07deae24147bab951def34b2",
+    "5ef9d470-46": "46632cbc9d71e91e6097e42bff6a8876e2801d7329a84c6967f59690cb57b3c9",
+    "65915489-47": "17ec15efe27f3f585040060a7b0f3caeb5dc25a904415be3e92d7594c1066d00",
+    "1fa958ea-48": "640eae42672ca78c701067ea986b9d64131a976374f256ab400f3592e7996cc4",
+    "3eda6e7a-49": "c7d7f3d6953bc22053c2f440b203e4e6029b223c56ef861ea91bf0c39fe7f2fe"
+  },
+  "scopes": {
+    "root": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (333 broods; outcome is brood-mean day-14 weight)",
+      "why": "The fitted OLS estimate directly addresses the declared within-frame estimand: experimentally increased versus decreased sibling competition and nestling growth in the represented blue-tit population. The focal coefficient is the hatch-year-adjusted enlarged-minus-reduced difference in brood-mean day-14 mass on the native gram scale (-1.0840 g, SE 0.09389 g). Predictor construction and orientation match the declaration: competition_contrast is +0.5 for enlarged broods and -0.5 for reduced broods, so larger values represent more sibling competition (as_declared). Excluding unmanipulated broods and analyzing brood means are analytical choices, not scope changes."
+    },
+    "bfb995a6-0": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (hatch_year \u00d7 rear_nest_breed_ID); 333 broods containing 2,801 measured chicks.",
+      "why": "Focal predictor: enlarged_vs_reduced, coded 1 for rear_nest_trt=5 (experimentally enlarged brood) and 0 for rear_nest_trt=6 (experimentally reduced brood); orientation: as_declared. OLS of brood-mean day_14_weight on enlarged_vs_reduced plus categorical hatch_year estimated an enlarged-minus-reduced effect of -1.0840068284204083 g (SE 0.09388597681558376 g; t=-11.545992971343066; 329 residual df), on the native outcome scale. Brood means included chicks alive and measured at day 14. Treatment 7 and all codes other than 5 or 6 were excluded; fitted outcomes and years were complete. This experimental contrast directly addresses sibling competition and nestling growth within the declared dataset frame."
+    },
+    "331df9c9-1": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (453 brood-level observations; each outcome is the mean day-14 weight of measured surviving chicks in a hatch_year \u00d7 rear_nest_breed_ID brood).",
+      "why": "This analysis answers the declared within-frame estimand: experimentally assigned brood enlargement corresponds to more sibling competition, reduction to less, and the outcome is brood-mean day-14 nestling weight. The focal predictor was constructed exactly as reduced = -1, unmanipulated = 0, enlarged = +1, so its orientation is as_declared. The fitted model was conventional OLS of brood-mean day_14_weight in grams on this ordered score plus categorical hatch_year, including all 453 eligible broods and 3,720 contributing chicks. Its focal coefficient is the year-adjusted change in brood-mean day-14 weight, in grams, per one-score-step increase in assigned sibling competition, under the imposed linear equally spaced treatment contrast; model-based uncertainty uses residual df = 449 (reported t = -11.428296277856)."
+    },
+    "79e86c0f-3": {
+      "scope": "E",
+      "unit_estimated": "-1.08097768957 g (Welch heteroskedastic SE 0.0938932873739 g; two-sided p=2.5301673957e-25; t=-11.5128324911, Satterthwaite df=276.903268696)",
+      "why": "Predictor: signed sibling-competition contrast coded +0.5 for experimentally enlarged rearing broods (rear_nest_trt=5) and -0.5 for experimentally reduced rearing broods (rear_nest_trt=6). Orientation: as_declared. Thus the coefficient is exactly the enlarged-minus-reduced difference in brood-mean day-14 weight. Outcome was mean day_14_weight in grams among chicks alive and measured at day 14, collapsed to one equally weighted mean per rearing brood (rear_nest_breed_ID). The unadjusted two-arm analysis included 167 enlarged and 165 reduced broods and excluded unmanipulated broods: 332 brood observations representing 2,801 chick measurements. Enlarged mean=9.70123106464 g and reduced mean=10.7822087542 g. Uncertainty used the Welch heteroskedastic standard error; no year or other covariates were included. This directly estimates the declared effect of experimentally altered sibling competition on nestling growth within the stated frame."
+    },
+    "bfb995a6-4": {
+      "scope": "E",
+      "unit_estimated": "Year-specific rearing brood (brood-level mean day-14 weight; 333 broods)",
+      "why": "The fitted year-adjusted OLS directly targets the declared within-frame relationship: experimentally manipulated sibling competition in enlarged versus reduced rearing broods and nestling growth measured as day-14 weight. The +1/-1 competition_score is oriented as_declared, and its native coefficient is grams per one-unit score increase (half the enlarged-minus-reduced contrast). Brood aggregation, year adjustment, equal brood weighting, and conditioning on chicks alive and measured at day 14 are analytical choices rather than scope changes."
+    },
+    "fd920bf8-5": {
+      "scope": "E",
+      "unit_estimated": "-1.083376 g (enlarged minus reduced brood-level mean day-14 mass), SE 0.093806 g; Welch t=-11.549165, df=276.569195, two-sided p=1.92465e-25",
+      "why": "Answers the declared estimand within frame using experimental sibling-competition exposure and nestling growth. Predictor: enlarged_vs_reduced, coded 1 for rear_nest_trt=5 (experimentally enlarged) and 0 for rear_nest_trt=6 (experimentally reduced); orientation: as_declared. Outcome was mean day_14_weight among chicks alive and measured at day 14, aggregated by hatch_year \u00d7 rear_nest_breed_ID. The fitted analysis was an unadjusted unequal-variance Welch comparison of 167 enlarged and 166 reduced rearing broods (333 broods; 2,801 measured chicks), excluding rear_nest_trt=7 and records outside codes 5/6. Enlarged mean=9.701231 g and reduced mean=10.784607 g."
+    },
+    "f794a1a2-6": {
+      "scope": "E",
+      "unit_estimated": "Adjusted change in rearing-brood mean day-14 nestling mass, in grams, per one-category increase in competition_score (reduced \u2192 unmanipulated \u2192 enlarged).",
+      "why": "The predictor directly orders experimentally reduced, unmanipulated, and enlarged broods from less to more sibling competition, with orientation as_declared. The outcome is brood-mean day-14 nestling mass in the stated blue-tit dataset, and the hatch-year-adjusted OLS coefficient therefore addresses the declared effect of sibling competition on nestling growth within frame. Brood aggregation, equal brood weighting, and the ordered-linear specification are analytical choices rather than scope changes."
+    },
+    "4f833484-7": {
+      "scope": "E",
+      "unit_estimated": "OLS coefficient = -0.182415484319 grams of brood-mean day-14 weight per 1 additional assigned chick (SE 0.015952767241; t = -11.434723616666; residual df = 436), on the model\u2019s native linear scale.",
+      "why": "This answers the declared estimand within frame. Predictor: net_rearing_manipulation used directly as a numeric dose in chicks (negative = brood reduction, 0 = unmanipulated, positive = enlargement); orientation: as_declared. Outcome: mean day-14 weight in grams among measured chicks in each rearing brood. Conventional OLS included categorical hatch_year fixed effects and equally weighted rearing broods, uniquely defined by hatch_year \u00d7 rear_nest_breed_ID. The analysis used 440 broods containing 3,635 chicks and excluded 13 broods containing 85 chicks because net_rearing_manipulation was missing. The coefficient assumes a linear per-chick effect across observed doses from -4 to +4."
+    },
+    "331df9c9-8": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood; equal-brood-weighted adjusted difference in brood mean day-14 weight (grams), enlarged minus unmanipulated.",
+      "why": "The fitted coefficient (-0.968372356051 g; SE 0.116333405418 g) directly contrasts experimentally enlarged broods (more sibling competition) with unmanipulated broods for nestling growth within the stated blue-tit dataset frame. The enlarged indicator is oriented as_declared. Brood aggregation, ANCOVA adjustment, exclusions, and imperfect matching are analytical/design choices and limitations, not changes in estimand scope."
+    },
+    "5c748913-9": {
+      "scope": "E",
+      "unit_estimated": "Breeding-year-adjusted enlarged-minus-reduced difference in rearing-brood mean day-14 mass, in grams, for the +0.5/-0.5 sibling-competition contrast; each of 332 manipulated rearing broods is one observation.",
+      "why": "This directly estimates the declared within-frame effect: treatment 5 is the higher-competition enlarged brood and treatment 6 the lower-competition reduced brood, so the predictor is oriented as_declared. Chick mass was averaged by rear_nest_breed_ID, unmanipulated broods were excluded, and brood-level OLS adjusted for categorical modal hatch_year with HC3 robust inference (t = -11.4620876876, df = 328). The negative coefficient therefore means enlarged broods had lower mean day-14 mass. The prompt does not provide the coefficient or HC3 standard error, and the reported t statistic alone cannot recover their separate native-scale values."
+    },
+    "83e2b161-10": {
+      "scope": "E",
+      "unit_estimated": "Chick-weighted mean difference in individual day-14 weight (grams), experimentally enlarged broods minus experimentally reduced broods",
+      "why": "This directly estimates the within-frame effect of greater sibling competition on nestling growth: brood enlargement is the declared higher-competition exposure, brood reduction is the lower-competition comparator, and individual day-14 mass is the declared growth outcome. Clustering the covariance by rearing brood changes uncertainty estimation, not the estimand\u2019s scope."
+    },
+    "a0011ac1-11": {
+      "scope": "E",
+      "unit_estimated": "Adjusted grams of individual day-14 nestling mass per one-step increase in competition_score (-1 reduced, 0 unmanipulated, +1 enlarged).",
+      "why": "The fitted chick-level OLS directly contrasts experimentally manipulated sibling competition within the represented blue-tit population and uses day-14 mass as the represented nestling-growth outcome. Larger competition_score means more sibling competition (as_declared). Hatch year was adjusted categorically, all 3,720 measured surviving chicks were included, and uncertainty was clustered by 453 hatch_year \u00d7 rear_nest_breed_ID assignment units. Thus it answers the declared estimand within frame; the ordered linear contrast and chick weighting are analytical choices rather than scope changes."
+    },
+    "bfb995a6-12": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (320 brood-level observations; brood-mean day-14 weight)",
+      "why": "The fitted OLS coefficient directly addresses the declared within-frame estimand: change in brood-mean nestling day-14 weight per +1 recorded net chick added to the rearing brood, adjusted for hatch year. It uses experimentally enlarged/reduced blue-tit broods and is signed in the declared orientation. Estimate = -0.1823279393 g per chick added; model-based SE = 0.0156424771 g (t = -11.6559505551, residual df = 316)."
+    },
+    "f794a1a2-13": {
+      "scope": "E",
+      "unit_estimated": "Year-specific rearing brood (hatch_year \u00d7 rear_nest_breed_ID), using the equally weighted brood mean of day_14_weight",
+      "why": "The fitted OLS contrast directly addresses the declared estimand within the dataset frame: enlarged rearing broods (rear_nest_trt=5) versus unmanipulated broods (rear_nest_trt=7), oriented as more sibling competition, for nestling growth measured by mean day-14 weight. The native-scale estimate is -0.9266767 g (SE 0.1026216 g; t=-9.0300346, residual df=440), adjusted for the separate reduced-brood category, categorical breeding year, rear_nest_CS, and rear_nest_LD. The lack of systematic matching affects causal strength, not estimand scope."
+    },
+    "4f8e6c2f-14": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (397 broods; 3,315 measured chicks)",
+      "why": "Answers the declared within-frame estimand using conventional OLS of rearing-brood mean day-14 weight (g) on the exact focal predictor 4 * net_rearing_manipulation / rear_d0_rear_nest_brood_size, adjusted for categorical hatch_year and pre-manipulation brood size. The predictor is oriented as_declared: larger values represent more sibling competition via greater assigned brood-size enlargement. The fitted effect is -0.442151 g per 25-percentage-point assigned increase in brood size, with model-based SE 0.037526 g (t = -11.782668; residual df = 392). Broods missing an exposure component or covariate were excluded (56 broods, 405 chicks)."
+    },
+    "0690017d-15": {
+      "scope": "E",
+      "unit_estimated": "Grams of individual chick day-14 mass per one-category increase in competition_score (-1 reduced, 0 unmanipulated, +1 enlarged), estimated by the OLS slope with rearing-brood-clustered sandwich uncertainty (t = -11.400695918315359; df = 452).",
+      "why": "This directly contrasts increasing sibling competition against a represented nestling-growth outcome in the represented blue-tit population. The fitted sample was 3,720 chicks in 453 rearing-brood clusters, using day_14_weight ~ 1 + competition_score and treatment codes 5/6/7 only. Larger competition_score means more sibling competition, so orientation is as_declared. The linear coding and lack of systematic matching for unmanipulated broods affect interpretation and identification, but do not change the estimand's scope."
+    },
+    "528f8188-16": {
+      "scope": "E",
+      "unit_estimated": "Brood-level mean day-14 nestling weight: -0.542003 g per one-unit increase in competition_effect_code (model-based SE 0.046943 g; t=-11.545993; residual df=329). The predictor was constructed as +1 for experimentally enlarged rearing broods (rear_nest_trt=5) and -1 for experimentally reduced rearing broods (rear_nest_trt=6), so its orientation is as_declared. One unit is half the reduced-to-enlarged contrast.",
+      "why": "This answers the declared within-frame effect of sibling competition on nestling growth using the experimental brood-size manipulation. Brood-level OLS modeled mean day-14 weight among measured chicks as competition_effect_code plus categorical hatch_year. Rearing broods were defined by hatch_year \u00d7 rear_nest_breed_ID and equally weighted. The analysis excluded unmanipulated broods and treatment codes other than 5 or 6; n=333 broods (167 enlarged, 166 reduced), containing 2,801 measured chicks."
+    },
+    "943d9ec2-19": {
+      "scope": "E",
+      "unit_estimated": "Year-adjusted enlarged-minus-reduced difference in individual day-14 chick weight (grams) among chicks alive and measured at day 14 in experimentally manipulated broods. The supplied information gives t = -11.3539109905 with 331 df, but does not provide the coefficient or cluster-robust SE separately, so their native-scale numerical values cannot be recovered without access to data.csv.",
+      "why": "This directly targets the declared within-frame effect: the predictor was coded +0.5 for enlarged broods (more sibling competition) and -0.5 for reduced broods (less competition), so its OLS coefficient is the enlarged-minus-reduced mass contrast and is oriented as_declared. The fitted model uses day_14_weight in grams, categorical hatch_year adjustment, excludes unmanipulated broods and chicks not alive/measured at day 14, includes 2,801 chicks in 332 rearing-brood clusters, and uses finite-sample-corrected sandwich uncertainty clustered by rear_nest_breed_ID with t inference."
+    },
+    "0690017d-20": {
+      "scope": "E",
+      "unit_estimated": "Change in brood-median day-14 nestling mass (grams) per one-category increase in competition_score, estimated by unadjusted OLS across 453 season-specific rearing broods.",
+      "why": "The fitted coefficient (-0.510138 g; model-based SE 0.0481115 g) directly relates the declared sibling-competition ordering\u2014reduced (-1), unmanipulated (0), enlarged (+1), oriented as_declared\u2014to the declared nestling-growth outcome in the represented blue-tit population. Brood-level aggregation, equal brood weighting, and the unadjusted linear-trend model are analytical choices rather than scope changes. The lack of systematic matching for unmanipulated broods limits a purely randomized causal interpretation but does not change the target\u2019s scope."
+    },
+    "79e86c0f-21": {
+      "scope": "E",
+      "unit_estimated": "Breeding-year-adjusted enlarged-minus-reduced difference in equal-weight rearing-brood mean day-14 nestling weight, in grams (333 brood means).",
+      "why": "The fitted coefficient directly estimates the declared sibling-competition contrast within the framed blue-tit data: +0.5 for enlarged broods and -0.5 for reduced broods, so its native-scale estimate of -1.0840 g (HC3 SE 0.0943 g) is the adjusted enlarged-minus-reduced difference in nestling growth outcome. Excluding unmanipulated broods, aggregating to brood means, and adjusting for breeding year are analytical choices rather than scope changes."
+    },
+    "d30378d1-22": {
+      "scope": "E",
+      "unit_estimated": "Adjusted difference in mean day-14 chick weight (grams) per year-specific rearing brood: unmanipulated (rear_nest_trt=7) minus reduced (rear_nest_trt=6), with enlarged broods (5), hatch year, clutch size, and laying date included as adjustment terms.",
+      "why": "This directly estimates the within-frame effect of greater sibling competition on nestling growth: unmanipulated broods represent more competition than reduced broods, so the contrast is oriented as declared. Brood-level aggregation, OLS adjustment, and the weaker causal interpretation of the non-systematically matched unmanipulated group are analytical/design limitations, not scope changes."
+    },
+    "38765910-23": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood; outcome is the brood-level mean day-14 chick mass in grams, so the coefficient is a difference in grams.",
+      "why": "The analysis directly targets sibling competition and nestling growth within the represented blue-tit data. The predictor is the competition contrast coded +0.5 for enlarged broods (rear_nest_trt 5) and -0.5 for reduced or unmanipulated broods (rear_nest_trt 6 or 7), with as_declared orientation. Its coefficient is the enlarged-brood mean minus the equally brood-weighted pooled reduced/unmanipulated mean. The model is an unadjusted two-group comparison of 452 rearing-brood means, using a Welch heteroskedastic standard error (t = -11.1635359874; Satterthwaite df = 267.335155518). Pooling non-randomly matched unmanipulated broods limits causal interpretation but does not change the estimand's scope."
+    },
+    "4f8e6c2f-24": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (398 brood-mean observations; 3,324 chicks measured at day 14)",
+      "why": "The fitted OLS ANCOVA estimates the adjusted effect of absolute assigned starting rearing-brood size, rear_Cs_at_start_of_rearing, on mean day-14 nestling weight. Larger assigned broods represent more sibling competition, so the reported \u22120.1861269 g per additional chick (SE 0.0155117 g; t = \u221211.9991; 393 residual df) is on the declared orientation and native model scale. Adjustment for baseline brood size and hatch year, brood-level aggregation, complete-case exclusions, and the linear OLS specification are analytical choices rather than scope changes."
+    },
+    "a0011ac1-26": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (453 hatch_year \u00d7 rear_nest_breed_ID brood means); coefficient scale is mm of mean day-14 tarsus length per +1 competition_score step.",
+      "why": "This directly estimates the declared within-frame effect of sibling competition on nestling growth. The predictor is the ordered brood-size manipulation contrast (reduced=-1, unmanipulated=0, enlarged=+1), oriented as_declared, and the outcome is rearing-brood mean day-14 tarsus length. Brood-level aggregation, equal brood weighting, year adjustment, and OLS are analytical choices rather than scope changes."
+    },
+    "7be072ca-29": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (hatch_year \u00d7 rear_nest_breed_ID; 453 equally weighted broods, 3,720 chicks)",
+      "why": "The year-adjusted OLS coefficient for competition_score directly estimates the effect of increasing experimentally manipulated sibling competition on brood-mean day-14 tarsus length, a nestling-growth outcome, within the represented blue-tit population and exposure/outcome frame. The predictor is coded \u22121 reduced, 0 unmanipulated, and +1 enlarged, so its orientation is as_declared. Brood-level aggregation, equal brood weighting, and the imposed linear treatment-score contrast are analytical choices rather than scope changes."
+    },
+    "44ec2395-31": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (287 brood-level observations; 2,661 measured chicks). Focal coefficient: -0.9027126 g, model-based SE 0.1146579 g (t=-7.8730962, residual df=283).",
+      "why": "This year-adjusted OLS coefficient estimates the enlarged-minus-unmanipulated difference in brood-mean day-14 mass, directly addressing sibling competition and nestling growth within the stated blue-tit dataset frame. Predictor: enlarged_vs_unmanipulated, coded 1 for rear_nest_trt=5 and 0 for rear_nest_trt=7; orientation: as_declared. Means were calculated among chicks alive and measured at day 14 for each hatch_year \u00d7 rear_nest_breed_ID brood; treatment 6 and nonfocal codes were excluded. The weaker causal identification of the unmanipulated comparison affects interpretation, not estimand scope."
+    },
+    "46352af6-32": {
+      "scope": "E",
+      "unit_estimated": "Year-adjusted enlarged-minus-reduced difference in individual chick day-14 weight, in grams, conditional on chicks alive and measured at day 14.",
+      "why": "The predictor directly contrasts experimentally enlarged rearing broods (rear_nest_trt=5, coded 1) with experimentally reduced broods (rear_nest_trt=6, coded 0), so larger predictor values represent more sibling competition (as_declared). Chick-level OLS of day_14_weight on this indicator and categorical hatch_year therefore targets the declared competition effect on growth within the represented frame. The analysis excludes treatment code 7 and other codes, uses 2,801 measured chicks in 333 year-specific rearing-brood clusters, and clusters covariance by hatch_year \u00d7 rear_nest_breed_ID with small-sample correction and t(332) inference. The reported focal test is t=-11.352429664496778; the coefficient and clustered SE are natively measured in grams, although their separate numerical values are not supplied in the declaration."
+    },
+    "661606ec-33": {
+      "scope": "E",
+      "unit_estimated": "Average measured chick alive at day 14 in experimentally enlarged or reduced rearing broods; chick-level OLS estimate: enlarged-minus-reduced day-14 mass = -1.01408397108 g (cluster-robust SE 0.089465610763 g; t = -11.334902455, df = 331).",
+      "why": "This directly answers the declared estimand within the dataset frame. The predictor was competition_contrast, coded +0.5 for rear_nest_trt=5 (experimentally enlarged brood) and -0.5 for rear_nest_trt=6 (experimentally reduced brood), so larger values represent more sibling competition (orientation: as_declared). The model was unadjusted chick-level OLS of day_14_weight in grams on this contrast, excluding unmanipulated broods, using 2,801 measured chicks (1,742 enlarged; 1,059 reduced) in 332 rearing broods. Uncertainty used a finite-sample-corrected sandwich SE clustered by rear_nest_breed_ID with t inference on 331 df. Because chicks are weighted individually, the fitted contrast targets the average measured chick rather than the average brood."
+    },
+    "edb22655-34": {
+      "scope": "E",
+      "unit_estimated": "0.54048884478 g per one-unit increase in the constructed \u00b11 competition-relief contrast (SE 0.0469466437 g; t = 11.5128324911, df = 276.903268696, two-sided p = 2.5301673957e-25).",
+      "why": "This answers the declared estimand within frame using the experimental sibling-competition manipulation and day-14 nestling growth. Predictor: competition-relief contrast coded +1 for rear_nest_trt 6 (experimentally reduced brood; less sibling competition) and -1 for rear_nest_trt 5 (experimentally enlarged brood; more sibling competition); orientation: reversed. The coefficient is (mean reduced \u2212 mean enlarged)/2: (10.7822087542 \u2212 9.70123106464)/2 = 0.54048884478 g. The analysis used 332 equally weighted rearing-brood means from 2,801 day_14_weight measurements: 167 enlarged and 165 reduced broods. Unmanipulated broods were excluded. Outcome was mean day_14_weight within rear_nest_breed_ID, with no covariate adjustment; Welch heteroskedastic uncertainty was used. One observation represents one rearing brood."
+    },
+    "943d9ec2-35": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood: breeding-year-adjusted enlarged-minus-reduced contrast in brood-mean day-14 tarsus length, in mm",
+      "why": "This directly estimates the effect of experimentally increased versus reduced sibling competition on nestling growth in the represented blue-tit population. Brood-level OLS used 332 manipulated rearing broods, excluded unmanipulated broods, adjusted for categorical breeding year, and gave \u22120.389111 mm with HC3 robust SE 0.045857 mm (t(328)=\u22128.48535). The predictor was coded +0.5 for enlarged broods and \u22120.5 for reduced broods, so the coefficient is the enlarged-minus-reduced difference and is oriented as_declared."
+    },
+    "d30378d1-36": {
+      "scope": "E",
+      "unit_estimated": "Year-specific rearing brood; the focal quantity is the adjusted contrast in brood-level mean day-14 mass (grams): enlarged rearing broods minus 0.5\u00d7reduced and 0.5\u00d7unmanipulated rearing broods.",
+      "why": "This directly targets sibling competition induced by brood-size manipulation and nestling growth in the represented blue-tit population. Larger values of the constructed predictor mean more sibling competition, so the orientation is as declared. Brood-level aggregation, OLS covariate adjustment, and the composite categorical contrast are analytical choices rather than scope changes; the unmatched unmanipulated group limits causal interpretation but does not change the target."
+    },
+    "1fe4ca65-38": {
+      "scope": "E",
+      "unit_estimated": "Individual chick (day-14 mass in grams per additional net chick in the rearing brood)",
+      "why": "The fitted coefficient directly addresses the declared within-frame estimand: experimentally induced sibling competition, operationalized as net_rearing_manipulation, on nestling growth, operationalized as individual day-14 mass. The year-adjusted chick-level linear dose-response and cluster-robust inference are analytical choices rather than scope changes. The estimate is conditional on chicks surviving and being measured at day 14."
+    },
+    "1fa958ea-39": {
+      "scope": "E",
+      "unit_estimated": "Individual-chick day-14 mass, in grams (chick-weighted treatment contrast).",
+      "why": "The fitted focal estimate is -1.01408397108 g with cluster-robust SE 0.089465610763 g (t = -11.334902455; 331 df), so enlarged broods had lower mean day-14 mass than reduced broods. Predictor: signed sibling-competition treatment contrast coded +0.5 for rear_nest_trt = 5 (experimentally enlarged) and -0.5 for rear_nest_trt = 6 (experimentally reduced); orientation: as_declared. The model was unadjusted chick-level OLS of day_14_weight on this contrast plus an intercept, fitted to 2,801 chicks alive and measured at day 14 in the manipulated arms only; 120 unmanipulated broods were excluded. Sandwich uncertainty was clustered by rear_nest_breed_ID with finite-sample correction across 332 rearing broods. The coefficient exactly equals the chick-weighted enlarged-minus-reduced difference: 9.76268656716 \u2212 10.7767705382 g. This directly addresses sibling competition's effect on nestling growth within the declared dataset frame."
+    },
+    "68faddb3-41": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (one observation per hatch_year \u00d7 rear_nest_breed_ID; n=286)",
+      "why": "This directly estimates the framed effect of sibling competition on nestling growth in the represented blue-tit population. Predictor: unmanipulated_vs_reduced, coded 1 for rear_nest_trt=7 (unmanipulated brood) and 0 for rear_nest_trt=6 (experimentally reduced brood), with enlarged broods and incomplete fitted variables excluded. Orientation: as_declared, because unmanipulated broods represent more sibling competition. Outcome: within-brood median day_14_weight. Unadjusted brood-level OLS gave the unmanipulated-minus-reduced coefficient \u22120.1427209 g (SE 0.0899431 g; t=\u22121.5867906; residual df=284), based on 286 broods containing 1,978 measured chicks. This is within scope, although the lack of systematic matching means it is not a clean randomized treatment contrast."
+    },
+    "6a34d443-43": {
+      "scope": "E",
+      "unit_estimated": "Day-14 chick weight in grams per 1-unit increase in competition_score (equivalently, half the enlarged-minus-reduced brood contrast), among measured chicks in manipulated rearing broods",
+      "why": "The fitted chick-level OLS directly contrasts experimentally enlarged versus reduced rearing broods, a sibling-competition exposure, on day_14_weight, a nestling-growth outcome, within the represented blue-tit population. Year adjustment, chick-level analysis, and brood-clustered CR1 uncertainty are analytical choices rather than scope changes."
+    },
+    "11b5edbf-44": {
+      "scope": "E",
+      "unit_estimated": "-0.1823279393 grams per additional net chick added (SE 0.0156424771; t=-11.6559505551; residual df=316). Predictor: reconstructed_net = rear_Cs_in - rear_Cs_out, in chicks. Orientation: as_declared.",
+      "why": "This estimates the declared within-frame effect of greater sibling competition on nestling growth. Outcome was mean day_14_weight among chicks alive and measured at day 14, with one equally weighted observation per rearing brood. OLS modeled brood-mean weight as a linear function of reconstructed_net plus categorical hatch year, using conventional model-based uncertainty. Included rear_nest_trt 5 (enlarged) and 6 (reduced); unmanipulated broods were excluded. Composite brood ID was hatch_year:rear_nest_breed_ID. Of 333 assigned broods, 13 lacking reconstructable exposure were excluded, leaving 320 broods and 2,716 chick measurements. The reconstructed exposure matched net_rearing_manipulation wherever both were observed."
+    },
+    "25105c38-45": {
+      "scope": "E",
+      "unit_estimated": "Linear change in rearing-brood median day-14 tarsus length (mm) per +1 competition_score step, where competition_score is -1 for reduced broods, 0 for unmanipulated broods, and +1 for enlarged broods.",
+      "why": "This directly addresses the framed effect of sibling competition on nestling growth in the represented blue-tit population. Larger competition_score means more sibling competition (as_declared), and day-14 tarsus length is a nestling-growth outcome. Brood-level aggregation, equal-brood weighting, year adjustment, OLS, and the ordered linear contrast are analytical choices rather than scope changes."
+    },
+    "5ef9d470-46": {
+      "scope": "E",
+      "unit_estimated": "Year-specific rearing brood (453 broods; brood-mean day-14 weight, grams)",
+      "why": "The fitted OLS directly estimates the declared within-frame effect: the signed linear trend in mean day-14 nestling weight per one-unit increase in competition_score, adjusted for categorical hatch year. The score increases from reduced (-1) to unmanipulated (0) to enlarged (+1), so its orientation is as_declared. The focal estimate is -0.543029125665 grams per score unit (model-based SE 0.0475161924807; t=-11.4282962779; 449 residual df). Aggregating measured surviving chicks to equally weighted year-specific rearing-brood means changes the analysis unit, not the estimand\u2019s scope."
+    },
+    "65915489-47": {
+      "scope": "E",
+      "unit_estimated": "Model-implied day-14 weight contrast at net_rearing_manipulation=+2 versus -2: -0.66094 g (cluster-robust SE 0.05745 g; t=-11.50417, df=318). Predictor: net_rearing_manipulation, constructed as chicks moved in minus chicks moved out; contrast +2 minus -2. Orientation: as_declared.",
+      "why": "This directly estimates the declared effect of experimentally induced sibling competition on nestling growth within the dataset frame. Chick-level OLS modeled day_14_weight as linear and squared net_rearing_manipulation plus categorical hatch_year, using 2,716 measured day-14 chicks in 319 rearing-brood clusters. Rows were restricted to experimentally enlarged/reduced broods (rear_nest_trt 5/6), excluding unmanipulated treatment 7 and rows missing outcome, hatch_year, rearing-brood ID, or dose. Uncertainty used finite-sample-corrected standard errors clustered by rear_nest_breed_ID with t inference. The focal symmetric +2-minus--2 contrast is on the native gram scale; quadratic-dose and year terms cancel when year is held fixed."
+    },
+    "1fa958ea-48": {
+      "scope": "E",
+      "unit_estimated": "Focal coefficient (enlarged minus reduced) = -0.3883060246 mm; Welch SE = 0.0462545122 mm (t = -8.39498691077, df = 305.225579023).",
+      "why": "The predictor was constructed as +0.5 for rear_nest_trt = 5 (experimentally enlarged rearing brood) and -0.5 for rear_nest_trt = 6 (experimentally reduced rearing brood), so its coefficient is exactly enlarged minus reduced; orientation is as_declared because larger predictor values represent more sibling competition. The outcome was mean day-14 tarsus length among measured chicks in each rear_nest_breed_ID. The unadjusted two-arm comparison used 332 manipulated rearing broods (167 enlarged, 165 reduced; 2,801 chick measurements), weighted each brood equally, excluded unmanipulated broods, and used a Welch unequal-variance standard error. Arm means were 16.5282206709 mm and 16.9165266955 mm. This directly estimates the experimental effect of sibling competition on nestling growth within the declared dataset frame."
+    },
+    "3eda6e7a-49": {
+      "scope": "E",
+      "unit_estimated": "Rearing brood (332 broods; weighted by 2,801 measured chicks)",
+      "why": "The fitted WLS coefficient directly estimates the declared sibling-competition contrast: experimentally enlarged rearing broods (+0.5) versus experimentally reduced broods (-0.5), for mean day-14 nestling mass within the represented blue-tit data. The estimate is the measured-chick-count-weighted enlarged-minus-reduced difference, -1.01408397108 g (HC2 SE 0.0896116277067 g), signed as declared. Excluding unmanipulated broods and analyzing brood means are stated analytical choices, not changes of estimand scope."
+    }
+  }
+}

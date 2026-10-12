@@ -1,0 +1,14 @@
+{
+  "protocol_version": 6,
+  "dataset": "bt",
+  "model": "gpt-5.6-sol",
+  "mode": "branchpoint",
+  "allocation": "spread",
+  "seed": 7,
+  "judge_model": "gpt-5.6-sol",
+  "effort": "low",
+  "workers": 6,
+  "provider_route": [],
+  "branching_method": "continuation",
+  "agent_interface": "native"
+}

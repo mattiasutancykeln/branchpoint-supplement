@@ -1,0 +1,185 @@
+% Results. Drops into the main paper with \input{results}; also compiles
+% standalone (the guard falls back to article when the workshop style is absent).
+\documentclass{article}
+
+\IfFileExists{neurips_2026.sty}{\usepackage[dblblindworkshop]{neurips_2026}}{%
+  % standalone fallback: lmodern gives microtype a scalable font to expand
+  \usepackage[margin=1in]{geometry}\usepackage{lmodern}}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\title{Branchpoint: Towards Structured Multiverse Analysis}
+
+\author{%
+  Anonymous Author(s) \\
+  Affiliation \\
+  \texttt{email} \\
+}
+
+\begin{document}
+\maketitle
+
+\section{Results}
+\label{sec:results}
+
+Eighteen conditions, $n = 50$ analyses each: three models $\times$ two datasets
+$\times$ \{Naive, Branchpoint, BpDynamic\}. 896 analyses in total, at a compute
+cost of \$145.
+
+\subsection{Branching produces distinct analyses; the allocator decides how many}
+\label{sec:results-coverage}
+
+\input{table_coverage_spread}
+
+Table~\ref{tab:coverage-spread} reports the 95\% width of each condition's
+Fisher-$z$ distribution in absolute units, against the human panel for the same
+dataset, together with what each distinct answer cost.
+
+A second quantity, not tabulated, is needed to read those widths.
+\emph{Coverage} is the share of in-scope analyses that are a distinct
+standardized endpoint --- how much of what an arm produced is a different answer
+rather than the same one again. It rises across the arms for every model and
+both datasets: on \texttt{gpt-5.6-sol} it goes $39 \to 68 \to 95$ on blue tit
+and $20 \to 69 \to 80$ on Eucalyptus. The naive controls show why it matters.
+\texttt{eu\_opus\_naive} produced 50 analyses containing 10 distinct answers,
+and \texttt{bt\_opus\_naive} 10 in-scope analyses containing 3. Width alone
+reports those as narrow; coverage reports them as \emph{repetitive}, which is a
+different failure and the one branching is meant to address.
+
+The allocator does what it is designed to do, and the effect is exact rather
+than statistical. The BpDynamic conditions spent 50 branches on 50 distinct
+decisions. The Branchpoint conditions, drawing at random from the same open set,
+spent 50 branches on 34--37 distinct decisions, wasting the remainder on
+decisions already branched.
+
+\paragraph{Covering more decisions does not widen the distribution.}
+This is the result we would least like to be true. Across the six cells where
+both arms ran, BpDynamic covers more of the decision space in four and is wider
+in four --- but they are not the same four. Only \texttt{eu}/\texttt{sol} and
+\texttt{eu}/\texttt{opus} win on both. On blue tit BpDynamic leads on coverage
+in two of three cells and is the narrower arm in two of three. The additional
+decisions the allocator reaches are, on that dataset, ones whose alternatives do
+not move the estimand.
+
+\subsection{Nothing converged}
+\label{sec:results-convergence}
+
+Every branching condition stopped at \texttt{cap-reached}. Across the twelve of
+them, 2{,}157 of 2{,}159 detected decisions remain open: \emph{two} were ever
+explored to exhaustion. With $n = 50$ against roughly 200 detected decisions per
+condition, even perfect allocation reaches a quarter of them at one alternative
+apiece.
+
+Every width reported here is therefore a lower bound from a partial sample, and
+the convergence curves are still climbing at $n = 50$. This is why coverage is
+worth stating alongside the widths: a width without a denominator invites
+reading a 25\%-coverage sample as an estimate of the multiverse.
+
+\subsection{The analyses are far more homogeneous than the humans'}
+\label{sec:results-homogeneity}
+
+Under the Fisher-$z$ convention the standard error depends only on the degrees of
+freedom, so its variation across a condition measures how much the analyses
+differ in effective sample size. The human panels have a standard-error
+coefficient of variation of $0.584$ (blue tit) and $0.654$ (Eucalyptus). Our
+conditions range from $0.002$ to $0.551$, and the low end is extreme:
+\texttt{bt\_sol\_naive} sits at $0.005$, meaning 38 analyses with effectively
+one error bar between them.
+
+Branching raises this but does not close it. \texttt{bt\_sol\_naive} $0.005 \to$
+\texttt{bt\_sol\_continuation} $0.088 \to$ \texttt{bt\_sol\_spread} $0.144$,
+against a human $0.584$. Human analysts differ in how much information their
+model extracts from the data; ours mostly do not.
+
+\subsection{Where the arms sit relative to the crowd is dataset-dependent}
+\label{sec:results-location}
+
+On blue tit the arms never reach the weak-effect region the crowd occupies. 37
+of 111 human analyses (33\%) report $|t| < 4$; across all nine blue-tit
+conditions, 8 of 282 in-scope analyses do, and exactly one crosses zero against
+the crowd's seven. The model talks itself into a confident negative effect
+nearly every time.
+
+On Eucalyptus the same claim is false, and we state that rather than generalize
+from the first dataset. There the true effect is near zero, 80 of 85 human
+analyses (94\%) report $|t| < 4$, and so do 434 of our 438; 62 of those 438
+cross zero, including 21 of 49 in \texttt{eu\_sol\_continuation}. Where
+the data support a null, the arms find it.
+
+The honest summary is that homogeneity of \emph{precision}
+(Section~\ref{sec:results-homogeneity}) replicates across both datasets, while
+failure to reach the null region does not: it is a blue-tit finding, and on that
+dataset it is the largest gap to the human panel that no sampler or
+standardization change addresses.
+
+\subsection{Attrition, and what it is selecting on}
+\label{sec:results-attrition}
+
+Eucalyptus attrition is now negligible --- 0 to 2 analyses lost per condition of
+50 --- after the degrees-of-freedom policy in the setup was made per-dataset.
+Before it, the same runs lost 50--90\%, and the survivors were selected by
+whether the analyst wrote ``$t$ with df'' or ``asymptotic $z$'': a reporting
+convention, not an analytic property.
+
+Blue tit remains uneven. \texttt{bt\_opus\_naive} retains 10 of 50 and
+\texttt{bt\_opus\_continuation} 19 of 49, against 8--12 lost for
+\texttt{gpt-5.6-sol}. Those rows report a cluster-robust $z$ with no stated
+cluster count, and on a dataset whose comparator standardizes on the cluster
+scale we decline to guess one. The consequence is that the two blue-tit
+\texttt{claude-opus-5} columns rest on small samples and should not carry weight
+in a model comparison.
+
+\subsection{A diagnostic on the raw test statistic}
+\label{sec:results-teststat}
+
+Because Layer 2 is the only place a common scale is imposed, it is worth asking
+whether it creates or destroys the arm differences. The raw focal statistic
+answers that: it consumes no degrees of freedom and no standardization rule.
+
+Its validity as a proxy depends on the dataset. Eucalyptus analyses are fit on
+an essentially fixed sample ($n_{\text{obs}}$ coefficient of variation $0.063$),
+and there the rank correlation between $|t|$ and the standardized $|Z_r|$ is
+$\rho = +0.999$: an arm contrast on the raw statistic is a genuine robustness
+check. Blue-tit analyses are not, because they sit at both chick and nest level
+($n_{\text{obs}}$ from 453 to 3{,}635, coefficient of variation $0.528$), and
+$\rho$ falls to $+0.621$.
+
+Neither should be compared to the humans on this scale. Crowd $|t|$ spans
+0--105 (blue tit) and 0--467 (Eucalyptus) in part because crowd sample sizes
+vary far more than ours. The test statistic is an internal diagnostic; Fisher
+$z$ remains the only scale on which the arms and the human panel are comparable.
+
+\subsection{Threats to validity}
+\label{sec:results-threats}
+
+\begin{itemize}
+\item \textbf{Widths are lower bounds.} No condition converged
+(Section~\ref{sec:results-convergence}), so every spread figure is a partial
+sample of the decision space.
+\item \textbf{Spread is measured on a 95\% window.} At $n \approx 50$ that is
+close to the raw range and is set by the two most extreme analyses. Blue tit /
+\texttt{gpt-5.6-sol} Branchpoint reads 56\% of the human panel on this window
+against 37\% on a 90\% one. Coverage does not have that sensitivity.
+\item \textbf{One seed per condition.} The grid is seed 7 throughout. A
+three-seed replication of one cell gave widths of $0.19$, $0.40$ and $0.45$ ---
+seed variance is of the same order as several of the arm differences reported
+here, and single-cell comparisons should not be read as significant.
+\item \textbf{Ban lists are per-trajectory.} The same decision axis reached from
+a different parent starts with an empty ban list, so distinct branches can and
+do land on identical specifications. This deflates coverage by an amount we have
+not quantified.
+\item \textbf{BpDynamic ran for one model.} Its coverage advantage is consistent
+across the two datasets it was run on, but rests on two conditions.
+\end{itemize}
+
+\end{document}

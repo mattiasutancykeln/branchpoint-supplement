@@ -1,0 +1,54 @@
+{
+  "state": "complete",
+  "phase": "complete",
+  "layer2": "complete",
+  "figures": "complete",
+  "updated": 1788078792.5041292,
+  "conditions": {
+    "bt_opus_spread": {
+      "state": "complete",
+      "elapsed_s": 532.9,
+      "log": "/path/to/branchpoint/results/final_v1/bt_opus_spread/run.log",
+      "completed": 51,
+      "total": 51,
+      "active": 0,
+      "root_complete": true,
+      "calls": 265,
+      "usd": 8.977550999999995,
+      "input_tokens": 1502187,
+      "output_tokens": 68689,
+      "cached_input_tokens": 0,
+      "cache_rate": 0.0,
+      "stage": "branches 50/50; finishing sampler",
+      "last_call": {
+        "role": "judge",
+        "instrument": "detect",
+        "model": "gpt-5.6-sol",
+        "usd": 0.009672
+      }
+    },
+    "bt_glm_spread": {
+      "state": "complete",
+      "elapsed_s": 587.7,
+      "log": "/path/to/branchpoint/results/final_v1/bt_glm_spread/run.log",
+      "completed": 51,
+      "total": 51,
+      "active": 0,
+      "root_complete": true,
+      "calls": 302,
+      "usd": 3.2893149599999996,
+      "input_tokens": 2921119,
+      "output_tokens": 154080,
+      "cached_input_tokens": 2325516,
+      "cache_rate": 0.7961045065264373,
+      "stage": "branches 50/50; finishing sampler",
+      "last_call": {
+        "role": "judge",
+        "instrument": "detect",
+        "model": "gpt-5.6-sol",
+        "usd": 0.019648
+      }
+    }
+  },
+  "incomplete": []
+}

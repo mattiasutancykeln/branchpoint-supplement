@@ -1,0 +1,295 @@
+% Experiment setup. Drops into the main paper with \input{experiment_setup};
+% also compiles standalone (the guard falls back to article when the workshop
+% style is not on TEXINPUTS).
+\documentclass{article}
+
+\IfFileExists{neurips_2026.sty}{\usepackage[dblblindworkshop]{neurips_2026}}{%
+  % standalone fallback: lmodern gives microtype a scalable font to expand
+  \usepackage[margin=1in]{geometry}\usepackage{lmodern}}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\title{Branchpoint: Towards Structured Multiverse Analysis}
+
+\author{%
+  Anonymous Author(s) \\
+  Affiliation \\
+  \texttt{email} \\
+}
+
+\begin{document}
+\maketitle
+
+\section{Experiment setup}
+\label{sec:setup}
+
+This section covers everything outside the sampler that the results depend on:
+the datasets, what the analyst is asked, how the model is called, the arms, and
+what happens to a result once it exists. The sampler itself is described in
+Section~\ref{sec:setup} of the main text; it detects contestable decisions in a
+recorded analysis, forks them under a neutral intervention, and grows a ban
+list. It makes no validity judgement and never sees a standardization rule.
+
+A third dataset (MARP, religiosity and well-being \cite{hoogeveen2023many})
+remains configured but is \emph{dropped throughout}: not run, not standardized,
+not plotted, not reported. Nothing below applies to it.
+
+\subsection{Datasets}
+\label{sec:setup-data}
+
+Two ecology datasets, each with a published many-analyst comparison, both from
+ManyEcoEvo \cite{gould2025same}.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+ & Blue tit (\texttt{bt}) & Eucalyptus (\texttt{eu}) \\
+\midrule
+Dimensions            & $3{,}720 \times 42$ & $351 \times 43$ \\
+Observation unit      & one chick & one quadrat in one round \\
+Clustering            & chicks within ${\sim}330$ rearing nests & quadrats within 18 properties \\
+Human analyses coded  & 174 & 128 \\
+Usable for $Z_r$      & 111 & 85 \\
+\bottomrule
+\end{tabular}
+\caption{The two datasets. Blue-tit chicks are nested within rearing broods;
+Eucalyptus quadrats are not nested in any comparable way, and physical quadrats
+do \emph{not} recur across survey rounds. That difference propagates all the way
+to the degrees-of-freedom rule in Section~\ref{sec:setup-layer2}.}
+\label{tab:datasets}
+\end{table}
+
+Analysts answer the published question verbatim: \emph{``To what extent is the
+growth of nestling blue tits (Cyanistes caeruleus) influenced by competition
+with siblings?''} and \emph{``How does grass cover influence Eucalyptus spp.\
+seedling recruitment?''}
+
+\paragraph{Two files per dataset, doing different jobs.}
+The analyst-facing data is what the model analyses. A separate comparator file
+carries each human team's reported coefficient, standard error and adjusted
+degrees of freedom, from which the crowd distribution is derived. Conflating
+them is a live hazard, and the two are never interchangeable.
+
+\paragraph{The Eucalyptus design description matters.}
+An earlier snapshot of the question stated that fixed quadrats recur across
+survey rounds and that the file has 43 columns. Neither is true: quadrat labels
+are reused and are not persistent identifiers, and the supplied file has 38
+usable columns. Analysts given the false description fit quadrat-clustered
+repeated-measures models, which report an asymptotic Wald $z$ with no finite
+error df and are then unstandardizable. Every run reported here uses the
+corrected snapshot, hash-recorded per condition alongside the results.
+
+\subsection{What the analyst is told}
+\label{sec:setup-prompt}
+
+One prompt per dataset, with a fixed structure: the published research question;
+a summary of the study design; a column guide; the declared estimand in plain
+words; and a frame policy stating what counts as in-frame. Then the working
+instruction: analyse the data, report the fitted analysis's focal estimate and
+uncertainty \emph{in its native model scale}, work in small checkable Python
+scripts, and report a note describing exactly what model, variables and
+exclusions were used.
+
+\paragraph{The analyst is never told the standardization rule.}
+No Fisher-$z$ formula, no $t$/df transformation map, no degrees-of-freedom
+convention. This boundary is marked in code and structurally tested. It matters
+because the transformation is exactly the kind of downstream convention that
+would contaminate the analytic choices being measured.
+
+This mirrors the benchmark. ManyEcoEvo analysts received the one-sentence
+question and the data and nothing else; the information needed for
+standardization was elicited \emph{afterwards}, in a separate follow-up survey
+with published per-dataset instructions \cite{gould2025same}. Our pipeline
+currently reconstructs that information from the analyst's free-text note rather
+than asking for it, which is a limitation we return to in
+Section~\ref{sec:setup-limits}.
+
+\subsection{How the model is called}
+\label{sec:setup-calls}
+
+\paragraph{Loop.}
+A files-as-state analysis loop gives the model two tools: \texttt{run\_code},
+which writes and runs one Python analysis step in the project directory, and
+\texttt{submit\_report}, which finishes with the focal estimate and standard
+error. Every step appends to a durable transcript. The model builds its analysis
+across small checkable steps rather than one script.
+
+\paragraph{Provider interface.}
+All arms use the provider-native interface. Per call we record a secret-free
+request object, the complete SDK-serialized response, opaque reasoning blocks,
+usage, and every host tool result. This is an SDK-level record, not an
+HTTP-wire capture, and it does not expose hidden model state.
+
+\paragraph{Models.}
+Three analysts (\texttt{gpt-5.6-sol}, \texttt{claude-opus-5},
+\texttt{glm-5.3}) and one judge (\texttt{gpt-5.6-sol}), all at low reasoning
+effort. \texttt{glm-5.3} is pinned to a single provider for continuation so the
+native history is stable across a fork. Cost is metered per call, tagged by
+role, written to a ledger, and re-derived from token counts at one rate table; a
+spend guard aborts a run above a ceiling. The full grid below cost \$105.
+
+\subsection{Arms}
+\label{sec:setup-arms}
+
+Three arms, sharing the same loop, tools and question.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lp{9.4cm}}
+\toprule
+Arm & What it does \\
+\midrule
+Naive & $n$ independent analyses from the same prompt under different seeds. The
+control: no decision detection, no forking, no intervention. \\
+Branchpoint & Detects decisions in a completed trajectory, copies state after the
+complete response, appends a neutral intervention, and continues from the exact
+provider-native history. Branch points are drawn at random from the open set. \\
+BpDynamic & Identical to Branchpoint except allocation: open decisions are
+sorted by branches taken plus strikes, and the least-tried are drawn first, so
+budget is spent on uncovered decisions. \\
+\bottomrule
+\end{tabular}
+\caption{The three arms. Branchpoint and BpDynamic differ only in how branch
+points are allocated, not in how a branch is produced.}
+\label{tab:arms}
+\end{table}
+
+The intervention is one neutral sentence naming the decision and listing the
+approaches already used: \emph{``For \textlangle decision\textrangle, do not use
+any approach in this JSON list: [\ldots]. Choose a different defensible
+approach; everything else remains yours to decide.''}
+
+\paragraph{Grid as run.}
+$\{\textrm{sol}, \textrm{opus}, \textrm{glm}\} \times \{\textrm{bt},
+\textrm{eu}\} \times \{\textrm{Naive}, \textrm{Branchpoint}\}$, plus
+$\textrm{sol} \times \{\textrm{bt}, \textrm{eu}\} \times \textrm{BpDynamic}$:
+14 conditions, $n = 50$ each, ${\sim}700$ analyses.
+
+\subsection{Layer 2: what happens to a result}
+\label{sec:setup-layer2}
+
+Layer 2 is host-side, runs only after Layer 1 is banked, and is the sole owner
+of the conversion to a common scale. It never runs or extends an analysis agent.
+Four stages, each digest-bound so an unchanged input is never re-judged.
+
+\paragraph{(i) Extract.}
+A judge reads what the run printed and returns a fixed schema: number of
+observations, the unit, the design, exactly one of a Student $t$ or an
+asymptotic Wald $z$ (never relabelled), the residual df, a separate finite
+reference df used for inference such as clusters minus one, and any directly
+reported standardized effect. The digest binds prompt, schema and judge model.
+
+\paragraph{(ii) Standardize --- deterministic, no model call.}
+The partial correlation and its transform are
+\begin{equation}
+r = \frac{t}{\sqrt{t^{2} + \mathit{df}}},
+\qquad
+Z_r = \operatorname{atanh}(r),
+\qquad
+\mathrm{SE}(Z_r) = \frac{1}{\sqrt{\mathit{df}}} .
+\label{eq:standardize}
+\end{equation}
+A row reporting both $t$ and $z$ is blocked as ambiguous. A row with a statistic
+but no usable df is blocked, but not immediately dropped: it falls through to a
+directly reported effect, taken as-is when already on the Fisher-$z$ scale and
+via $\operatorname{atanh}$ when $|{\cdot}| < 1$. Only when no usable direct
+effect exists does the blocked reason become the row's terminal state, and the
+row carries that exact reason rather than disappearing.
+
+Note that $\mathrm{SE}(Z_r)$ depends only on the degrees of freedom: the
+analyst's own reported standard error is deliberately \emph{not} used, following
+the same convention as the benchmark \cite{gould2025same}. A consequence worth
+stating plainly is that our intervals carry no information beyond df, so within
+a condition they are nearly identical.
+
+\paragraph{Degrees of freedom are per-dataset policy.}
+Equation~\ref{eq:standardize} requires the df that the comparator itself used,
+and the two datasets do not agree. Measured from each dataset's own human
+panel, the median ratio of adjusted df to sample size is $0.126$ for blue tit
+(90 of 96 analyses on a cluster scale) and $0.936$ for Eucalyptus (40 of 55 on a
+row scale). They differ because chicks nest within broods and quadrats do not.
+
+Policy therefore decides \emph{precedence}, not merely a fallback: on a
+row-scale comparator the residual df wins, then $n - 2$, then any reference df;
+on a cluster-scale comparator the reference df wins, then the residual df. This
+matters because $\mathrm{SE} = 1/\sqrt{\mathit{df}}$, so a row on a cluster df
+sitting beside a row on a row df receives an interval several-fold different for
+the same analysis type, and the \emph{gap between the two scales} is then read
+as spread. Before precedence was enforced, Eucalyptus widths were inflated
+roughly threefold with no change in the number of rows retained.
+
+Where the comparator is row-scale and a generalized linear model reports an
+asymptotic Wald $z$ with no classical error df, $n - 2$ is derived. It is the
+conservative end, since it maximizes df and so cannot inflate $|r|$, and the
+number of parameters is immaterial at these sample sizes: at $n = 350$,
+$z = -1.12$, $Z_r$ is $-0.0602$ at $\mathit{df} = 345$ against $-0.0615$ at
+$\mathit{df} = 330$. The df \emph{family} is what matters --- a cluster df of 17
+would give $-0.262$, over four times larger. Where the comparator is
+cluster-scale no cluster count is ever guessed; a row carrying only a row-scale
+df stays on it and is reported as such.
+
+\paragraph{(iii) Scope.}
+One judgement per standardizable row, against the declared estimand and frame
+only. The prompt is explicit that a different covariate set, model family or
+estimator is an analytical choice and \emph{not} a scope change, and that
+neither is the aggregation level: individuals, clusters and group means are all
+reasonable ways to answer one question, and the human panels contain all three.
+In this run the screen removed almost nothing.
+
+\paragraph{(iv) Finalize.}
+The reportable spread over rows that are both standardizable and in scope. Every
+excluded row is retained with its reason, and the counts are reported
+separately, so attrition is always visible beside the width --- which matters,
+because the two are not independent.
+
+\paragraph{Manual overrides are not used here.}
+The pipeline supports a per-condition override file that short-circuits
+\emph{before} the deterministic path, supplying a value and method directly.
+None of the 14 conditions reported here carries one; every value below is
+produced by Equation~\ref{eq:standardize}. This is worth stating because a
+condition carrying such a file has rows that no subsequent code fix can reach.
+
+\subsection{Known limitations}
+\label{sec:setup-limits}
+
+\begin{itemize}
+\item \textbf{Standardization information is reconstructed, not elicited.} The
+benchmark asked its analysts for the statistic and df in a follow-up survey; we
+parse a free-text note. Analyses whose author wrote ``$z$'' rather than ``$t$
+with df'' were being dropped by reporting convention rather than by anything
+analytic. The principled fix is a post-analysis elicitation stage.
+\item \textbf{Coverage is capped, not converged.} With $n = 50$ against roughly
+200 detected decisions, no decision is explored to exhaustion: nothing closes,
+and every run stops at the cap. Reported widths are lower bounds from a partial
+sample, and coverage belongs beside them.
+\item \textbf{Ban lists are per-trajectory.} The same decision axis explored
+from a different parent starts with an empty ban list, so distinct branches can
+land on identical specifications.
+\item \textbf{Blue-tit attrition is uneven.} One condition retains 10 of 50.
+Rows reporting a cluster-robust $z$ with no stated cluster count remain
+unstandardizable by design, rather than having a cluster count guessed for them.
+\item \textbf{Our analyses are far more homogeneous than the humans'.} Within a
+condition the standard-error coefficient of variation is $0.002$--$0.09$ against
+the crowd's $0.58$--$0.65$, and roughly a third of properly-clustered human
+analyses report $|t| < 4$ against about 2\% of ours. No sampler or
+standardization change reaches this. It is a property of the analyst, and it is
+the central finding rather than a defect.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
